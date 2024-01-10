@@ -1,13 +1,11 @@
-import NavBar from './components/NavBar';
-import Home from './components/Home';
+import MainBody from './components/MainBody';
+import NavigationBar from './components/NavigationBar';
 
 function App() {
     return (
         <div className="App">
-            <NavBar/>
-            <div className="content">
-                <Home />
-            </div>
+            <NavigationBar />
+            <MainBody />
         </div>
     );
 }
