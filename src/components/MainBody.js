@@ -6,6 +6,7 @@ import LeftPanel from './mainpage/LeftPanel';
 import Projects from './mainpage/Projects';
 import NoteDisplay from '../components/notedisplay/NoteDisplay';
 import VmUsageChart from '../components/VmUsageChart';
+import Box from '@mui/material/Box';
 
 
 function MainBody() {
@@ -28,6 +29,9 @@ function MainBody() {
                 </Grid>
                 <Grid item xs={12} md={6.5}>
                     <VmUsageChart />
+                </Grid>
+                <Grid item xs={12}>
+                    <Box sx={{ height: '2rem' }} />
                 </Grid>
             </Grid>
         </Container>

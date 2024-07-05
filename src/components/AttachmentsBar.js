@@ -32,10 +32,23 @@ const AttachmentsBar = ({ downloadFiles, gitHubLink, pageLink }) => {
                 })}
             </Box>
             <Tooltip title="View Detailed Page">
-                <Button variant="contained" href={pageLink} target="_blank" rel="noopener noreferrer" size="sm" sx={{ fontSize: '0.75rem', marginTop: { xs: '0.5rem', md: '0' }, alignSelf: { xs: 'flex-start', md: 'center' } }}>
-                    View Page
-                    <KeyboardArrowRight />
-                </Button>
+                {pageLink && (
+                    <Button
+                        variant="contained"
+                        href={pageLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        size="sm"
+                        sx={{
+                            fontSize: '0.75rem',
+                            marginTop: { xs: '0.5rem', md: '0' },
+                            alignSelf: { xs: 'flex-start', md: 'center' }
+                        }}
+                    >
+                        View Page
+                        <KeyboardArrowRight />
+                    </Button>
+                )}
             </Tooltip>
         </Box>
     );

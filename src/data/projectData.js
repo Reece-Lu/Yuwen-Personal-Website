@@ -35,7 +35,7 @@ const projectDataList = [{
         }
     ],
     "GitHubLink": "https://github.com/Reece-Lu/Laptop_Data_Crawler_and_Price_Prediction_UvicCSC503Project",
-    "pageLink": "https://your-page-link.com",
+    "pageLink": "",
     "icons": ["Python", "Scrapy", "scikit-learn","Pandas", "NumPy"],
     "partners": [
         "Chengze Hao, Yuwen Lu"
@@ -76,7 +76,7 @@ const projectDataList = [{
             }
         ],
         "GitHubLink": "https://github.com/Reece-Lu/QML-Model-Serving",
-        "pageLink": "https://your-quantum-machine-learning-page-link.com",
+        "pageLink": "",
         "icons": ["Python", "PyTorch", "Qiskit", "Jupyter","FastAPI"],
         "partners": [
             "Yuwen Lu"
@@ -116,7 +116,7 @@ const projectDataList = [{
         "GitHubLink": [
             "https://github.com/Reece-Lu/propertymanagement-graduationproject-server"
         ],
-        "pageLink": "https://your-property-management-page-link.com",
+        "pageLink": "https://www.meetyuwen.com/residentialcomplex/",
         "icons": ["Spring", "Vue", "MySQL", "Docker","Ubuntu"],
         "partners": [
             "Yuwen Lu"
