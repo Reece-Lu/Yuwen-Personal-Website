@@ -30,9 +30,6 @@ function MainBody() {
                 <Grid item xs={12} md={6.5}>
                     <VmUsageChart />
                 </Grid>
-                <Grid item xs={12}>
-                    <Box sx={{ height: '2rem' }} />
-                </Grid>
             </Grid>
         </Container>
     );

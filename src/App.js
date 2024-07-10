@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigationBar from './components/NavigationBar';
+import Footer from './components/Footer';
 import ProjectAPIs from './pages/ProjectAPIsPage/ProjectAPIs';
 import Home from './pages/Home';
 import ComputerPricePrediction from './pages/ComputerPricePrediction';
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/computerpriceprediction" element={<ComputerPricePrediction />} />
                 <Route path="/" element={<Home />} />
             </Routes>
+            <Footer />
         </BrowserRouter>
     );
 }

@@ -82,7 +82,7 @@ const VmUsageChart = () => {
 
     return (
         <div style={{ height: '170px', width: '100%' }}>
-            <Typography level="h2" sx={{ marginBottom: '1rem', fontFamily: theme.typography.fontFamily }}>Website Performance Metrics</Typography>
+            <Typography level="h2" sx={{ marginBottom: '1rem', fontFamily: theme.typography.fontFamily }}>Website Performance</Typography>
             <Chart
                 options={{
                     data,
