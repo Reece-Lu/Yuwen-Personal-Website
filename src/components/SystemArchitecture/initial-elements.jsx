@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './SystemArchitecture.module.css';
+import { MarkerType } from "@xyflow/react";
 
 export const initialNodes = [
     {
         id: 'azure-server',
-        type: 'resizer',
+        type: 'group',
         data: { label: (
                 <div className={styles['node-label']}>
                     Microsoft Azure Server<br />
@@ -19,25 +20,33 @@ export const initialNodes = [
     {
         id: 'dns',
         type: 'resizer',
-        data: { label: (
+        data: {
+            label: (
                 <div className={styles['node-label']}>
                     DNS From DreamHost<br />
                     meetyuwen.com
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 0, target: 0 },
+                bottom: { source: 0, target: 0 },
+                left: { source: 0, target: 0 },
+                right: { source: 1, target: 0 },
+            }
+        },
         position: { x: -350, y: 200 },
-        style: { width: 250, height: 75, background: 'rgb(208, 192, 247)', color: 'white'},
+        style: { width: 250, height: 75, background: 'rgb(208, 192, 247)', color: 'white' },
     },
     {
         id: 'nginx',
-        type: 'resizer',
+        type: 'group',
         data: { label: <div className={styles['node-label']}>
                 NGINX
             </div> },
         position: { x: 40, y: 150 },
-        parentNode: 'azure-server',
+        parentId: 'azure-server',
         extent: 'parent',
-        style: { width: 390, height: 300 },
+        style: { width: 390, height: 300, backgroundColor: 'rgba(208, 192, 247, 0.2)', },
     },
     {
         id: 'personal-website',
@@ -48,9 +57,15 @@ export const initialNodes = [
                     React<br />
                     Port: 3000
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 0, target: 0 },
+                bottom: { source: 0, target: 0 },
+                left: { source: 0, target: 3 },
+                right: { source: 0, target: 2 },
+            }},
         position: { x: 20, y: 50 },
-        parentNode: 'nginx',
+        parentId: 'nginx',
         extent: 'parent',
         style: { width: 350, height: 100, background: 'rgb(208, 192, 247)', color: 'white' },
     },
@@ -63,9 +78,15 @@ export const initialNodes = [
                     Vue<br />
                     Port: 8080
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 0, target: 0 },
+                bottom: { source: 0, target: 1 },
+                left: { source: 1, target: 0 },
+                right: { source: 0, target: 0 },
+            }},
         position: { x: 20, y: 170 },
-        parentNode: 'nginx',
+        parentId: 'nginx',
         extent: 'parent',
         style: { width: 350, height: 100, background: 'rgb(208, 192, 247)', color: 'white' },
     },
@@ -77,9 +98,15 @@ export const initialNodes = [
                     FastAPI<br />
                     Port: 8000
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 0, target: 0 },
+                bottom: { source: 0, target: 0 },
+                left: { source: 1, target: 0 },
+                right: { source: 0, target: 0 },
+            }},
         position: { x: 500, y: 240 },
-        parentNode: 'azure-server',
+        parentId: 'azure-server',
         extent: 'parent',
         style: { width: 350, height: 75, background: 'rgb(208, 192, 247)', color: 'white' },
     },
@@ -93,23 +120,29 @@ export const initialNodes = [
                     Java 17<br />
                     Port: 8080
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 0, target: 0 },
+                bottom: { source: 0, target: 0 },
+                left: { source: 1, target: 0 },
+                right: { source: 0, target: 1 },
+            }},
         position: { x: 500, y: 80 },
-        parentNode: 'azure-server',
+        parentId: 'azure-server',
         style: { width: 350, height: 140, background: 'rgb(208, 192, 247)', color: 'white' },
         extent: 'parent',
     },
     {
         id: 'docker',
-        type: 'resizer',
+        type: 'group',
         data: { label: (
                 <div className={styles['node-label']}>
                     Docker
                 </div>
             )},
         position: { x: 500, y: 335 },
-        parentNode: 'azure-server',
-        style: { width: 350, height: 240 },
+        parentId: 'azure-server',
+        style: { width: 350, height: 240, backgroundColor: 'rgba(208, 192, 247, 0.2)' },
         extent: 'parent',
     },
     {
@@ -122,15 +155,21 @@ export const initialNodes = [
                     Docker Java 8<br />
                     Port: 8081
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 0, target: 0 },
+                bottom: { source: 0, target: 0 },
+                left: { source: 1, target: 0 },
+                right: { source: 0, target: 1 },
+            }},
         position: { x: 20, y: 45 },
-        parentNode: 'docker',
+        parentId: 'docker',
         style: { width: 310, height: 160, background: 'rgb(208, 192, 247)', color: 'white' },
         extent: 'parent',
     },
     {
         id: 'mysql',
-        type: 'resizer',
+        type: 'group',
         data: { label: (
                 <div className={styles['node-label']}>
                     MySQL 8.0.37-0ubuntu0.20.04.3<br />
@@ -138,9 +177,9 @@ export const initialNodes = [
                 </div>
             )},
         position: { x: 950, y: 180 },
-        parentNode: 'azure-server',
+        parentId: 'azure-server',
         extent: 'parent',
-        style: { width: 390, height: 220 },
+        style: { width: 390, height: 220, backgroundColor: 'rgba(208, 192, 247, 0.2)' },
     },
     {
         id: 'mysql-personal-website',
@@ -149,9 +188,15 @@ export const initialNodes = [
                 <div className={styles['node-label']}>
                     Personal Website Database
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 0, target: 0 },
+                bottom: { source: 0, target: 0 },
+                left: { source: 1, target: 0 },
+                right: { source: 0, target: 0 },
+            }},
         position: { x: 20, y: 80 },
-        parentNode: 'mysql',
+        parentId: 'mysql',
         extent: 'parent',
         style: { width: 350, height: 50, background: 'rgb(208, 192, 247)', color: 'white' },
     },
@@ -162,22 +207,28 @@ export const initialNodes = [
                 <div className={styles['node-label']}>
                     Complex Management Database
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 0, target: 0 },
+                bottom: { source: 0, target: 0 },
+                left: { source: 1, target: 0 },
+                right: { source: 0, target: 0 },
+            }},
         position: { x: 20, y: 150 },
-        parentNode: 'mysql',
+        parentId: 'mysql',
         extent: 'parent',
         style: { width: 350, height: 50, background: 'rgb(208, 192, 247)', color: 'white' },
     },
     {
         id: 'github-actions',
-        type: 'resizer',
+        type: 'group',
         data: { label: (
                 <div className={styles['node-label']}>
                     Github Actions
                 </div>
             )},
         position: { x: 0, y: 680 },
-        style: { width: 500, height: 130 },
+        style: { width: 500, height: 130, backgroundColor: 'rgba(208, 192, 247, 0.2)' },
     },
     {
         id: 'intelliJ-writerSide',
@@ -186,14 +237,92 @@ export const initialNodes = [
                 <div className={styles['node-label']}>
                     Learning Journey Hub With IntelliJ Writer Side
                 </div>
-            )},
+            ),
+            handles: {
+                top: { source: 1, target: 0 },
+                bottom: { source: 0, target: 0 },
+                left: { source: 0, target: 0 },
+                right: { source: 0, target: 0 },
+            }},
         position: { x: 20, y: 50 },
-        parentNode: 'github-actions',
+        parentId: 'github-actions',
         extent: 'parent',
         style: { width: 450, height: 50, background: 'rgb(208, 192, 247)', color: 'white' },
     },
 ];
 
 export const initialEdges = [
-    // Your edges here
+    {
+        id: 'e0-1',
+        source: 'dns',
+        target: 'personal-website',
+        sourceHandle: 'right-source-1',
+        targetHandle: 'left-target-1',
+        type: 'default',
+        animated: true,
+        style: { stroke: 'rgb(158, 118, 255)', strokeWidth: 2, zIndex: 10}
+    },{
+        id: 'e0-2',
+        source: 'intelliJ-writerSide',
+        target: 'personal-website',
+        sourceHandle: 'top-source-1',
+        targetHandle: 'left-target-2',
+        type: 'default',
+        animated: true,
+        style: { stroke: 'rgb(158, 118, 255)', strokeWidth: 2, zIndex: 10}
+    },{
+        id: 'e0-3',
+        source: 'residential-management',
+        target: 'personal-website',
+        sourceHandle: 'left-source-1',
+        targetHandle: 'left-target-3',
+        type: 'default',
+        animated: true,
+        style: { stroke: 'rgb(158, 118, 255)', strokeWidth: 2, zIndex: 10}
+    },{
+        id: 'e0-4',
+        source: 'personal-website-data',
+        target: 'personal-website',
+        sourceHandle: 'left-source-1',
+        targetHandle: 'right-target-1',
+        type: 'default',
+        animated: true,
+        style: { stroke: 'rgb(158, 118, 255)', strokeWidth: 2, zIndex: 10}
+    },{
+        id: 'e0-5',
+        source: 'fastapi',
+        target: 'personal-website',
+        sourceHandle: 'left-source-1',
+        targetHandle: 'right-target-2',
+        type: 'default',
+        animated: true,
+        style: { stroke: 'rgb(158, 118, 255)', strokeWidth: 2, zIndex: 10}
+    },{
+        id: 'e0-7',
+        source: 'residential-management-data',
+        target: 'residential-management',
+        sourceHandle: 'left-source-1',
+        targetHandle: 'bottom-target-1',
+        type: 'default',
+        animated: true,
+        style: { stroke: 'rgb(158, 118, 255)', strokeWidth: 2, zIndex: 10}
+    },{
+        id: 'e0-8',
+        source: 'mysql-personal-website',
+        target: 'personal-website-data',
+        sourceHandle: 'left-source-1',
+        targetHandle: 'right-target-1',
+        type: 'default',
+        animated: true,
+        style: { stroke: 'rgb(158, 118, 255)', strokeWidth: 2, zIndex: 10}
+    },{
+        id: 'e0-9',
+        source: 'mysql-residential-management',
+        target: 'residential-management-data',
+        sourceHandle: 'left-source-1',
+        targetHandle: 'right-target-1',
+        type: 'default',
+        animated: true,
+        style: { stroke: 'rgb(158, 118, 255)', strokeWidth: 2, zIndex: 10}
+    }
 ];

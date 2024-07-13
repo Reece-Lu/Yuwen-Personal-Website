@@ -62,9 +62,6 @@
 .react-flow__node-resizer {
     background: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
 }
 
 .react-flow__node-resizer .react-flow__handle,
@@ -103,6 +100,19 @@
     left: -5px;
     border-radius: 2px 0 0 2px;
 }
+
+.react-flow__node-resizer .react-flow__handle-right,
+.react-flow__node-circle .react-flow__handle-right,
+.react-flow__node-textinput .react-flow__handle-right {
+    height: 8px;
+    width: 4px;
+    right: -5px;
+    border-radius: 0 2px 2px 0;
+}
+
+
+
+
 
 .react-flow__node-annotation {
     font-size: 16px;
@@ -224,3 +234,24 @@
 .react-flow__minimap .annotation {
     display: none;
 }
+
+.floatingedges {
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}
+
+.floatingedges .react-flow__handle {
+    opacity: 0;
+}
+
+.react-flow__edge {
+    z-index: 10 !important;
+}
+
+.react-flow__node {
+    z-index: 5 !important;
+}
+
+
