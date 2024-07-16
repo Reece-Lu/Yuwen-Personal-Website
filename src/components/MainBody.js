@@ -35,9 +35,6 @@ function MainBody() {
                 <Grid item xs={12}>
                     <SystemArchitecture />
                 </Grid>
-                <Grid item xs={12}>
-                    <ProjectAPIs />
-                </Grid>
             </Grid>
         </Container>
     );

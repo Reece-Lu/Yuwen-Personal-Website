@@ -47,9 +47,8 @@ function SystemArchitecture() {
 
     return (
         <div>
-            <Typography level="h2" sx={{ marginBottom: '1rem', fontFamily: theme.typography.fontFamily}}>Website Architecture</Typography>
-            <div style={{ height: '70vh', width: '90%', margin: 'auto', marginBottom: '10px' }}>
-
+            <Typography level="h2" sx={{ fontFamily: theme.typography.fontFamily}}>Website Architecture</Typography>
+            <div style={{ height: '60vh', width: '90%', margin: 'auto', marginBottom: '10px' }}>
                 <ReactFlow
                     nodes={nodes}
                     edges={edges}
@@ -61,7 +60,7 @@ function SystemArchitecture() {
                     nodeTypes={nodeTypes}
                     className="overview"
                 >
-                    <MiniMap zoomable pannable />
+                    <MiniMap zoomable pannable style={{ height: 100, width: 150 }}/>
                     <Controls />
                     <Background color="#aaa" gap={16} />
                 </ReactFlow>

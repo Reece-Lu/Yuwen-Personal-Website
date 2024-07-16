@@ -29,31 +29,31 @@ function NavigationBar() {
                 </Button>
             </Typography>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                {/*<Button*/}
-                {/*    sx={{*/}
-                {/*        fontSize: '1rem',*/}
-                {/*        color: 'white',*/}
-                {/*    }}*/}
-                {/*    component={RouterLink}*/}
-                {/*    to="/projectapis"*/}
-                {/*>*/}
-                {/*<motion.div*/}
-                {/*    style={{*/}
-                {/*        width: 10,*/}
-                {/*        height: 10,*/}
-                {/*        marginRight: '0.5rem',*/}
-                {/*        borderRadius: '50%',*/}
-                {/*        backgroundColor: '#FF002C',*/}
-                {/*    }}*/}
-                {/*    animate={{ opacity: [0.5, 1, 0.5] }}*/}
-                {/*    transition={{*/}
-                {/*        repeat: Infinity,*/}
-                {/*        repeatType: "loop",*/}
-                {/*        duration: 4,*/}
-                {/*    }}*/}
-                {/*/>*/}
-                {/*    API Doc*/}
-                {/*</Button>*/}
+                <Button
+                    sx={{
+                        fontSize: '1rem',
+                        color: 'white',
+                    }}
+                    component={RouterLink}
+                    to="/projectapis"
+                >
+                <motion.div
+                    style={{
+                        width: 10,
+                        height: 10,
+                        marginRight: '0.5rem',
+                        borderRadius: '50%',
+                        backgroundColor: '#FF002C',
+                    }}
+                    animate={{ opacity: [0.5, 1, 0.5] }}
+                    transition={{
+                        repeat: Infinity,
+                        repeatType: "loop",
+                        duration: 4,
+                    }}
+                />
+                    API Doc
+                </Button>
             </div>
         </AppBar>
     );
