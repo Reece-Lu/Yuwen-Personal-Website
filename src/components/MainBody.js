@@ -8,6 +8,7 @@ import NoteDisplay from '../components/notedisplay/NoteDisplay';
 import VmUsageChart from '../components/VmUsageChart';
 import Box from '@mui/material/Box';
 import SystemArchitecture from '../components/SystemArchitecture/SystemArchitecture';
+import ProjectAPIs from '../pages/ProjectAPIsPage/ProjectAPIs';
 
 
 function MainBody() {
@@ -33,6 +34,9 @@ function MainBody() {
                 </Grid>
                 <Grid item xs={12}>
                     <SystemArchitecture />
+                </Grid>
+                <Grid item xs={12}>
+                    <ProjectAPIs />
                 </Grid>
             </Grid>
         </Container>

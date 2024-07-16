@@ -19,6 +19,15 @@ import {
     ReactFlowProvider,
 } from '@xyflow/react';
 import './overview.css';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/joy/Typography';
+
+
+const theme = createTheme({
+    typography: {
+        fontFamily: 'Nunito, Arial, sans-serif',
+    },
+});
 
 const nodeTypes = {
     resizer: ResizerNode,
@@ -37,22 +46,27 @@ function SystemArchitecture() {
     );
 
     return (
-        <div style={{ height: '80vh', width: '100%' }}>
-            <ReactFlow
-                nodes={nodes}
-                edges={edges}
-                onNodesChange={onNodesChange}
-                onEdgesChange={onEdgesChange}
-                onConnect={onConnect}
-                fitView
-                attributionPosition="top-right"
-                nodeTypes={nodeTypes}
-                className="overview"
-            >
-                <MiniMap zoomable pannable />
-                <Controls />
-                <Background color="#aaa" gap={16} />
-            </ReactFlow>
+        <div>
+            <Typography level="h2" sx={{ marginBottom: '1rem', fontFamily: theme.typography.fontFamily}}>Website Architecture</Typography>
+            <div style={{ height: '70vh', width: '90%', margin: 'auto', marginBottom: '10px' }}>
+
+                <ReactFlow
+                    nodes={nodes}
+                    edges={edges}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}
+                    onConnect={onConnect}
+                    fitView
+                    attributionPosition="top-right"
+                    nodeTypes={nodeTypes}
+                    className="overview"
+                >
+                    <MiniMap zoomable pannable />
+                    <Controls />
+                    <Background color="#aaa" gap={16} />
+                </ReactFlow>
+                <box sx={{ height: '1vh', marginTop:'1vh'}} />
+            </div>
         </div>
     );
 }

@@ -6,6 +6,15 @@ import { useState } from "react";
 import { initialTabs as tabs } from "./ingredients.ts";
 import { motion, AnimatePresence } from "framer-motion";
 import Box from '@mui/material/Box';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Typography from '@mui/joy/Typography';
+
+
+const theme = createTheme({
+    typography: {
+        fontFamily: 'Nunito, Arial, sans-serif',
+    },
+});
 
 
 const ProjectAPIs = () => {
@@ -13,6 +22,7 @@ const ProjectAPIs = () => {
 
     return (
         <div>
+            <Typography level="h2" sx={{ marginBottom: '1rem', fontFamily: theme.typography.fontFamily }}>Web Service</Typography>
             <div className="window">
                 <nav>
                     <ul>
