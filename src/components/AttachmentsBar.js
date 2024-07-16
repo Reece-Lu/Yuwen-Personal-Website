@@ -41,13 +41,20 @@ const AttachmentsBar = ({ downloadFiles, gitHubLink, pageLink }) => {
                         size="sm"
                         sx={{
                             fontSize: '0.75rem',
+                            fontWeight: 'bold',
+                            color: '#EBF4F6',
                             marginTop: { xs: '0.5rem', md: '0' },
-                            alignSelf: { xs: 'flex-start', md: 'center' }
+                            alignSelf: { xs: 'flex-start', md: 'center' },
+                            backgroundColor: '#37B7C3',
+                            '&:hover': {
+                                backgroundColor: '#071952'
+                            }
                         }}
                     >
                         View Page
                         <KeyboardArrowRight />
                     </Button>
+
                 )}
             </Tooltip>
         </Box>

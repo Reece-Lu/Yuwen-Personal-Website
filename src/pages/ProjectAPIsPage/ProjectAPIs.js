@@ -22,7 +22,7 @@ const ProjectAPIs = () => {
 
     return (
         <div>
-            <Typography level="h2" sx={{ marginBottom: '1rem', fontFamily: theme.typography.fontFamily }}>Web Service</Typography>
+            <Typography level="h2" sx={{ marginBottom: '1rem', marginLeft:'2rem', fontFamily: theme.typography.fontFamily }}>Web Service</Typography>
             <div className="window">
                 <nav>
                     <ul>

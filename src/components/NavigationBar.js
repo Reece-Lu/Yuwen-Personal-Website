@@ -14,12 +14,14 @@ function NavigationBar() {
             justifyContent: 'space-between',
             alignItems: 'center',
             padding: '0 1rem',
-            marginBottom: '1rem',
+            marginBottom: '1.5rem',
+            backgroundColor: '#37B7C3',
         }}>
             <Typography variant="h6" sx={{ lineHeight: '2.5rem' }}>
                 <Button
                     sx={{
                         fontSize: '1rem',
+                        fontWeight: 'bold',
                         color: 'white',
                     }}
                     component={RouterLink}
@@ -31,8 +33,11 @@ function NavigationBar() {
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Button
                     sx={{
-                        fontSize: '1rem',
-                        color: 'white',
+                        fontSize: '0.8rem',
+                        color: '#071952',
+                        backgroundColor: '#EBF4F6',
+                        height: '2rem',
+                        fontWeight: 'bold',
                     }}
                     component={RouterLink}
                     to="/projectapis"
