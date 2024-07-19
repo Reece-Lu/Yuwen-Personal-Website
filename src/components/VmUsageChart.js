@@ -81,15 +81,17 @@ const VmUsageChart = () => {
     );
 
     return (
-        <div style={{ height: '170px', width: '100%' }}>
+        <div style={{ width: '90%'}}>
             <Typography level="h2" sx={{ marginBottom: '1rem', fontFamily: theme.typography.fontFamily }}>Website Performance</Typography>
-            <Chart
-                options={{
-                    data,
-                    primaryAxis,
-                    secondaryAxes
-                }}
-            />
+            <div style={{ height: '170px'}}>
+                <Chart
+                    options={{
+                        data,
+                        primaryAxis,
+                        secondaryAxes
+                    }}
+                />
+            </div>
         </div>
     );
 };

@@ -80,12 +80,12 @@ function NoteDisplay() {
                     overflowX: 'scroll',
                     padding: '10px 0',
                     flex: '0 0 90%',
-                    // Hide scrollbar for Chrome, Safari and Opera
-                    WebkitOverflowScrolling: 'touch',
-                    '::-webkit-scrollbar': { display: 'none' },
-                    // Hide scrollbar for IE, Edge and Firefox
-                    msOverflowStyle: 'none',
-                    scrollbarWidth: 'none'
+                    // // Hide scrollbar for Chrome, Safari and Opera
+                    // WebkitOverflowScrolling: 'touch',
+                    // '::-webkit-scrollbar': { display: 'none' },
+                    // // Hide scrollbar for IE, Edge and Firefox
+                    // msOverflowStyle: 'none',
+                    // scrollbarWidth: 'none'
                 }}>
                     {notes.map((note) => (
                         <li key={note.id} style={{

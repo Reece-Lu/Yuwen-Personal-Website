@@ -43,7 +43,7 @@ function RightPanel() {
     return (
         <ThemeProvider theme={theme}>
             <Box sx={{ fontFamily: theme.typography.fontFamily, display: 'flex', flexDirection: 'column' }}>
-                <Box sx={{ marginLeft: '2.5%', marginRight: '5%', marginTop: '0rem' }}>
+                <Box sx={{ marginLeft: '2.5%', marginRight: '5%', marginTop: '2rem' }}>
                     <DividerText label='Education' />
                     <Education />
                     <DividerText label='Working Experience' />

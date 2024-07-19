@@ -13,7 +13,8 @@ const theme = createTheme({
 
 function LeftPanel() {
     return (
-        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' , marginLeft: '5%', marginRight: '2.5%' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' , marginLeft: '5%', marginRight: '2.5%', marginTop: '3rem' }}>
+
             <img src="/images/leftPanelPicture.jpeg" alt="Yuwen Lu" style={{ width: '90%', borderRadius: '5%', marginTop: '0rem'}} />
             <ThemeProvider theme={theme}>
                 <Typography variant="h6" style={{marginTop:'3%', fontFamily: theme.typography.fontFamily}}>Yuwen Lu</Typography>

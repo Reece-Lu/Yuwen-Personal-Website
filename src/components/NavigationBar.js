@@ -4,6 +4,13 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { Link as RouterLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
+const theme = createTheme({
+    typography: {
+        fontFamily: 'Nunito, Arial, sans-serif',
+    },
+});
 
 function NavigationBar() {
     return (
@@ -14,15 +21,16 @@ function NavigationBar() {
             justifyContent: 'space-between',
             alignItems: 'center',
             padding: '0 1rem',
-            marginBottom: '1.5rem',
+            marginBottom: '0.5rem',
             backgroundColor: '#37B7C3',
         }}>
-            <Typography variant="h6" sx={{ lineHeight: '2.5rem' }}>
+            <Typography variant="h6" sx={{ lineHeight: '2.5rem'}}>
                 <Button
                     sx={{
                         fontSize: '1rem',
                         fontWeight: 'bold',
                         color: 'white',
+                        fontFamily: theme.typography.fontFamily,
                     }}
                     component={RouterLink}
                     to="/"
@@ -38,6 +46,7 @@ function NavigationBar() {
                         backgroundColor: '#EBF4F6',
                         height: '2rem',
                         fontWeight: 'bold',
+                        fontFamily: theme.typography.fontFamily
                     }}
                     component={RouterLink}
                     to="/projectapis"

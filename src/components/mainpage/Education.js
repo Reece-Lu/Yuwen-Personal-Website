@@ -76,7 +76,7 @@ const Education = () => {
     ];
 
     return (
-        <Box sx={{ maxWidth: 800, mx: 'auto', marginTop:'1%'}}>
+        <Box sx={{ maxWidth: 800, mx: 'auto', marginTop:'0.5rem'}}>
             {educationHistory.map((edu, index) => (
                 <EducationItem key={index} {...edu} />
             ))}

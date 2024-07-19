@@ -9,7 +9,7 @@ const WorkingExperienceItem = ({ position, company, dateRange}) => {
     let iconSrc = companyIcon;
     return (
         <Box>
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ display: 'flex', alignItems: 'center',marginTop: '1rem' }}>
                 <Box component="img" src={iconSrc} alt={company + " icon"} sx={{ width: 'auto', height: '1rem', mr: 0.5, verticalAlign: 'middle' }} />
                 <Typography variant="h6" sx={{ fontSize: '0.875rem', lineHeight: '1rem' }}>
                     {position}

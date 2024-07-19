@@ -1,6 +1,6 @@
 .card {
     width: 90%;
-    margin: 10px auto;
+    margin: 15px auto;
     transition: transform 0.3s ease-in-out;
     display: flex;
 }
