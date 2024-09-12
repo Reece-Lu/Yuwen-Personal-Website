@@ -5,6 +5,7 @@ import ProjectAPIs from './pages/ProjectAPIsPage/ProjectAPIs';
 import Home from './pages/Home';
 import ComputerPricePrediction from './pages/ComputerPricePrediction';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import CathayMixedCabinCalculator from "./pages/CathayMixedCabinCalculator";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route path="/projectapis" element={<ProjectAPIs />} />
                 <Route path="/computerpriceprediction" element={<ComputerPricePrediction />} />
                 <Route path="/" element={<Home />} />
+                <Route path="/cathaypacific" element={<CathayMixedCabinCalculator/>} />
             </Routes>
             <Footer />
         </BrowserRouter>

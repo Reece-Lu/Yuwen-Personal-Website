@@ -1,0 +1,3254 @@
+[
+    {
+        "flight_number": "CX881",
+        "departure_airport": "LAX",
+        "arrival_airport": "HKG",
+        "distance": 7248.048081987973
+    },
+    {
+        "flight_number": "CX331",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX957",
+        "departure_airport": "CGO",
+        "arrival_airport": "HKG",
+        "distance": 843.7059353102496
+    },
+    {
+        "flight_number": "CX521",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX865",
+        "departure_airport": "YVR",
+        "arrival_airport": "HKG",
+        "distance": 6381.12714063603
+    },
+    {
+        "flight_number": "CX507",
+        "departure_airport": "KIX",
+        "arrival_airport": "HKG",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX313",
+        "departure_airport": "HAK",
+        "arrival_airport": "HKG",
+        "distance": 276.603317464455
+    },
+    {
+        "flight_number": "CX987",
+        "departure_airport": "TFU",
+        "arrival_airport": "HKG",
+        "distance": ""
+    },
+    {
+        "flight_number": "CX396",
+        "departure_airport": "HKG",
+        "arrival_airport": "WNZ",
+        "distance": 581.3432586775062
+    },
+    {
+        "flight_number": "CX312",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX743",
+        "departure_airport": "HKG",
+        "arrival_airport": "HAN",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX882",
+        "departure_airport": "HKG",
+        "arrival_airport": "LAX",
+        "distance": 7248.048081987973
+    },
+    {
+        "flight_number": "CX903",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX711",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX458",
+        "departure_airport": "HKG",
+        "arrival_airport": "KHH",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX502",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX416",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX542",
+        "departure_airport": "HKG",
+        "arrival_airport": "HND",
+        "distance": 1803.5622326799578
+    },
+    {
+        "flight_number": "CX840",
+        "departure_airport": "HKG",
+        "arrival_airport": "JFK",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX729",
+        "departure_airport": "HKG",
+        "arrival_airport": "KUL",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX421",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX443",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX776",
+        "departure_airport": "CGK",
+        "arrival_airport": "HKG",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX581",
+        "departure_airport": "CTS",
+        "arrival_airport": "HKG",
+        "distance": 2130.6779101016164
+    },
+    {
+        "flight_number": "CX734",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX531",
+        "departure_airport": "NGO",
+        "arrival_airport": "TPE",
+        "distance": 1148.871579747639
+    },
+    {
+        "flight_number": "CX3247",
+        "departure_airport": "HKG",
+        "arrival_airport": "HAN",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX701",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX719",
+        "departure_airport": "HKG",
+        "arrival_airport": "CGK",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX472",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX2043",
+        "departure_airport": "HKG",
+        "arrival_airport": "MAA",
+        "distance": 2307.267827967565
+    },
+    {
+        "flight_number": "CX799",
+        "departure_airport": "HKG",
+        "arrival_airport": "SGN",
+        "distance": 927.7030129689929
+    },
+    {
+        "flight_number": "CX635",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX500",
+        "departure_airport": "HKG",
+        "arrival_airport": "NRT",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX589",
+        "departure_airport": "FUK",
+        "arrival_airport": "HKG",
+        "distance": 1272.061595153527
+    },
+    {
+        "flight_number": "CX549",
+        "departure_airport": "HND",
+        "arrival_airport": "HKG",
+        "distance": 1803.5622326799578
+    },
+    {
+        "flight_number": "CX565",
+        "departure_airport": "KIX",
+        "arrival_airport": "TPE",
+        "distance": 1058.165792905478
+    },
+    {
+        "flight_number": "CX784",
+        "departure_airport": "DPS",
+        "arrival_airport": "HKG",
+        "distance": 2147.5347403028204
+    },
+    {
+        "flight_number": "CX961",
+        "departure_airport": "HGH",
+        "arrival_airport": "HKG",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX654",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX377",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX38",
+        "departure_airport": "FRA",
+        "arrival_airport": "CDG",
+        "distance": 279.00054479387546
+    },
+    {
+        "flight_number": "CX411",
+        "departure_airport": "ICN",
+        "arrival_airport": "HKG",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX539",
+        "departure_airport": "NGO",
+        "arrival_airport": "HKG",
+        "distance": 1630.9611508140836
+    },
+    {
+        "flight_number": "CX955",
+        "departure_airport": "NGB",
+        "arrival_airport": "HKG",
+        "distance": 699.011138452321
+    },
+    {
+        "flight_number": "CX451",
+        "departure_airport": "NRT",
+        "arrival_airport": "TPE",
+        "distance": 1355.2380173232705
+    },
+    {
+        "flight_number": "CX951",
+        "departure_airport": "TAO",
+        "arrival_airport": "HKG",
+        "distance": 1039.2276123462896
+    },
+    {
+        "flight_number": "CX380",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX171",
+        "departure_airport": "HKG",
+        "arrival_airport": "PER",
+        "distance": 3750.7546454665735
+    },
+    {
+        "flight_number": "CX84",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX735",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX751",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX418",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX779",
+        "departure_airport": "HKG",
+        "arrival_airport": "SUB",
+        "distance": 2052.736657504756
+    },
+    {
+        "flight_number": "CX843",
+        "departure_airport": "JFK",
+        "arrival_airport": "HKG",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX357",
+        "departure_airport": "NKG",
+        "arrival_airport": "HKG",
+        "distance": 719.1186208899251
+    },
+    {
+        "flight_number": "CX391",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX722",
+        "departure_airport": "KUL",
+        "arrival_airport": "HKG",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX367",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX527",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX829",
+        "departure_airport": "YYZ",
+        "arrival_airport": "HKG",
+        "distance": 7797.381508062665
+    },
+    {
+        "flight_number": "CX754",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX495",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX49",
+        "departure_airport": "HAN",
+        "arrival_airport": "DAC",
+        "distance": 999.4026771534653
+    },
+    {
+        "flight_number": "CX423",
+        "departure_airport": "KHH",
+        "arrival_airport": "HKG",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX811",
+        "departure_airport": "BOS",
+        "arrival_airport": "HKG",
+        "distance": 7957.375878038499
+    },
+    {
+        "flight_number": "CX919",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX310",
+        "departure_airport": "HKG",
+        "arrival_airport": "HAK",
+        "distance": 276.603317464455
+    },
+    {
+        "flight_number": "CX392",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX3298",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX360",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX253",
+        "departure_airport": "HKG",
+        "arrival_airport": "LHR",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX420",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX80",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX157",
+        "departure_airport": "HKG",
+        "arrival_airport": "BNE",
+        "distance": 4317.326886521225
+    },
+    {
+        "flight_number": "CX400",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX349",
+        "departure_airport": "SHA",
+        "arrival_airport": "HKG",
+        "distance": 765.5369787821256
+    },
+    {
+        "flight_number": "CX712",
+        "departure_airport": "SIN",
+        "arrival_airport": "BKK",
+        "distance": 880.4328727696449
+    },
+    {
+        "flight_number": "CX930",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX319",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX766",
+        "departure_airport": "SGN",
+        "arrival_airport": "HKG",
+        "distance": 927.7030129689929
+    },
+    {
+        "flight_number": "CX634",
+        "departure_airport": "PEN",
+        "arrival_airport": "HKG",
+        "distance": 1487.101715074493
+    },
+    {
+        "flight_number": "CX690",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX439",
+        "departure_airport": "ICN",
+        "arrival_airport": "HKG",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX3069",
+        "departure_airport": "YYZ",
+        "arrival_airport": "ANC",
+        "distance": 3023.823043710017
+    },
+    {
+        "flight_number": "CX104",
+        "departure_airport": "MEL",
+        "arrival_airport": "HKG",
+        "distance": 4605.965494751364
+    },
+    {
+        "flight_number": "CX717",
+        "departure_airport": "BKK",
+        "arrival_airport": "SIN",
+        "distance": 880.4328727696449
+    },
+    {
+        "flight_number": "CX973",
+        "departure_airport": "XMN",
+        "arrival_airport": "HKG",
+        "distance": 308.49930675264756
+    },
+    {
+        "flight_number": "CX450",
+        "departure_airport": "TPE",
+        "arrival_airport": "NRT",
+        "distance": 1355.2380173232705
+    },
+    {
+        "flight_number": "CX5",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX770",
+        "departure_airport": "HKT",
+        "arrival_airport": "HKG",
+        "distance": 1427.0095945505868
+    },
+    {
+        "flight_number": "CX952",
+        "departure_airport": "HKG",
+        "arrival_airport": "CGO",
+        "distance": 843.7059353102496
+    },
+    {
+        "flight_number": "CX725",
+        "departure_airport": "HKG",
+        "arrival_airport": "KUL",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX806",
+        "departure_airport": "HKG",
+        "arrival_airport": "ORD",
+        "distance": 7781.230026004587
+    },
+    {
+        "flight_number": "CX960",
+        "departure_airport": "HKG",
+        "arrival_airport": "HGH",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX653",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX332",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX36",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX163",
+        "departure_airport": "HKG",
+        "arrival_airport": "MEL",
+        "distance": 4605.965494751364
+    },
+    {
+        "flight_number": "CX739",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX335",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX929",
+        "departure_airport": "CKG",
+        "arrival_airport": "HKG",
+        "distance": 682.3213215866341
+    },
+    {
+        "flight_number": "CX100",
+        "departure_airport": "SYD",
+        "arrival_airport": "HKG",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX750",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX431",
+        "departure_airport": "KHH",
+        "arrival_airport": "HKG",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX461",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX530",
+        "departure_airport": "TPE",
+        "arrival_airport": "NGO",
+        "distance": 1148.871579747639
+    },
+    {
+        "flight_number": "CX959",
+        "departure_airport": "HGH",
+        "arrival_airport": "HKG",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX906",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX983",
+        "departure_airport": "CAN",
+        "arrival_airport": "HKG",
+        "distance": 84.51503183314775
+    },
+    {
+        "flight_number": "CX564",
+        "departure_airport": "TPE",
+        "arrival_airport": "KIX",
+        "distance": 1058.165792905478
+    },
+    {
+        "flight_number": "CX489",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX239",
+        "departure_airport": "HKG",
+        "arrival_airport": "LHR",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX956",
+        "departure_airport": "HKG",
+        "arrival_airport": "NGB",
+        "distance": 699.011138452321
+    },
+    {
+        "flight_number": "CX588",
+        "departure_airport": "HKG",
+        "arrival_airport": "FUK",
+        "distance": 1272.061595153527
+    },
+    {
+        "flight_number": "CX828",
+        "departure_airport": "HKG",
+        "arrival_airport": "YYZ",
+        "distance": 7797.381508062665
+    },
+    {
+        "flight_number": "CX520",
+        "departure_airport": "HKG",
+        "arrival_airport": "NRT",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX424",
+        "departure_airport": "HKG",
+        "arrival_airport": "KHH",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX506",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX356",
+        "departure_airport": "HKG",
+        "arrival_airport": "NKG",
+        "distance": 719.1186208899251
+    },
+    {
+        "flight_number": "CX43",
+        "departure_airport": "HKG",
+        "arrival_airport": "DEL",
+        "distance": 2327.9296251629544
+    },
+    {
+        "flight_number": "CX376",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX494",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX954",
+        "departure_airport": "HKG",
+        "arrival_airport": "TAO",
+        "distance": 1039.2276123462896
+    },
+    {
+        "flight_number": "CX785",
+        "departure_airport": "HKG",
+        "arrival_airport": "DPS",
+        "distance": 2147.5347403028204
+    },
+    {
+        "flight_number": "CX986",
+        "departure_airport": "HKG",
+        "arrival_airport": "TFU",
+        "distance": ""
+    },
+    {
+        "flight_number": "CX536",
+        "departure_airport": "HKG",
+        "arrival_airport": "NGO",
+        "distance": 1630.9611508140836
+    },
+    {
+        "flight_number": "CX450",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX49",
+        "departure_airport": "HKG",
+        "arrival_airport": "HAN",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX342",
+        "departure_airport": "HKG",
+        "arrival_airport": "SHA",
+        "distance": 765.5369787821256
+    },
+    {
+        "flight_number": "CX970",
+        "departure_airport": "HKG",
+        "arrival_airport": "XMN",
+        "distance": 308.49930675264756
+    },
+    {
+        "flight_number": "CX755",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX410",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX368",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX580",
+        "departure_airport": "HKG",
+        "arrival_airport": "CTS",
+        "distance": 2130.6779101016164
+    },
+    {
+        "flight_number": "CX777",
+        "departure_airport": "HKG",
+        "arrival_airport": "CGK",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX139",
+        "departure_airport": "HKG",
+        "arrival_airport": "SYD",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX347",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX658",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX417",
+        "departure_airport": "ICN",
+        "arrival_airport": "HKG",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX718",
+        "departure_airport": "CGK",
+        "arrival_airport": "HKG",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX365",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX780",
+        "departure_airport": "SUB",
+        "arrival_airport": "HKG",
+        "distance": 2052.736657504756
+    },
+    {
+        "flight_number": "CX469",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX700",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX509",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX734",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX581",
+        "departure_airport": "CTS",
+        "arrival_airport": "HKG",
+        "distance": 2130.6779101016164
+    },
+    {
+        "flight_number": "CX776",
+        "departure_airport": "CGK",
+        "arrival_airport": "HKG",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX443",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX421",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX729",
+        "departure_airport": "HKG",
+        "arrival_airport": "KUL",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX840",
+        "departure_airport": "HKG",
+        "arrival_airport": "JFK",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX542",
+        "departure_airport": "HKG",
+        "arrival_airport": "HND",
+        "distance": 1803.5622326799578
+    },
+    {
+        "flight_number": "CX416",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX502",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX458",
+        "departure_airport": "HKG",
+        "arrival_airport": "KHH",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX711",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX903",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX882",
+        "departure_airport": "HKG",
+        "arrival_airport": "LAX",
+        "distance": 7248.048081987973
+    },
+    {
+        "flight_number": "CX743",
+        "departure_airport": "HKG",
+        "arrival_airport": "HAN",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX312",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX396",
+        "departure_airport": "HKG",
+        "arrival_airport": "WNZ",
+        "distance": 581.3432586775062
+    },
+    {
+        "flight_number": "CX987",
+        "departure_airport": "TFU",
+        "arrival_airport": "HKG",
+        "distance": ""
+    },
+    {
+        "flight_number": "CX313",
+        "departure_airport": "HAK",
+        "arrival_airport": "HKG",
+        "distance": 276.603317464455
+    },
+    {
+        "flight_number": "CX507",
+        "departure_airport": "KIX",
+        "arrival_airport": "HKG",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX865",
+        "departure_airport": "YVR",
+        "arrival_airport": "HKG",
+        "distance": 6381.12714063603
+    },
+    {
+        "flight_number": "CX521",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX957",
+        "departure_airport": "CGO",
+        "arrival_airport": "HKG",
+        "distance": 843.7059353102496
+    },
+    {
+        "flight_number": "CX331",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX881",
+        "departure_airport": "LAX",
+        "arrival_airport": "HKG",
+        "distance": 7248.048081987973
+    },
+    {
+        "flight_number": "CX434",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX982",
+        "departure_airport": "HKG",
+        "arrival_airport": "CAN",
+        "distance": 84.51503183314775
+    },
+    {
+        "flight_number": "CX958",
+        "departure_airport": "HKG",
+        "arrival_airport": "HGH",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX907",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX334",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX912",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX692",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX18",
+        "departure_airport": "CMB",
+        "arrival_airport": "HKG",
+        "distance": 2493.2734390186565
+    },
+    {
+        "flight_number": "CX37",
+        "departure_airport": "DEL",
+        "arrival_airport": "CDG",
+        "distance": 4079.5788491485405
+    },
+    {
+        "flight_number": "CX464",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX2061",
+        "departure_airport": "CTU",
+        "arrival_airport": "HKG",
+        "distance": 839.8898706216278
+    },
+    {
+        "flight_number": "CX50",
+        "departure_airport": "PVG",
+        "arrival_airport": "CGO",
+        "distance": 517.6547551004146
+    },
+    {
+        "flight_number": "CX976",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX110",
+        "departure_airport": "SYD",
+        "arrival_airport": "HKG",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX464",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX37",
+        "departure_airport": "DEL",
+        "arrival_airport": "CDG",
+        "distance": 4079.5788491485405
+    },
+    {
+        "flight_number": "CX18",
+        "departure_airport": "CMB",
+        "arrival_airport": "HKG",
+        "distance": 2493.2734390186565
+    },
+    {
+        "flight_number": "CX692",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX912",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX334",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX907",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX958",
+        "departure_airport": "HKG",
+        "arrival_airport": "HGH",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX982",
+        "departure_airport": "HKG",
+        "arrival_airport": "CAN",
+        "distance": 84.51503183314775
+    },
+    {
+        "flight_number": "CX434",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX156",
+        "departure_airport": "BNE",
+        "arrival_airport": "HKG",
+        "distance": 4317.326886521225
+    },
+    {
+        "flight_number": "CX383",
+        "departure_airport": "HKG",
+        "arrival_airport": "ZRH",
+        "distance": 5766.254664192168
+    },
+    {
+        "flight_number": "CX880",
+        "departure_airport": "HKG",
+        "arrival_airport": "LAX",
+        "distance": 7248.048081987973
+    },
+    {
+        "flight_number": "CX3122",
+        "departure_airport": "WTB",
+        "arrival_airport": "HKG",
+        "distance": 4273.558582967119
+    },
+    {
+        "flight_number": "CX105",
+        "departure_airport": "HKG",
+        "arrival_airport": "MEL",
+        "distance": 4605.965494751364
+    },
+    {
+        "flight_number": "CX315",
+        "departure_airport": "HKG",
+        "arrival_airport": "MAD",
+        "distance": 6528.914719847604
+    },
+    {
+        "flight_number": "CX888",
+        "departure_airport": "HKG",
+        "arrival_airport": "YVR",
+        "distance": 6381.12714063603
+    },
+    {
+        "flight_number": "CX872",
+        "departure_airport": "HKG",
+        "arrival_airport": "SFO",
+        "distance": 6914.786793021075
+    },
+    {
+        "flight_number": "CX6",
+        "departure_airport": "HKG",
+        "arrival_airport": "NRT",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX798",
+        "departure_airport": "CGK",
+        "arrival_airport": "HKG",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX714",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX524",
+        "departure_airport": "HKG",
+        "arrival_airport": "NRT",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX2090",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX96",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX659",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX566",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX844",
+        "departure_airport": "HKG",
+        "arrival_airport": "JFK",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX2058",
+        "departure_airport": "XMN",
+        "arrival_airport": "PVG",
+        "distance": 508.2091699649553
+    },
+    {
+        "flight_number": "CX3261",
+        "departure_airport": "CKG",
+        "arrival_airport": "HKG",
+        "distance": 682.3213215866341
+    },
+    {
+        "flight_number": "CX660",
+        "departure_airport": "BOM",
+        "arrival_airport": "HKG",
+        "distance": 2654.4665684883394
+    },
+    {
+        "flight_number": "CX624",
+        "departure_airport": "BLR",
+        "arrival_airport": "HKG",
+        "distance": 2457.5174964985076
+    },
+    {
+        "flight_number": "CX3144",
+        "departure_airport": "MAA",
+        "arrival_airport": "HKG",
+        "distance": 2307.267827967565
+    },
+    {
+        "flight_number": "CX610",
+        "departure_airport": "CMB",
+        "arrival_airport": "HKG",
+        "distance": 2493.2734390186565
+    },
+    {
+        "flight_number": "CX694",
+        "departure_airport": "DEL",
+        "arrival_airport": "HKG",
+        "distance": 2327.9296251629544
+    },
+    {
+        "flight_number": "CX632",
+        "departure_airport": "MAA",
+        "arrival_airport": "HKG",
+        "distance": 2307.267827967565
+    },
+    {
+        "flight_number": "CX662",
+        "departure_airport": "DAC",
+        "arrival_airport": "HKG",
+        "distance": 1496.9393092913647
+    },
+    {
+        "flight_number": "CX51",
+        "departure_airport": "PVG",
+        "arrival_airport": "CGO",
+        "distance": 517.6547551004146
+    },
+    {
+        "flight_number": "CX3253",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX3239",
+        "departure_airport": "XMN",
+        "arrival_airport": "PVG",
+        "distance": 508.2091699649553
+    },
+    {
+        "flight_number": "CX3261",
+        "departure_airport": "CTU",
+        "arrival_airport": "HKG",
+        "distance": 839.8898706216278
+    },
+    {
+        "flight_number": "CX110",
+        "departure_airport": "SYD",
+        "arrival_airport": "HKG",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX976",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX3288",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX464",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX692",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX449",
+        "departure_airport": "KHH",
+        "arrival_airport": "HKG",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX616",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX162",
+        "departure_airport": "SYD",
+        "arrival_airport": "HKG",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX5",
+        "departure_airport": "NRT",
+        "arrival_airport": "TPE",
+        "distance": 1355.2380173232705
+    },
+    {
+        "flight_number": "CX710",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX345",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX334",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX907",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX958",
+        "departure_airport": "HKG",
+        "arrival_airport": "HGH",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX982",
+        "departure_airport": "HKG",
+        "arrival_airport": "CAN",
+        "distance": 84.51503183314775
+    },
+    {
+        "flight_number": "CX488",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX691",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX705",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX257",
+        "departure_airport": "HKG",
+        "arrival_airport": "LHR",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX912",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX407",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX597",
+        "departure_airport": "KIX",
+        "arrival_airport": "HKG",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX503",
+        "departure_airport": "KIX",
+        "arrival_airport": "HKG",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX509",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX51",
+        "departure_airport": "CGO",
+        "arrival_airport": "HKG",
+        "distance": 843.7059353102496
+    },
+    {
+        "flight_number": "CX730",
+        "departure_airport": "KUL",
+        "arrival_airport": "HKG",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX543",
+        "departure_airport": "HND",
+        "arrival_airport": "HKG",
+        "distance": 1803.5622326799578
+    },
+    {
+        "flight_number": "CX596",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX564",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX723",
+        "departure_airport": "HKG",
+        "arrival_airport": "KUL",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX512",
+        "departure_airport": "HKG",
+        "arrival_airport": "FUK",
+        "distance": 1272.061595153527
+    },
+    {
+        "flight_number": "CX936",
+        "departure_airport": "HKG",
+        "arrival_airport": "WUH",
+        "distance": 585.8445644076926
+    },
+    {
+        "flight_number": "CX921",
+        "departure_airport": "HKG",
+        "arrival_airport": "CEB",
+        "distance": 1063.4269141002508
+    },
+    {
+        "flight_number": "CX3095",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX526",
+        "departure_airport": "HKG",
+        "arrival_airport": "NRT",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX316",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX759",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX530",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX607",
+        "departure_airport": "HKG",
+        "arrival_airport": "PNH",
+        "distance": 954.4933882353627
+    },
+    {
+        "flight_number": "CX994",
+        "departure_airport": "HKG",
+        "arrival_airport": "FOC",
+        "distance": 440.53648586060206
+    },
+    {
+        "flight_number": "CX767",
+        "departure_airport": "HKG",
+        "arrival_airport": "SGN",
+        "distance": 927.7030129689929
+    },
+    {
+        "flight_number": "CX548",
+        "departure_airport": "HKG",
+        "arrival_airport": "HND",
+        "distance": 1803.5622326799578
+    },
+    {
+        "flight_number": "CX432",
+        "departure_airport": "HKG",
+        "arrival_airport": "KHH",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX390",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX466",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX717",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX901",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX504",
+        "departure_airport": "HKG",
+        "arrival_airport": "NRT",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX830",
+        "departure_airport": "HKG",
+        "arrival_airport": "JFK",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX361",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX700",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX365",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX198",
+        "departure_airport": "AKL",
+        "arrival_airport": "HKG",
+        "distance": 5698.123676668173
+    },
+    {
+        "flight_number": "CX718",
+        "departure_airport": "CGK",
+        "arrival_airport": "HKG",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX658",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX347",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX780",
+        "departure_airport": "SUB",
+        "arrival_airport": "HKG",
+        "distance": 2052.736657504756
+    },
+    {
+        "flight_number": "CX417",
+        "departure_airport": "ICN",
+        "arrival_airport": "HKG",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX139",
+        "departure_airport": "HKG",
+        "arrival_airport": "SYD",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX777",
+        "departure_airport": "HKG",
+        "arrival_airport": "CGK",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX580",
+        "departure_airport": "HKG",
+        "arrival_airport": "CTS",
+        "distance": 2130.6779101016164
+    },
+    {
+        "flight_number": "CX368",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX410",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX970",
+        "departure_airport": "HKG",
+        "arrival_airport": "XMN",
+        "distance": 308.49930675264756
+    },
+    {
+        "flight_number": "CX755",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX342",
+        "departure_airport": "HKG",
+        "arrival_airport": "SHA",
+        "distance": 765.5369787821256
+    },
+    {
+        "flight_number": "CX450",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX536",
+        "departure_airport": "HKG",
+        "arrival_airport": "NGO",
+        "distance": 1630.9611508140836
+    },
+    {
+        "flight_number": "CX986",
+        "departure_airport": "HKG",
+        "arrival_airport": "TFU",
+        "distance": ""
+    },
+    {
+        "flight_number": "CX785",
+        "departure_airport": "HKG",
+        "arrival_airport": "DPS",
+        "distance": 2147.5347403028204
+    },
+    {
+        "flight_number": "CX469",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX983",
+        "departure_airport": "CAN",
+        "arrival_airport": "HKG",
+        "distance": 84.51503183314775
+    },
+    {
+        "flight_number": "CX954",
+        "departure_airport": "HKG",
+        "arrival_airport": "TAO",
+        "distance": 1039.2276123462896
+    },
+    {
+        "flight_number": "CX494",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX376",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX356",
+        "departure_airport": "HKG",
+        "arrival_airport": "NKG",
+        "distance": 719.1186208899251
+    },
+    {
+        "flight_number": "CX3174",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX506",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX424",
+        "departure_airport": "HKG",
+        "arrival_airport": "KHH",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX520",
+        "departure_airport": "HKG",
+        "arrival_airport": "NRT",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX828",
+        "departure_airport": "HKG",
+        "arrival_airport": "YYZ",
+        "distance": 7797.381508062665
+    },
+    {
+        "flight_number": "CX3241",
+        "departure_airport": "HKG",
+        "arrival_airport": "CGK",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX588",
+        "departure_airport": "HKG",
+        "arrival_airport": "FUK",
+        "distance": 1272.061595153527
+    },
+    {
+        "flight_number": "CX239",
+        "departure_airport": "HKG",
+        "arrival_airport": "LHR",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX906",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX489",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX564",
+        "departure_airport": "TPE",
+        "arrival_airport": "KIX",
+        "distance": 1058.165792905478
+    },
+    {
+        "flight_number": "CX960",
+        "departure_airport": "HKG",
+        "arrival_airport": "HGH",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX163",
+        "departure_airport": "HKG",
+        "arrival_airport": "MEL",
+        "distance": 4605.965494751364
+    },
+    {
+        "flight_number": "CX739",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX36",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX2049",
+        "departure_airport": "HKG",
+        "arrival_airport": "HAN",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX2036",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX332",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX959",
+        "departure_airport": "HGH",
+        "arrival_airport": "HKG",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX431",
+        "departure_airport": "KHH",
+        "arrival_airport": "HKG",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX750",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX937",
+        "departure_airport": "WUH",
+        "arrival_airport": "HKG",
+        "distance": 585.8445644076926
+    },
+    {
+        "flight_number": "CX100",
+        "departure_airport": "SYD",
+        "arrival_airport": "HKG",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX335",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX530",
+        "departure_airport": "TPE",
+        "arrival_airport": "NGO",
+        "distance": 1148.871579747639
+    },
+    {
+        "flight_number": "CX461",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX995",
+        "departure_airport": "FOC",
+        "arrival_airport": "HKG",
+        "distance": 440.53648586060206
+    },
+    {
+        "flight_number": "CX5",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX450",
+        "departure_airport": "TPE",
+        "arrival_airport": "NRT",
+        "distance": 1355.2380173232705
+    },
+    {
+        "flight_number": "CX104",
+        "departure_airport": "MEL",
+        "arrival_airport": "HKG",
+        "distance": 4605.965494751364
+    },
+    {
+        "flight_number": "CX973",
+        "departure_airport": "XMN",
+        "arrival_airport": "HKG",
+        "distance": 308.49930675264756
+    },
+    {
+        "flight_number": "CX717",
+        "departure_airport": "BKK",
+        "arrival_airport": "SIN",
+        "distance": 880.4328727696449
+    },
+    {
+        "flight_number": "CX319",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX513",
+        "departure_airport": "FUK",
+        "arrival_airport": "HKG",
+        "distance": 1272.061595153527
+    },
+    {
+        "flight_number": "CX922",
+        "departure_airport": "CEB",
+        "arrival_airport": "HKG",
+        "distance": 1063.4269141002508
+    },
+    {
+        "flight_number": "CX400",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX766",
+        "departure_airport": "SGN",
+        "arrival_airport": "HKG",
+        "distance": 927.7030129689929
+    },
+    {
+        "flight_number": "CX690",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX884",
+        "departure_airport": "HKG",
+        "arrival_airport": "LAX",
+        "distance": 7248.048081987973
+    },
+    {
+        "flight_number": "CX725",
+        "departure_airport": "HKG",
+        "arrival_airport": "KUL",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX608",
+        "departure_airport": "PNH",
+        "arrival_airport": "HKG",
+        "distance": 954.4933882353627
+    },
+    {
+        "flight_number": "CX930",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX712",
+        "departure_airport": "SIN",
+        "arrival_airport": "BKK",
+        "distance": 880.4328727696449
+    },
+    {
+        "flight_number": "CX2074",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX349",
+        "departure_airport": "SHA",
+        "arrival_airport": "HKG",
+        "distance": 765.5369787821256
+    },
+    {
+        "flight_number": "CX391",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX2091",
+        "departure_airport": "DFW",
+        "arrival_airport": "ATL",
+        "distance": 729.828375966447
+    },
+    {
+        "flight_number": "CX811",
+        "departure_airport": "BOS",
+        "arrival_airport": "HKG",
+        "distance": 7957.375878038499
+    },
+    {
+        "flight_number": "CX420",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX3294",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX253",
+        "departure_airport": "HKG",
+        "arrival_airport": "LHR",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX360",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX3016",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX870",
+        "departure_airport": "HKG",
+        "arrival_airport": "SFO",
+        "distance": 6914.786793021075
+    },
+    {
+        "flight_number": "CX392",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX919",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX495",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX754",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX423",
+        "departure_airport": "KHH",
+        "arrival_airport": "HKG",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX85",
+        "departure_airport": "YYZ",
+        "arrival_airport": "ANC",
+        "distance": 3023.823043710017
+    },
+    {
+        "flight_number": "CX829",
+        "departure_airport": "YYZ",
+        "arrival_airport": "HKG",
+        "distance": 7797.381508062665
+    },
+    {
+        "flight_number": "CX527",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX843",
+        "departure_airport": "JFK",
+        "arrival_airport": "HKG",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX367",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX722",
+        "departure_airport": "KUL",
+        "arrival_airport": "HKG",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX779",
+        "departure_airport": "HKG",
+        "arrival_airport": "SUB",
+        "distance": 2052.736657504756
+    },
+    {
+        "flight_number": "CX418",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX735",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX751",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX94",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX773",
+        "departure_airport": "HKG",
+        "arrival_airport": "HKT",
+        "distance": 1427.0095945505868
+    },
+    {
+        "flight_number": "CX171",
+        "departure_airport": "HKG",
+        "arrival_airport": "PER",
+        "distance": 3750.7546454665735
+    },
+    {
+        "flight_number": "CX621",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEN",
+        "distance": 1487.101715074493
+    },
+    {
+        "flight_number": "CX47",
+        "departure_airport": "HKG",
+        "arrival_airport": "BOM",
+        "distance": 2654.4665684883394
+    },
+    {
+        "flight_number": "CX380",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX451",
+        "departure_airport": "NRT",
+        "arrival_airport": "TPE",
+        "distance": 1355.2380173232705
+    },
+    {
+        "flight_number": "CX951",
+        "departure_airport": "TAO",
+        "arrival_airport": "HKG",
+        "distance": 1039.2276123462896
+    },
+    {
+        "flight_number": "CX357",
+        "departure_airport": "NKG",
+        "arrival_airport": "HKG",
+        "distance": 719.1186208899251
+    },
+    {
+        "flight_number": "CX377",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX539",
+        "departure_airport": "NGO",
+        "arrival_airport": "HKG",
+        "distance": 1630.9611508140836
+    },
+    {
+        "flight_number": "CX411",
+        "departure_airport": "ICN",
+        "arrival_airport": "HKG",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX873",
+        "departure_airport": "SFO",
+        "arrival_airport": "HKG",
+        "distance": 6914.786793021075
+    },
+    {
+        "flight_number": "CX500",
+        "departure_airport": "HKG",
+        "arrival_airport": "NRT",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX635",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX45",
+        "departure_airport": "HKG",
+        "arrival_airport": "BOM",
+        "distance": 2654.4665684883394
+    },
+    {
+        "flight_number": "CX799",
+        "departure_airport": "HKG",
+        "arrival_airport": "SGN",
+        "distance": 927.7030129689929
+    },
+    {
+        "flight_number": "CX472",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX719",
+        "departure_airport": "HKG",
+        "arrival_airport": "CGK",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX701",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX41",
+        "departure_airport": "HKG",
+        "arrival_airport": "DEL",
+        "distance": 2327.9296251629544
+    },
+    {
+        "flight_number": "CX810",
+        "departure_airport": "HKG",
+        "arrival_airport": "YVR",
+        "distance": 6381.12714063603
+    },
+    {
+        "flight_number": "CX784",
+        "departure_airport": "DPS",
+        "arrival_airport": "HKG",
+        "distance": 2147.5347403028204
+    },
+    {
+        "flight_number": "CX961",
+        "departure_airport": "HGH",
+        "arrival_airport": "HKG",
+        "distance": 679.8208841119731
+    },
+    {
+        "flight_number": "CX581",
+        "departure_airport": "CTS",
+        "arrival_airport": "HKG",
+        "distance": 2130.6779101016164
+    },
+    {
+        "flight_number": "CX734",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX549",
+        "departure_airport": "HND",
+        "arrival_airport": "HKG",
+        "distance": 1803.5622326799578
+    },
+    {
+        "flight_number": "CX531",
+        "departure_airport": "NGO",
+        "arrival_airport": "TPE",
+        "distance": 1148.871579747639
+    },
+    {
+        "flight_number": "CX589",
+        "departure_airport": "FUK",
+        "arrival_airport": "HKG",
+        "distance": 1272.061595153527
+    },
+    {
+        "flight_number": "CX565",
+        "departure_airport": "KIX",
+        "arrival_airport": "TPE",
+        "distance": 1058.165792905478
+    },
+    {
+        "flight_number": "CX776",
+        "departure_airport": "CGK",
+        "arrival_airport": "HKG",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX331",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX729",
+        "departure_airport": "HKG",
+        "arrival_airport": "KUL",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX840",
+        "departure_airport": "HKG",
+        "arrival_airport": "JFK",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX542",
+        "departure_airport": "HKG",
+        "arrival_airport": "HND",
+        "distance": 1803.5622326799578
+    },
+    {
+        "flight_number": "CX416",
+        "departure_airport": "HKG",
+        "arrival_airport": "ICN",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX502",
+        "departure_airport": "HKG",
+        "arrival_airport": "KIX",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX458",
+        "departure_airport": "HKG",
+        "arrival_airport": "KHH",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX711",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX903",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX743",
+        "departure_airport": "HKG",
+        "arrival_airport": "HAN",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX312",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX987",
+        "departure_airport": "TFU",
+        "arrival_airport": "HKG",
+        "distance": ""
+    },
+    {
+        "flight_number": "CX507",
+        "departure_airport": "KIX",
+        "arrival_airport": "HKG",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX443",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX421",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX521",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX3242",
+        "departure_airport": "CGK",
+        "arrival_airport": "PEN",
+        "distance": 903.6093808362388
+    },
+    {
+        "flight_number": "CX865",
+        "departure_airport": "YVR",
+        "arrival_airport": "HKG",
+        "distance": 6381.12714063603
+    },
+    {
+        "flight_number": "CX881",
+        "departure_airport": "LAX",
+        "arrival_airport": "HKG",
+        "distance": 7248.048081987973
+    },
+    {
+        "flight_number": "CX364",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX938",
+        "departure_airport": "HKG",
+        "arrival_airport": "WUH",
+        "distance": 585.8445644076926
+    },
+    {
+        "flight_number": "CX990",
+        "departure_airport": "HKG",
+        "arrival_airport": "FOC",
+        "distance": 440.53648586060206
+    },
+    {
+        "flight_number": "CX695",
+        "departure_airport": "HKG",
+        "arrival_airport": "DEL",
+        "distance": 2327.9296251629544
+    },
+    {
+        "flight_number": "CX978",
+        "departure_airport": "HKG",
+        "arrival_airport": "XMN",
+        "distance": 308.49930675264756
+    },
+    {
+        "flight_number": "CX731",
+        "departure_airport": "HKG",
+        "arrival_airport": "DXB",
+        "distance": 3678.3621745580463
+    },
+    {
+        "flight_number": "CX826",
+        "departure_airport": "HKG",
+        "arrival_airport": "YYZ",
+        "distance": 7797.381508062665
+    },
+    {
+        "flight_number": "CX2035",
+        "departure_airport": "KIX",
+        "arrival_airport": "HKG",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX35",
+        "departure_airport": "KIX",
+        "arrival_airport": "TPE",
+        "distance": 1058.165792905478
+    },
+    {
+        "flight_number": "CX595",
+        "departure_airport": "KIX",
+        "arrival_airport": "HKG",
+        "distance": 1538.3032746306199
+    },
+    {
+        "flight_number": "CX712",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX505",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX2091",
+        "departure_airport": "ATL",
+        "arrival_airport": "ANC",
+        "distance": 3410.3956187980743
+    },
+    {
+        "flight_number": "CX369",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX3288",
+        "departure_airport": "ANC",
+        "arrival_airport": "MIA",
+        "distance": 3998.7738205450464
+    },
+    {
+        "flight_number": "CX260",
+        "departure_airport": "CDG",
+        "arrival_airport": "HKG",
+        "distance": 5959.052316113589
+    },
+    {
+        "flight_number": "CX716",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX724",
+        "departure_airport": "KUL",
+        "arrival_airport": "HKG",
+        "distance": 1580.2205322702962
+    },
+    {
+        "flight_number": "CX918",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX402",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX812",
+        "departure_airport": "HKG",
+        "arrival_airport": "BOS",
+        "distance": 7957.375878038499
+    },
+    {
+        "flight_number": "CX703",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX344",
+        "departure_airport": "HKG",
+        "arrival_airport": "PEK",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX797",
+        "departure_airport": "HKG",
+        "arrival_airport": "CGK",
+        "distance": 2025.1012340178336
+    },
+    {
+        "flight_number": "CX473",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX2086",
+        "departure_airport": "ORD",
+        "arrival_airport": "MIA",
+        "distance": 1199.2848394602026
+    },
+    {
+        "flight_number": "CX708",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX372",
+        "departure_airport": "MAD",
+        "arrival_airport": "HKG",
+        "distance": 6528.914719847604
+    },
+    {
+        "flight_number": "CX381",
+        "departure_airport": "PVG",
+        "arrival_airport": "HKG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX270",
+        "departure_airport": "AMS",
+        "arrival_airport": "HKG",
+        "distance": 5762.9248379314695
+    },
+    {
+        "flight_number": "CX393",
+        "departure_airport": "PEK",
+        "arrival_airport": "HKG",
+        "distance": 1237.8134858669478
+    },
+    {
+        "flight_number": "CX111",
+        "departure_airport": "HKG",
+        "arrival_airport": "SYD",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX603",
+        "departure_airport": "HKG",
+        "arrival_airport": "KTM",
+        "distance": 1822.106860961591
+    },
+    {
+        "flight_number": "CX362",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX3147",
+        "departure_airport": "HKG",
+        "arrival_airport": "HAN",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX988",
+        "departure_airport": "HKG",
+        "arrival_airport": "CAN",
+        "distance": 84.51503183314775
+    },
+    {
+        "flight_number": "CX17",
+        "departure_airport": "HKG",
+        "arrival_airport": "MAA",
+        "distance": 2307.267827967565
+    },
+    {
+        "flight_number": "CX778",
+        "departure_airport": "HKT",
+        "arrival_airport": "HKG",
+        "distance": 1427.0095945505868
+    },
+    {
+        "flight_number": "CX565",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX451",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX531",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX459",
+        "departure_airport": "KHH",
+        "arrival_airport": "HKG",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX704",
+        "departure_airport": "BKK",
+        "arrival_airport": "HKG",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX742",
+        "departure_airport": "HAN",
+        "arrival_airport": "HKG",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX138",
+        "departure_airport": "SYD",
+        "arrival_airport": "HKG",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX252",
+        "departure_airport": "LHR",
+        "arrival_airport": "HKG",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX419",
+        "departure_airport": "ICN",
+        "arrival_airport": "HKG",
+        "distance": 1286.083885726846
+    },
+    {
+        "flight_number": "CX2090",
+        "departure_airport": "LAX",
+        "arrival_airport": "DFW",
+        "distance": 1232.3012261342988
+    },
+    {
+        "flight_number": "CX3242",
+        "departure_airport": "PEN",
+        "arrival_airport": "HKG",
+        "distance": 1487.101715074493
+    },
+    {
+        "flight_number": "CX764",
+        "departure_airport": "SGN",
+        "arrival_airport": "HKG",
+        "distance": 927.7030129689929
+    },
+    {
+        "flight_number": "CX288",
+        "departure_airport": "FRA",
+        "arrival_airport": "HKG",
+        "distance": 5687.676301887599
+    },
+    {
+        "flight_number": "CX382",
+        "departure_airport": "ZRH",
+        "arrival_airport": "HKG",
+        "distance": 5766.254664192168
+    },
+    {
+        "flight_number": "CX679",
+        "departure_airport": "HKG",
+        "arrival_airport": "DEL",
+        "distance": 2327.9296251629544
+    },
+    {
+        "flight_number": "CX913",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX715",
+        "departure_airport": "HKG",
+        "arrival_airport": "SIN",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX663",
+        "departure_airport": "HKG",
+        "arrival_airport": "BOM",
+        "distance": 2654.4665684883394
+    },
+    {
+        "flight_number": "CX479",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX979",
+        "departure_airport": "XMN",
+        "arrival_airport": "HKG",
+        "distance": 308.49930675264756
+    },
+    {
+        "flight_number": "CX931",
+        "departure_airport": "WUH",
+        "arrival_airport": "HKG",
+        "distance": 585.8445644076926
+    },
+    {
+        "flight_number": "CX501",
+        "departure_airport": "NRT",
+        "arrival_airport": "HKG",
+        "distance": 1840.6131697339956
+    },
+    {
+        "flight_number": "CX991",
+        "departure_airport": "FOC",
+        "arrival_airport": "HKG",
+        "distance": 440.53648586060206
+    },
+    {
+        "flight_number": "CX636",
+        "departure_airport": "SIN",
+        "arrival_airport": "HKG",
+        "distance": 1594.1926529410148
+    },
+    {
+        "flight_number": "CX902",
+        "departure_airport": "MNL",
+        "arrival_airport": "HKG",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX161",
+        "departure_airport": "HKG",
+        "arrival_airport": "SYD",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX448",
+        "departure_airport": "HKG",
+        "arrival_airport": "KHH",
+        "distance": 411.33023826687923
+    },
+    {
+        "flight_number": "CX617",
+        "departure_airport": "HKG",
+        "arrival_airport": "BKK",
+        "distance": 1049.7506961474342
+    },
+    {
+        "flight_number": "CX939",
+        "departure_airport": "HKG",
+        "arrival_airport": "MNL",
+        "distance": 712.0111497995591
+    },
+    {
+        "flight_number": "CX3272",
+        "departure_airport": "HKG",
+        "arrival_airport": "ANC",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX2048",
+        "departure_airport": "HAN",
+        "arrival_airport": "HKG",
+        "distance": 525.6078278338691
+    },
+    {
+        "flight_number": "CX178",
+        "departure_airport": "MEL",
+        "arrival_airport": "HKG",
+        "distance": 4605.965494751364
+    },
+    {
+        "flight_number": "CX841",
+        "departure_airport": "JFK",
+        "arrival_airport": "HKG",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX97",
+        "departure_airport": "NLU",
+        "arrival_airport": "GDL",
+        "distance": ""
+    },
+    {
+        "flight_number": "CX85",
+        "departure_airport": "ANC",
+        "arrival_airport": "HKG",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX3174",
+        "departure_airport": "ANC",
+        "arrival_airport": "MIA",
+        "distance": 3998.7738205450464
+    },
+    {
+        "flight_number": "CX35",
+        "departure_airport": "TPE",
+        "arrival_airport": "HKG",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX989",
+        "departure_airport": "CAN",
+        "arrival_airport": "HKG",
+        "distance": 84.51503183314775
+    },
+    {
+        "flight_number": "CX251",
+        "departure_airport": "HKG",
+        "arrival_airport": "LHR",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX408",
+        "departure_airport": "HKG",
+        "arrival_airport": "TPE",
+        "distance": 500.86393751456706
+    },
+    {
+        "flight_number": "CX170",
+        "departure_airport": "PER",
+        "arrival_airport": "HKG",
+        "distance": 3750.7546454665735
+    },
+    {
+        "flight_number": "CX40",
+        "departure_airport": "BOM",
+        "arrival_airport": "HKG",
+        "distance": 2654.4665684883394
+    },
+    {
+        "flight_number": "CX271",
+        "departure_airport": "HKG",
+        "arrival_airport": "AMS",
+        "distance": 5762.9248379314695
+    },
+    {
+        "flight_number": "CX255",
+        "departure_airport": "HKG",
+        "arrival_airport": "LHR",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX37",
+        "departure_airport": "HKG",
+        "arrival_airport": "DEL",
+        "distance": 2327.9296251629544
+    },
+    {
+        "flight_number": "CX261",
+        "departure_airport": "HKG",
+        "arrival_airport": "CDG",
+        "distance": 5959.052316113589
+    },
+    {
+        "flight_number": "CX50",
+        "departure_airport": "HKG",
+        "arrival_airport": "PVG",
+        "distance": 780.2444358983211
+    },
+    {
+        "flight_number": "CX289",
+        "departure_airport": "HKG",
+        "arrival_airport": "FRA",
+        "distance": 5687.676301887599
+    },
+    {
+        "flight_number": "CX2062",
+        "departure_airport": "HKG",
+        "arrival_airport": "CTU",
+        "distance": 839.8898706216278
+    },
+    {
+        "flight_number": "CX101",
+        "departure_airport": "HKG",
+        "arrival_airport": "SYD",
+        "distance": 4594.374232447453
+    },
+    {
+        "flight_number": "CX3148",
+        "departure_airport": "HAN",
+        "arrival_airport": "SGN",
+        "distance": 720.9243798955025
+    },
+    {
+        "flight_number": "CX238",
+        "departure_airport": "LHR",
+        "arrival_airport": "HKG",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX2087",
+        "departure_airport": "MIA",
+        "arrival_airport": "ANC",
+        "distance": 3998.7738205450464
+    },
+    {
+        "flight_number": "CX3244",
+        "departure_airport": "DEL",
+        "arrival_airport": "HKG",
+        "distance": 2327.9296251629544
+    },
+    {
+        "flight_number": "CX2091",
+        "departure_airport": "DFW",
+        "arrival_airport": "ANC",
+        "distance": 3038.080893853357
+    },
+    {
+        "flight_number": "CX3294",
+        "departure_airport": "ANC",
+        "arrival_airport": "JFK",
+        "distance": 3376.660454900096
+    },
+    {
+        "flight_number": "CX3016",
+        "departure_airport": "ANC",
+        "arrival_airport": "ORD",
+        "distance": 2838.6896791562
+    },
+    {
+        "flight_number": "CX698",
+        "departure_airport": "DEL",
+        "arrival_airport": "HKG",
+        "distance": 2327.9296251629544
+    },
+    {
+        "flight_number": "CX97",
+        "departure_airport": "GDL",
+        "arrival_airport": "ANC",
+        "distance": 3586.7095902135416
+    },
+    {
+        "flight_number": "CX94",
+        "departure_airport": "ANC",
+        "arrival_airport": "JFK",
+        "distance": 3376.660454900096
+    },
+    {
+        "flight_number": "CX250",
+        "departure_airport": "LHR",
+        "arrival_airport": "HKG",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX42",
+        "departure_airport": "DEL",
+        "arrival_airport": "CCU",
+        "distance": 815.6708538841546
+    },
+    {
+        "flight_number": "CX640",
+        "departure_airport": "KTM",
+        "arrival_airport": "HKG",
+        "distance": 1822.106860961591
+    },
+    {
+        "flight_number": "CX831",
+        "departure_airport": "JFK",
+        "arrival_airport": "HKG",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX2091",
+        "departure_airport": "ANC",
+        "arrival_airport": "HKG",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX738",
+        "departure_airport": "DXB",
+        "arrival_airport": "HKG",
+        "distance": 3678.3621745580463
+    },
+    {
+        "flight_number": "CX825",
+        "departure_airport": "YYZ",
+        "arrival_airport": "HKG",
+        "distance": 7797.381508062665
+    },
+    {
+        "flight_number": "CX256",
+        "departure_airport": "LHR",
+        "arrival_airport": "HKG",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX3287",
+        "departure_airport": "MIA",
+        "arrival_airport": "ANC",
+        "distance": 3998.7738205450464
+    },
+    {
+        "flight_number": "CX879",
+        "departure_airport": "SFO",
+        "arrival_airport": "HKG",
+        "distance": 6914.786793021075
+    },
+    {
+        "flight_number": "CX885",
+        "departure_airport": "LAX",
+        "arrival_airport": "HKG",
+        "distance": 7248.048081987973
+    },
+    {
+        "flight_number": "CX819",
+        "departure_airport": "YVR",
+        "arrival_airport": "HKG",
+        "distance": 6381.12714063603
+    },
+    {
+        "flight_number": "CX254",
+        "departure_airport": "LHR",
+        "arrival_airport": "HKG",
+        "distance": 5984.369388962581
+    },
+    {
+        "flight_number": "CX3174",
+        "departure_airport": "MIA",
+        "arrival_airport": "ATL",
+        "distance": 595.9417330384117
+    },
+    {
+        "flight_number": "CX3272",
+        "departure_airport": "ANC",
+        "arrival_airport": "MIA",
+        "distance": 3998.7738205450464
+    },
+    {
+        "flight_number": "CX3016",
+        "departure_airport": "ORD",
+        "arrival_airport": "YYZ",
+        "distance": 435.18383431200544
+    },
+    {
+        "flight_number": "CX3295",
+        "departure_airport": "JFK",
+        "arrival_airport": "HKG",
+        "distance": 8059.510991116452
+    },
+    {
+        "flight_number": "CX2087",
+        "departure_airport": "ANC",
+        "arrival_airport": "HKG",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX97",
+        "departure_airport": "ANC",
+        "arrival_airport": "HKG",
+        "distance": 5073.31924856958
+    },
+    {
+        "flight_number": "CX3273",
+        "departure_airport": "ATL",
+        "arrival_airport": "ANC",
+        "distance": 3410.3956187980743
+    },
+    {
+        "flight_number": "CX95",
+        "departure_airport": "JFK",
+        "arrival_airport": "YYC",
+        "distance": 2036.3369087172596
+    },
+    {
+        "flight_number": "CX86",
+        "departure_airport": "ANC",
+        "arrival_airport": "NLU",
+        "distance": ""
+    },
+    {
+        "flight_number": "CX3170",
+        "departure_airport": "ANC",
+        "arrival_airport": "MIA",
+        "distance": 3998.7738205450464
+    },
+    {
+        "flight_number": "CX3287",
+        "departure_airport": "ANC",
+        "arrival_airport": "HKG",
+        "distance": 5073.31924856958
+    }
+]
