@@ -33,7 +33,7 @@
   },
   {
     "category": "超長途",
-    "range": 7501,
+    "range": 20000,
     "economy": 38000,
     "premium_economy": 75000,
     "business": 110000,

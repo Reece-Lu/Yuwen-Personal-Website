@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Box, Typography, Button, Alert } from '@mui/material';
+import { Box, Grid, Typography, Button, Alert } from '@mui/material';
 import flightsData from '../data/cx_flights_with_distances.json';
 import FlightSelector from "../components/FlightSelector";
 import mileageChart from '../data/mileage_chart.json'; // 导入mileage_chart.json
+import routes from '../data/routes.min.js';
+import CustomButton from '../components/CustomButton';
 
 const CathayMixedCabinCalculator = () => {
     const [flightSelections, setFlightSelections] = useState({
@@ -65,17 +67,30 @@ const CathayMixedCabinCalculator = () => {
             '头等': firstClassRatio
         };
 
-        const firstLegPoints = cabinRatios[flightSelections.firstLegCabin?.value] ?
-            firstLegDistance * cabinRatios[flightSelections.firstLegCabin?.value] : 0;
-        const secondLegPoints = cabinRatios[flightSelections.secondLegCabin?.value] ?
-            secondLegDistance * cabinRatios[flightSelections.secondLegCabin?.value] : 0;
+        const firstLegCabin = flightSelections.firstLegCabin?.value;
+        const secondLegCabin = flightSelections.secondLegCabin?.value;
+
+        const firstLegPoints = cabinRatios[firstLegCabin] ?
+            firstLegDistance * cabinRatios[firstLegCabin] : 0;
+        const secondLegPoints = cabinRatios[secondLegCabin] ?
+            secondLegDistance * cabinRatios[secondLegCabin] : 0;
 
         const totalPointsNeeded = firstLegPoints + secondLegPoints;
 
         console.log(totalPointsNeeded);
 
-        return totalPointsNeeded ? totalPointsNeeded.toFixed(2) : '无法计算所需里程数';
+        if (!totalPointsNeeded) {
+            return '无法计算所需里程数';
+        }
+
+        // 向上取整到最近的百位
+        const roundedTotalPoints = Math.ceil(totalPointsNeeded / 100) * 100;
+
+        console.log(roundedTotalPoints);
+
+        return roundedTotalPoints.toFixed(0); // 返回整数形式的里程数
     };
+
 
     const calculateDistance = () => {
         if (!flightSelections.firstLegDeparture || !flightSelections.firstLegArrival ||
@@ -87,39 +102,36 @@ const CathayMixedCabinCalculator = () => {
 
         setError(false);
 
-        // 获取第一段航班的航班列表和距离
-        const firstLegFlights = flightsData.filter(
+        // Helper function to get the distance from the routes data
+        const getDistance = (departure, arrival) => {
+            const departureRoutes = routes[departure]; // Get routes from departure airport
+            if (!departureRoutes) return 0;
+            const flightRoute = departureRoutes.find(route => route.destination === arrival);
+            return flightRoute ? flightRoute.miles : 0;
+        };
+
+        // Get the distance for the first leg
+        const firstLegDistance = getDistance(flightSelections.firstLegDeparture.value, flightSelections.firstLegArrival.value);
+        setFirstLegDistance(firstLegDistance);
+
+        // Get the distance for the second leg
+        const secondLegDistance = getDistance(flightSelections.secondLegDeparture.value, flightSelections.secondLegArrival.value);
+        setSecondLegDistance(secondLegDistance);
+
+        // Set flight lists for UI
+        setFlightList1(flightsData.filter(
             (flight) =>
                 flight.departure_airport === flightSelections.firstLegDeparture.value &&
                 flight.arrival_airport === flightSelections.firstLegArrival.value
-        );
-        setFlightList1(firstLegFlights);
-
-        if (firstLegFlights.length > 0) {
-            const firstDistance = parseFloat(firstLegFlights[0].distance) || 0;
-            setFirstLegDistance(firstDistance);
-        } else {
-            setFirstLegDistance(0); // 如果没有匹配到航班，设置距离为0
-        }
-
-        // 获取第二段航班的航班列表和距离
-        const secondLegFlights = flightsData.filter(
+        ));
+        setFlightList2(flightsData.filter(
             (flight) =>
                 flight.departure_airport === flightSelections.secondLegDeparture.value &&
                 flight.arrival_airport === flightSelections.secondLegArrival.value
-        );
-        setFlightList2(secondLegFlights);
+        ));
 
-        if (secondLegFlights.length > 0) {
-            const secondDistance = parseFloat(secondLegFlights[0].distance) || 0;
-            setSecondLegDistance(secondDistance);
-        } else {
-            setSecondLegDistance(0); // 如果没有匹配到航班，设置距离为0
-        }
-
-        // **直接在这里进行计算，确保每次点击时都能计算出来结果**
-        if (firstLegFlights.length > 0 && secondLegFlights.length > 0) {
-            const totalMiles = (parseFloat(firstLegFlights[0].distance) || 0) + (parseFloat(secondLegFlights[0].distance) || 0);
+        // Ensure distances are calculated and use them in total points calculation
+        if (firstLegDistance > 0 && secondLegDistance > 0) {
             const points = calculateTotalPointsNeeded(firstLegDistance, secondLegDistance);
             setTotalPoints(points);
         } else {
@@ -131,74 +143,105 @@ const CathayMixedCabinCalculator = () => {
         <Box sx={{ p: 3 }}>
             <Typography variant="h4" gutterBottom>国泰航空混舱计算器</Typography>
 
-            <FlightSelector
-                flightsData={flightsData}
-                onSelectionChange={handleSelectionChange}
-            />
+            <FlightSelector flightsData={flightsData} onSelectionChange={handleSelectionChange} />
 
-            <Box sx={{ mt: 4 }}>
-                {firstLegDistance !== null && (
-                    <Typography sx={{ mt: 2 }}>第一段航程距离: {firstLegDistance} 英里</Typography>
+            <Grid container spacing={2} justifyContent="center">
+                {/* 计算按钮 */}
+                <Grid item xs={12} md={6}>
+                    <CustomButton
+                        text="计算"
+                        onClick={calculateDistance}
+                        variant="contained"
+                        color="#005D63"
+                        hoverColor="#004a4f"
+                    />
+                </Grid>
+
+                {/* 重新计算按钮 */}
+                <Grid item xs={12} md={6}>
+                    <CustomButton
+                        text="重新计算"
+                        onClick={calculateDistance}
+                        variant="outlined"
+                        color="#005D63"
+                        hoverColor="#004a4f"
+                    />
+                </Grid>
+
+                {/* 错误提示 */}
+                {error && (
+                    <Grid item xs={12}>
+                        <Alert severity="error" sx={{ mt: 2 }}>
+                            请确认所有航班信息和舱位选择都填写完整！
+                        </Alert>
+                    </Grid>
                 )}
+            </Grid>
 
-                {secondLegDistance !== null && (
-                    <Typography sx={{ mt: 2 }}>第二段航程距离: {secondLegDistance} 英里</Typography>
-                )}
 
-                {/* 显示第一段航班列表 */}
+            <Grid container spacing={2} sx={{ mt: 4 }}>
+                {/* 第一段航班列表 */}
                 {flightList1.length > 0 && (
-                    <Box sx={{ mt: 2 }}>
+                    <Grid item xs={12}>
                         <Typography variant="h6">第一段航班列表:</Typography>
                         {flightList1.map((flight, index) => (
                             <Typography key={index}>
                                 航班号: {flight.flight_number}, 路线: {flight.departure_airport} - {flight.arrival_airport}
                             </Typography>
                         ))}
-                    </Box>
+                    </Grid>
                 )}
 
-                {/* 显示第二段航班列表 */}
+                {/* 第二段航班列表 */}
                 {flightList2.length > 0 && (
-                    <Box sx={{ mt: 2 }}>
+                    <Grid item xs={12}>
                         <Typography variant="h6">第二段航班列表:</Typography>
                         {flightList2.map((flight, index) => (
                             <Typography key={index}>
                                 航班号: {flight.flight_number}, 路线: {flight.departure_airport} - {flight.arrival_airport}
                             </Typography>
                         ))}
-                    </Box>
+                    </Grid>
                 )}
 
-                {/* 显示总里程数 */}
+                {/* 总所需里程数 */}
                 {totalPoints && (
-                    <Typography sx={{ mt: 4, fontWeight: 'bold', color: totalPoints === '无法计算所需里程数' ? 'red' : 'black' }}>
-                        总所需里程数: {totalPoints}
-                    </Typography>
+                    <Grid item xs={12}>
+                        <Typography sx={{ fontWeight: 'bold', color: totalPoints === '无法计算所需里程数' ? 'red' : 'black' }}>
+                            总所需里程数: {totalPoints}
+                        </Typography>
+                    </Grid>
                 )}
 
-                {/* 显示比例 */}
+                {/* 各舱位里程比例 */}
                 {ratios && (
-                    <Box sx={{ mt: 4 }}>
+                    <Grid item xs={12}>
                         <Typography variant="h6">各舱位里程比例:</Typography>
                         <Typography>经济舱比例: {ratios.economyRatio}</Typography>
                         <Typography>特选经济舱比例: {ratios.premiumEconomyRatio}</Typography>
                         <Typography>商务舱比例: {ratios.businessRatio}</Typography>
                         <Typography>头等舱比例: {ratios.firstClassRatio}</Typography>
-                    </Box>
+                    </Grid>
                 )}
-            </Box>
+            </Grid>
 
-            {/* 计算按钮 */}
-            <Button variant="contained" sx={{ mt: 3 }} onClick={calculateDistance}>
-                计算
-            </Button>
+            <Grid container spacing={2} sx={{ mt: 4 }}>
+                {/* 第一段航程距离 */}
+                {firstLegDistance !== null && (
+                    <Grid item xs={12}>
+                        <Typography>第一段航程距离: {firstLegDistance} 英里</Typography>
+                    </Grid>
+                )}
 
-            {/* 错误提示 */}
-            {error && (
-                <Alert severity="error" sx={{ mt: 2 }}>
-                    请确认所有航班信息和舱位选择都填写完整！
-                </Alert>
-            )}
+                {/* 第二段航程距离 */}
+                {secondLegDistance !== null && (
+                    <Grid item xs={12}>
+                        <Typography>第二段航程距离: {secondLegDistance} 英里</Typography>
+                    </Grid>
+                )}
+            </Grid>
+
+
         </Box>
     );
 };

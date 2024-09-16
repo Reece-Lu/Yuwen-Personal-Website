@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Autocomplete, TextField, Typography } from '@mui/material';
+import { Box, Grid, Autocomplete, TextField, Typography } from '@mui/material';
 
 const FlightSelector = ({ flightsData, onSelectionChange }) => {
     // 第一段
@@ -86,10 +86,11 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
     }, [selectedDepartureFirstLeg, selectedArrivalFirstLeg, selectedCabinFirstLeg, selectedDepartureSecondLeg, selectedArrivalSecondLeg, selectedCabinSecondLeg, onSelectionChange]);
 
     return (
-        <Box sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom>第一段</Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
-                {/* 第一段-出发机场 */}
+    <Box sx={{ p: 3 }}>
+        <Typography variant="h6" gutterBottom sx={{ mb: 1 }}>航程一</Typography>
+        <Grid container spacing={2}>
+            {/* 第一段-出发机场 */}
+            <Grid item xs={12} md={4}>
                 <Autocomplete
                     options={departureAirports}
                     getOptionLabel={(option) => option.label}
@@ -99,7 +100,6 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                     renderInput={(params) => (
                         <TextField {...params} label="选择出发机场" variant="outlined" />
                     )}
-                    sx={{ width: 300, mb: 2 }}
                     ListboxProps={{
                         style: {
                             maxHeight: '300px',
@@ -108,8 +108,10 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                         },
                     }}
                 />
+            </Grid>
 
-                {/* 第一段-到达机场 */}
+            {/* 第一段-到达机场 */}
+            <Grid item xs={12} md={4}>
                 <Autocomplete
                     options={arrivalAirports}
                     getOptionLabel={(option) => option.label}
@@ -119,7 +121,7 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                     renderInput={(params) => (
                         <TextField {...params} label="选择到达机场" variant="outlined" />
                     )}
-                    sx={{ width: 300, mb: 2 }}
+                    disabled={!selectedDepartureFirstLeg}
                     ListboxProps={{
                         style: {
                             maxHeight: '300px',
@@ -127,10 +129,11 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                             display: 'block',
                         },
                     }}
-                    disabled={!selectedDepartureFirstLeg}
                 />
+            </Grid>
 
-                {/* 第一段-舱位选择 */}
+            {/* 第一段-舱位选择 */}
+            <Grid item xs={12} md={4}>
                 <Autocomplete
                     options={cabinOptions}
                     getOptionLabel={(option) => option.label}
@@ -140,7 +143,6 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                     renderInput={(params) => (
                         <TextField {...params} label="选择舱位" variant="outlined" />
                     )}
-                    sx={{ width: 150, mb: 2 }}
                     ListboxProps={{
                         style: {
                             maxHeight: '300px',
@@ -149,22 +151,34 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                         },
                     }}
                 />
-            </Box>
+            </Grid>
+        </Grid>
 
-            <Typography variant="h6" gutterBottom>第二段</Typography>
-            <Box sx={{ display: 'flex', gap: 2 }}>
-                {/* 第二段-出发机场 */}
-                <TextField
-                    label="第二段出发机场"
-                    variant="outlined"
-                    value={selectedDepartureSecondLeg?.label || ''}
-                    sx={{ width: 300, mb: 2 }}
-                    InputProps={{
-                        readOnly: true,
+        <Typography variant="h6" gutterBottom sx={{ mt: 2, mb: 1 }}>航程二</Typography>
+        <Grid container spacing={2}>
+            {/* 第二段-出发机场 */}
+            <Grid item xs={12} md={4}>
+                <Autocomplete
+                    options={[{ label: selectedDepartureSecondLeg?.label || '' }]} // 使用当前选择的机场作为唯一选项
+                    getOptionLabel={(option) => option.label}
+                    value={selectedDepartureSecondLeg} // 只显示选中的值
+                    renderInput={(params) => (
+                        <TextField {...params} label="第二段出发机场" variant="outlined" />
+                    )}
+                    disabled
+                    ListboxProps={{
+                        style: {
+                            maxHeight: '300px',
+                            overflow: 'auto',
+                            display: 'block',
+                        },
                     }}
                 />
+            </Grid>
 
-                {/* 第二段-到达机场 */}
+
+            {/* 第二段-到达机场 */}
+            <Grid item xs={12} md={4}>
                 <Autocomplete
                     options={secondArrivalAirports}
                     getOptionLabel={(option) => option.label}
@@ -174,7 +188,7 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                     renderInput={(params) => (
                         <TextField {...params} label="选择到达机场" variant="outlined" />
                     )}
-                    sx={{ width: 300, mb: 2 }}
+                    disabled={!selectedDepartureSecondLeg}
                     ListboxProps={{
                         style: {
                             maxHeight: '300px',
@@ -182,10 +196,11 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                             display: 'block',
                         },
                     }}
-                    disabled={!selectedDepartureSecondLeg}
                 />
+            </Grid>
 
-                {/* 第二段-舱位选择 */}
+            {/* 第二段-舱位选择 */}
+            <Grid item xs={12} md={4}>
                 <Autocomplete
                     options={cabinOptions}
                     getOptionLabel={(option) => option.label}
@@ -195,7 +210,7 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                     renderInput={(params) => (
                         <TextField {...params} label="选择舱位" variant="outlined" />
                     )}
-                    sx={{ width: 150, mb: 2 }}
+                    disabled={!selectedDepartureSecondLeg}
                     ListboxProps={{
                         style: {
                             maxHeight: '300px',
@@ -203,11 +218,12 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
                             display: 'block',
                         },
                     }}
-                    disabled={!selectedDepartureSecondLeg}
                 />
-            </Box>
-        </Box>
-    );
+            </Grid>
+        </Grid>
+    </Box>
+
+);
 };
 
 export default FlightSelector;
