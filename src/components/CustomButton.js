@@ -8,7 +8,7 @@ const CustomButton = ({ text, onClick, variant = "contained", fullWidth = true, 
             fullWidth={fullWidth}
             onClick={onClick}
             sx={{
-                mt: 3,
+                mt: 1,
                 height: height,
                 backgroundColor: variant === 'contained' ? color : 'transparent',
                 borderColor: variant === 'outlined' ? color : 'none',
@@ -16,7 +16,6 @@ const CustomButton = ({ text, onClick, variant = "contained", fullWidth = true, 
                 '&:hover': {
                     backgroundColor: variant === 'contained' ? hoverColor : '#E0F7F9',
                     borderColor: hoverColor,
-                    color: hoverColor
                 }
             }}
         >

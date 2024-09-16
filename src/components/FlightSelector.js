@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Grid, Autocomplete, TextField, Typography } from '@mui/material';
 
-const FlightSelector = ({ flightsData, onSelectionChange }) => {
+const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
     // 第一段
     const [departureAirports, setDepartureAirports] = useState([]);
     const [arrivalAirports, setArrivalAirports] = useState([]);
@@ -65,6 +65,20 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
         }
     }, [selectedArrivalFirstLeg, flightsData]);
 
+    // 当 reset 状态为 true 时，重置所有选择
+    useEffect(() => {
+        if (reset) {
+            setSelectedDepartureFirstLeg(null);
+            setSelectedArrivalFirstLeg(null);
+            setSelectedCabinFirstLeg(null);
+            setSelectedDepartureSecondLeg(null);
+            setSelectedArrivalSecondLeg(null);
+            setSelectedCabinSecondLeg(null);
+            setArrivalAirports([]);
+            setSecondArrivalAirports([]);
+        }
+    }, [reset]);
+
     // 舱位选项
     const cabinOptions = [
         { label: '头等', value: '头等' },
@@ -83,147 +97,148 @@ const FlightSelector = ({ flightsData, onSelectionChange }) => {
             secondLegArrival: selectedArrivalSecondLeg,
             secondLegCabin: selectedCabinSecondLeg,
         });
-    }, [selectedDepartureFirstLeg, selectedArrivalFirstLeg, selectedCabinFirstLeg, selectedDepartureSecondLeg, selectedArrivalSecondLeg, selectedCabinSecondLeg, onSelectionChange]);
+    }, [
+        selectedDepartureFirstLeg,
+        selectedArrivalFirstLeg,
+        selectedCabinFirstLeg,
+        selectedDepartureSecondLeg,
+        selectedArrivalSecondLeg,
+        selectedCabinSecondLeg,
+        onSelectionChange
+    ]);
 
     return (
-    <Box sx={{ p: 3 }}>
-        <Typography variant="h6" gutterBottom sx={{ mb: 1 }}>航程一</Typography>
-        <Grid container spacing={2}>
-            {/* 第一段-出发机场 */}
-            <Grid item xs={12} md={4}>
-                <Autocomplete
-                    options={departureAirports}
-                    getOptionLabel={(option) => option.label}
-                    value={selectedDepartureFirstLeg} // 确保 value 正确绑定
-                    onChange={(event, value) => setSelectedDepartureFirstLeg(value)}
-                    isOptionEqualToValue={(option, value) => option.value === value?.value} // 自定义比较方式
-                    renderInput={(params) => (
-                        <TextField {...params} label="选择出发机场" variant="outlined" />
-                    )}
-                    ListboxProps={{
-                        style: {
-                            maxHeight: '300px',
-                            overflow: 'auto',
-                            display: 'block',
-                        },
-                    }}
-                />
+        <Box sx={{ p: 3 }}>
+            <Typography variant="h6" gutterBottom sx={{ mb: 1 }}>航程一</Typography>
+            <Grid container spacing={2}>
+                {/* 第一段-出发机场 */}
+                <Grid item xs={12} md={4}>
+                    <Autocomplete
+                        options={departureAirports}
+                        getOptionLabel={(option) => option.label}
+                        value={selectedDepartureFirstLeg}
+                        onChange={(event, value) => setSelectedDepartureFirstLeg(value)}
+                        renderInput={(params) => (
+                            <TextField {...params} label="选择出发机场" variant="outlined" />
+                        )}
+                        ListboxProps={{
+                            style: {
+                                maxHeight: '300px',
+                                overflow: 'auto',
+                                display: 'block',
+                            },
+                        }}
+                    />
+                </Grid>
+
+                {/* 第一段-到达机场 */}
+                <Grid item xs={12} md={4}>
+                    <Autocomplete
+                        options={arrivalAirports}
+                        getOptionLabel={(option) => option.label}
+                        value={selectedArrivalFirstLeg}
+                        onChange={(event, value) => setSelectedArrivalFirstLeg(value)}
+                        disabled={!selectedDepartureFirstLeg}
+                        renderInput={(params) => (
+                            <TextField {...params} label="选择到达机场" variant="outlined" />
+                        )}
+                        ListboxProps={{
+                            style: {
+                                maxHeight: '300px',
+                                overflow: 'auto',
+                                display: 'block',
+                            },
+                        }}
+                    />
+                </Grid>
+
+                {/* 第一段-舱位选择 */}
+                <Grid item xs={12} md={4}>
+                    <Autocomplete
+                        options={cabinOptions}
+                        getOptionLabel={(option) => option.label}
+                        value={selectedCabinFirstLeg}
+                        onChange={(event, value) => setSelectedCabinFirstLeg(value)}
+                        renderInput={(params) => (
+                            <TextField {...params} label="选择舱位" variant="outlined" />
+                        )}
+                        ListboxProps={{
+                            style: {
+                                maxHeight: '300px',
+                                overflow: 'auto',
+                                display: 'block',
+                            },
+                        }}
+                    />
+                </Grid>
             </Grid>
 
-            {/* 第一段-到达机场 */}
-            <Grid item xs={12} md={4}>
-                <Autocomplete
-                    options={arrivalAirports}
-                    getOptionLabel={(option) => option.label}
-                    value={selectedArrivalFirstLeg} // 确保 value 正确绑定
-                    onChange={(event, value) => setSelectedArrivalFirstLeg(value)}
-                    isOptionEqualToValue={(option, value) => option.value === value?.value} // 自定义比较方式
-                    renderInput={(params) => (
-                        <TextField {...params} label="选择到达机场" variant="outlined" />
-                    )}
-                    disabled={!selectedDepartureFirstLeg}
-                    ListboxProps={{
-                        style: {
-                            maxHeight: '300px',
-                            overflow: 'auto',
-                            display: 'block',
-                        },
-                    }}
-                />
+            <Typography variant="h6" gutterBottom sx={{ mt: 2, mb: 1 }}>航程二</Typography>
+            <Grid container spacing={2}>
+                {/* 第二段-出发机场 */}
+                <Grid item xs={12} md={4}>
+                    <Autocomplete
+                        options={[{ label: selectedDepartureSecondLeg?.label || '' }]}
+                        getOptionLabel={(option) => option.label}
+                        value={selectedDepartureSecondLeg}
+                        disabled
+                        renderInput={(params) => (
+                            <TextField {...params} label="第二段出发机场" variant="outlined" />
+                        )}
+                        ListboxProps={{
+                            style: {
+                                maxHeight: '300px',
+                                overflow: 'auto',
+                                display: 'block',
+                            },
+                        }}
+                    />
+                </Grid>
+
+                {/* 第二段-到达机场 */}
+                <Grid item xs={12} md={4}>
+                    <Autocomplete
+                        options={secondArrivalAirports}
+                        getOptionLabel={(option) => option.label}
+                        value={selectedArrivalSecondLeg}
+                        onChange={(event, value) => setSelectedArrivalSecondLeg(value)}
+                        disabled={!selectedDepartureSecondLeg}
+                        renderInput={(params) => (
+                            <TextField {...params} label="选择到达机场" variant="outlined" />
+                        )}
+                        ListboxProps={{
+                            style: {
+                                maxHeight: '300px',
+                                overflow: 'auto',
+                                display: 'block',
+                            },
+                        }}
+                    />
+                </Grid>
+
+                {/* 第二段-舱位选择 */}
+                <Grid item xs={12} md={4}>
+                    <Autocomplete
+                        options={cabinOptions}
+                        getOptionLabel={(option) => option.label}
+                        value={selectedCabinSecondLeg}
+                        onChange={(event, value) => setSelectedCabinSecondLeg(value)}
+                        renderInput={(params) => (
+                            <TextField {...params} label="选择舱位" variant="outlined" />
+                        )}
+                        disabled={!selectedDepartureSecondLeg}
+                        ListboxProps={{
+                            style: {
+                                maxHeight: '300px',
+                                overflow: 'auto',
+                                display: 'block',
+                            },
+                        }}
+                    />
+                </Grid>
             </Grid>
-
-            {/* 第一段-舱位选择 */}
-            <Grid item xs={12} md={4}>
-                <Autocomplete
-                    options={cabinOptions}
-                    getOptionLabel={(option) => option.label}
-                    value={selectedCabinFirstLeg} // 确保 value 正确绑定
-                    onChange={(event, value) => setSelectedCabinFirstLeg(value)}
-                    isOptionEqualToValue={(option, value) => option.value === value?.value} // 自定义比较方式
-                    renderInput={(params) => (
-                        <TextField {...params} label="选择舱位" variant="outlined" />
-                    )}
-                    ListboxProps={{
-                        style: {
-                            maxHeight: '300px',
-                            overflow: 'auto',
-                            display: 'block',
-                        },
-                    }}
-                />
-            </Grid>
-        </Grid>
-
-        <Typography variant="h6" gutterBottom sx={{ mt: 2, mb: 1 }}>航程二</Typography>
-        <Grid container spacing={2}>
-            {/* 第二段-出发机场 */}
-            <Grid item xs={12} md={4}>
-                <Autocomplete
-                    options={[{ label: selectedDepartureSecondLeg?.label || '' }]} // 使用当前选择的机场作为唯一选项
-                    getOptionLabel={(option) => option.label}
-                    value={selectedDepartureSecondLeg} // 只显示选中的值
-                    renderInput={(params) => (
-                        <TextField {...params} label="第二段出发机场" variant="outlined" />
-                    )}
-                    disabled
-                    ListboxProps={{
-                        style: {
-                            maxHeight: '300px',
-                            overflow: 'auto',
-                            display: 'block',
-                        },
-                    }}
-                />
-            </Grid>
-
-
-            {/* 第二段-到达机场 */}
-            <Grid item xs={12} md={4}>
-                <Autocomplete
-                    options={secondArrivalAirports}
-                    getOptionLabel={(option) => option.label}
-                    value={selectedArrivalSecondLeg} // 确保 value 正确绑定
-                    onChange={(event, value) => setSelectedArrivalSecondLeg(value)}
-                    isOptionEqualToValue={(option, value) => option.value === value?.value} // 自定义比较方式
-                    renderInput={(params) => (
-                        <TextField {...params} label="选择到达机场" variant="outlined" />
-                    )}
-                    disabled={!selectedDepartureSecondLeg}
-                    ListboxProps={{
-                        style: {
-                            maxHeight: '300px',
-                            overflow: 'auto',
-                            display: 'block',
-                        },
-                    }}
-                />
-            </Grid>
-
-            {/* 第二段-舱位选择 */}
-            <Grid item xs={12} md={4}>
-                <Autocomplete
-                    options={cabinOptions}
-                    getOptionLabel={(option) => option.label}
-                    value={selectedCabinSecondLeg} // 确保 value 正确绑定
-                    onChange={(event, value) => setSelectedCabinSecondLeg(value)}
-                    isOptionEqualToValue={(option, value) => option.value === value?.value} // 自定义比较方式
-                    renderInput={(params) => (
-                        <TextField {...params} label="选择舱位" variant="outlined" />
-                    )}
-                    disabled={!selectedDepartureSecondLeg}
-                    ListboxProps={{
-                        style: {
-                            maxHeight: '300px',
-                            overflow: 'auto',
-                            display: 'block',
-                        },
-                    }}
-                />
-            </Grid>
-        </Grid>
-    </Box>
-
-);
+        </Box>
+    );
 };
 
 export default FlightSelector;
