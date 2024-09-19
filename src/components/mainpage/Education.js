@@ -59,7 +59,7 @@ const Education = () => {
             degree: "M.Eng. Applied Data Science",
             imageName: 'master',
             institution: "University of Victoria",
-            dateRange: "Sep 2022 - Aug 2023",
+            dateRange: "Sep 2022 - Aug 2024",
         },
         {
             degree: "B.Eng. Software Engineering",

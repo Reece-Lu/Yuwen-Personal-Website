@@ -20,7 +20,7 @@ function LeftPanel() {
                 <Typography variant="h6" style={{marginTop:'3%', fontFamily: theme.typography.fontFamily}}>Yuwen Lu</Typography>
             </ThemeProvider>
             <Typography variant="body2" style={{ marginTop: '3%', textAlign: 'center', fontFamily: theme.typography.fontFamily }}>
-                M.Eng in Applied Data Science, U. of Victoria. Co-op at Ocean Networks Canada, focusing on software test automation.
+                M.Eng in Applied Data Science, University of Victoria. Former Co-op at Ocean Networks Canada, where I focused on software test automation.
             </Typography>
             <ContactInfo/>
         </Box>

@@ -40,7 +40,7 @@ const WorkingExperience = () => {
     const workHistory = {
         position: "Software Test Automation Co-op",
         company: "Ocean Networks Canada",
-        dateRange: "Sep 2023 - Aug 2024(expected)",
+        dateRange: "Sep 2023 - Aug 2024",
     };
 
     return (
