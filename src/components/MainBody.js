@@ -6,9 +6,8 @@ import LeftPanel from './mainpage/LeftPanel';
 import Projects from './mainpage/Projects';
 import NoteDisplay from '../components/notedisplay/NoteDisplay';
 import VmUsageChart from '../components/VmUsageChart';
-import Box from '@mui/material/Box';
 import SystemArchitecture from '../components/SystemArchitecture/SystemArchitecture';
-import ProjectAPIs from '../pages/ProjectAPIsPage/ProjectAPIs';
+import ToolsAndResources from "./ToolsAndResources/ToolsAndResources";
 
 
 function MainBody() {
@@ -33,8 +32,12 @@ function MainBody() {
                     <VmUsageChart />
                 </Grid>
                 <Grid item xs={12}>
+                    <ToolsAndResources />
+                </Grid>
+                <Grid item xs={12}>
                     <SystemArchitecture />
                 </Grid>
+
             </Grid>
         </Container>
     );

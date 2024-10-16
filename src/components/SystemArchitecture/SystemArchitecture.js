@@ -19,7 +19,7 @@ import {
     ReactFlowProvider,
 } from '@xyflow/react';
 import './overview.css';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import Typography from '@mui/joy/Typography';
 
 
