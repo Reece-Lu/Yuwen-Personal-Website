@@ -10,10 +10,10 @@
   {
     "category": "短途",
     "range": 2750,
-    "economy": 12500,
-    "premium_economy": 32000,
-    "business": 32000,
-    "first_class": 50000
+    "economy": 10000,
+    "premium_economy": 20000,
+    "business": 28000,
+    "first_class": 43000
   },
   {
     "category": "中途",
