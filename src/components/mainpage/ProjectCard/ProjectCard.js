@@ -49,7 +49,9 @@ export default function ProjectCard({ projectData }) {
                             <Typography level="body-sm" sx={{ fontFamily: theme.typography.fontFamily }}>
                                 {projectData.descriptionList.map((description, index) => (
                                     <Box key={index} sx={{ marginBottom: '0.5rem' }}>
-                                        <span dangerouslySetInnerHTML={{ __html: description.replace(/(\*\*.*?\*\*)/g, '<strong>$1</strong>').replace(/\*\*/g, '') }}></span>
+                                        {description.split(/\*\*/).map((part, i) =>
+                                            i % 2 === 1 ? <strong key={i}>{part}</strong> : part
+                                        )}
                                     </Box>
                                 ))}
                             </Typography>
