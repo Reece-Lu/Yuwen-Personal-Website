@@ -1,5 +1,7 @@
 import React from 'react';
 import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Chip, Paper, Grid } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import {t} from "i18next";
 
 const FlightResultForm = ({
                               firstLegDeparture,
@@ -23,10 +25,10 @@ const FlightResultForm = ({
                 <Table>
                     <TableHead>
                         <TableRow>
-                            <TableCell align="center" sx={{ fontWeight: 'bold', width: '30px' }}>航程</TableCell>
-                            <TableCell align="center" sx={{ fontWeight: 'bold', width: '20px' }}>起点</TableCell>
-                            <TableCell align="center" sx={{ fontWeight: 'bold', width: '20px' }}>终点</TableCell>
-                            <TableCell align="center" sx={{ fontWeight: 'bold', width: '30px' }}>距离</TableCell>
+                            <TableCell align="center" sx={{ fontWeight: 'bold', width: '30px' }}>{t('leg')}</TableCell>
+                            <TableCell align="center" sx={{ fontWeight: 'bold', width: '20px' }}>{t('departure')}</TableCell>
+                            <TableCell align="center" sx={{ fontWeight: 'bold', width: '20px' }}>{t('arrival')}</TableCell>
+                            <TableCell align="center" sx={{ fontWeight: 'bold', width: '30px' }}>{t('distance')}</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -53,12 +55,12 @@ const FlightResultForm = ({
             <Grid container spacing={2} sx={{ mt: 1 }} alignItems="center">
                 <Grid item xs={12} md={6}>
                     <Typography sx={{ fontWeight: 'bold', textAlign: { xs: 'center', md: 'right' } }}>
-                        总距离: {(firstLegDistance + secondLegDistance) || 'N/A'} 英里
+                        {t('total_distance')}: {(firstLegDistance + secondLegDistance) || 'N/A'} {t('miles')}
                     </Typography>
                 </Grid>
                 <Grid item xs={12} md={6}>
                     <Typography sx={{ fontWeight: 'bold', textAlign: { xs: 'center', md: 'left' } }}>
-                        总里程数: {totalPoints || 'N/A'}
+                        {t('total_points')}: {totalPoints || 'N/A'}
                     </Typography>
                 </Grid>
             </Grid>
@@ -70,10 +72,10 @@ const FlightResultForm = ({
 
             {/* 航班号列表 */}
             <Box sx={{ p: 3, borderRadius: '8px', mt: 2 }}>
-                <Typography sx={{ fontWeight: 'bold'}}>可选航班:</Typography>
+                <Typography sx={{ fontWeight: 'bold'}}>{t('available_flights')}:</Typography>
 
                 <Typography variant="body1" sx={{ mt: 1 }}>
-                    航程 1:
+                    {t('leg')} 1:
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 , mt: 0.5}}>
                     {flightList1.map((flight, index) => (
@@ -87,7 +89,7 @@ const FlightResultForm = ({
                 </Box>
 
                 <Typography variant="body1" sx={{ mt: 2 }}>
-                    航程 2:
+                    {t('leg')} 2:
                 </Typography>
                 <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 0.5}}>
                     {flightList2.map((flight, index) => (

@@ -5,7 +5,10 @@ import FlightSelector from "../components/FlightSelector";
 import mileageChart from '../data/mileage_chart.json';
 import routes from '../data/routes.min.js';
 import CustomButton from '../components/CustomButton';
-import FlightResultForm from '../components/FlightResultForm'; // 导入结果表单组件
+import FlightResultForm from '../components/FlightResultForm';
+import i18n from '../i18n';
+import Button from "@mui/material/Button";
+import {useTranslation} from "react-i18next";
 
 const CathayMixedCabinCalculator = () => {
     const [flightSelections, setFlightSelections] = useState({
@@ -24,7 +27,12 @@ const CathayMixedCabinCalculator = () => {
     const [totalPoints, setTotalPoints] = useState(null);
     const [ratios, setRatios] = useState({});
     const [reset, setReset] = useState(false);
-    const [showResultForm, setShowResultForm] = useState(false); // 用于控制是否显示结果表单
+    const [showResultForm, setShowResultForm] = useState(false);
+    const { t } = useTranslation();
+
+    const changeLanguage = (lng) => {
+        i18n.changeLanguage(lng);
+    };
 
     const handleSelectionChange = (selections) => {
         setFlightSelections(selections);
@@ -143,18 +151,38 @@ const CathayMixedCabinCalculator = () => {
     return (
         <Container maxWidth="lg">
             <Box sx={{ p: 3 }}>
-                <Typography variant="h4" gutterBottom>国泰航空混舱计算器</Typography>
+                <Typography variant="h4" gutterBottom>{t('title')}</Typography>
+                <Button
+                    onClick={() => changeLanguage('en')}
+                    style={{ color: '#005D63' }}
+                >
+                    English
+                </Button>
+                <Button
+                    onClick={() => changeLanguage('zh')}
+                    style={{ color: '#005D63' }}
+                >
+                    中文
+                </Button>
+
 
                 <FlightSelector
                     flightsData={flightsData}
                     onSelectionChange={handleSelectionChange}
-                    reset={reset} // 传递 reset 属性
+                    reset={reset}
+                    labels={{
+                        firstLegTitle: t('first_leg_title'),
+                        secondLegTitle: t('second_leg_title'),
+                        departure: t('departure_airport'),
+                        arrival: t('arrival_airport'),
+                        cabin: t('cabin_class')
+                    }}
                 />
 
                 <Grid container spacing={2} justifyContent="center">
                     <Grid item xs={12} md={6}>
                         <CustomButton
-                            text="计算"
+                            text={t('calculate')}
                             onClick={calculateDistance}
                             variant="contained"
                             color="#005D63"
@@ -165,7 +193,7 @@ const CathayMixedCabinCalculator = () => {
 
                     <Grid item xs={12} md={6}>
                         <CustomButton
-                            text="重新计算"
+                            text={t('reset')}
                             onClick={resetCalculation}
                             variant="outlined"
                             color="#005D63"
@@ -177,7 +205,7 @@ const CathayMixedCabinCalculator = () => {
                     {error && (
                         <Grid item xs={12}>
                             <Alert severity="error" sx={{ mt: 2 }}>
-                                请确认所有航班信息和舱位选择都填写完整！
+                                {t('error_message')}
                             </Alert>
                         </Grid>
                     )}
@@ -200,7 +228,7 @@ const CathayMixedCabinCalculator = () => {
                 )}
             </Box>
             <Typography variant="body2" color="textSecondary" sx={{ mt: 1, textAlign: 'center' }}>
-                所有信息仅供参考，实际航班情况和票价以航空公司电话客服为准。
+                {t('result_notice')}
             </Typography>
 
         </Container>

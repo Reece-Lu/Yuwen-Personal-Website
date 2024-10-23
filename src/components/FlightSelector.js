@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Grid, Autocomplete, TextField, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
-const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
+const FlightSelector = ({ flightsData, onSelectionChange, reset, labels }) => {
     // 第一段
     const [departureAirports, setDepartureAirports] = useState([]);
     const [arrivalAirports, setArrivalAirports] = useState([]);
@@ -14,6 +15,14 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
     const [selectedDepartureSecondLeg, setSelectedDepartureSecondLeg] = useState(null);
     const [selectedArrivalSecondLeg, setSelectedArrivalSecondLeg] = useState(null);
     const [selectedCabinSecondLeg, setSelectedCabinSecondLeg] = useState(null);
+    const { t, i18n } = useTranslation();
+
+    const cabinOptions = [
+        { label: t('first_class'), value: '头等' },
+        { label: t('business_class'), value: '商务' },
+        { label: t('premium_economy'), value: '超经' },
+        { label: t('economy_class'), value: '经济' }
+    ];
 
     // 加载所有出发机场，提取唯一的出发机场代码
     useEffect(() => {
@@ -79,13 +88,6 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
         }
     }, [reset]);
 
-    // 舱位选项
-    const cabinOptions = [
-        { label: '头等', value: '头等' },
-        { label: '商务', value: '商务' },
-        { label: '超经', value: '超经' },
-        { label: '经济', value: '经济' }
-    ];
 
     // 每当选择更改时，将 6 个参数返回给父组件
     useEffect(() => {
@@ -109,7 +111,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
 
     return (
         <Box sx={{ p: 3 }}>
-            <Typography variant="h6" gutterBottom sx={{ mb: 1 }}>航程一</Typography>
+            <Typography variant="h6" gutterBottom sx={{ mb: 1 }}>{labels.firstLegTitle}</Typography>
             <Grid container spacing={2}>
                 {/* 第一段-出发机场 */}
                 <Grid item xs={12} md={4}>
@@ -119,7 +121,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
                         value={selectedDepartureFirstLeg}
                         onChange={(event, value) => setSelectedDepartureFirstLeg(value)}
                         renderInput={(params) => (
-                            <TextField {...params} label="选择出发机场" variant="outlined" />
+                            <TextField {...params} label={labels.departure} variant="outlined" />
                         )}
                         ListboxProps={{
                             style: {
@@ -140,7 +142,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
                         onChange={(event, value) => setSelectedArrivalFirstLeg(value)}
                         disabled={!selectedDepartureFirstLeg}
                         renderInput={(params) => (
-                            <TextField {...params} label="选择到达机场" variant="outlined" />
+                            <TextField {...params} label={labels.arrival} variant="outlined" />
                         )}
                         ListboxProps={{
                             style: {
@@ -160,7 +162,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
                         value={selectedCabinFirstLeg}
                         onChange={(event, value) => setSelectedCabinFirstLeg(value)}
                         renderInput={(params) => (
-                            <TextField {...params} label="选择舱位" variant="outlined" />
+                            <TextField {...params} label={labels.cabin} variant="outlined" />
                         )}
                         ListboxProps={{
                             style: {
@@ -173,7 +175,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
                 </Grid>
             </Grid>
 
-            <Typography variant="h6" gutterBottom sx={{ mt: 2, mb: 1 }}>航程二</Typography>
+            <Typography variant="h6" gutterBottom sx={{ mt: 2, mb: 1 }}>{labels.secondLegTitle}</Typography>
             <Grid container spacing={2}>
                 {/* 第二段-出发机场 */}
                 <Grid item xs={12} md={4}>
@@ -183,7 +185,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
                         value={selectedDepartureSecondLeg}
                         disabled
                         renderInput={(params) => (
-                            <TextField {...params} label="第二段出发机场" variant="outlined" />
+                            <TextField {...params} label={labels.departure} variant="outlined" />
                         )}
                         ListboxProps={{
                             style: {
@@ -204,7 +206,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
                         onChange={(event, value) => setSelectedArrivalSecondLeg(value)}
                         disabled={!selectedDepartureSecondLeg}
                         renderInput={(params) => (
-                            <TextField {...params} label="选择到达机场" variant="outlined" />
+                            <TextField {...params} label={labels.arrival} variant="outlined" />
                         )}
                         ListboxProps={{
                             style: {
@@ -224,7 +226,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset }) => {
                         value={selectedCabinSecondLeg}
                         onChange={(event, value) => setSelectedCabinSecondLeg(value)}
                         renderInput={(params) => (
-                            <TextField {...params} label="选择舱位" variant="outlined" />
+                            <TextField {...params} label={labels.cabin} variant="outlined" />
                         )}
                         disabled={!selectedDepartureSecondLeg}
                         ListboxProps={{
