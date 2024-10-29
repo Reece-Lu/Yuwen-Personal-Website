@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import ComputerPricePrediction from './pages/ComputerPricePrediction';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CathayMixedCabinCalculator from "./pages/CathayMixedCabinCalculator";
+import ExchangeRateDisplay from "./pages/ExchangeRateDisplay";
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/computerpriceprediction" element={<ComputerPricePrediction />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/cathaypacific" element={<CathayMixedCabinCalculator/>} />
+                <Route path="/exchangerate" element={<ExchangeRateDisplay />} />
             </Routes>
             <Footer />
         </BrowserRouter>
