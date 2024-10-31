@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { get } from '../utils/api-utils';
-import ExchangeRateChartWithBrush from '../components/ExchangeRateChartWithBrush';
+import ExchangeRateChart from "../components/ExchangeRateChart";
 
 const ExchangeRateDisplay = () => {
     const [cnyCadRates, setCnyCadRates] = useState([]);
@@ -17,6 +17,7 @@ const ExchangeRateDisplay = () => {
                         sellRate: parseFloat(item.sellRate),  // 转换为数字
                     }))
                 );
+                console.log("CNY-CAD exchange rates:", cnyCadData);
             } catch (error) {
                 console.error("Error fetching CNY-CAD exchange rates:", error);
             }
@@ -32,6 +33,7 @@ const ExchangeRateDisplay = () => {
                         sellRate: parseFloat(item.sellRate),
                     }))
                 );
+                console.log("CNY-USD exchange rates:", cnyUsdData);
             } catch (error) {
                 console.error("Error fetching CNY-USD exchange rates:", error);
             }
@@ -44,8 +46,8 @@ const ExchangeRateDisplay = () => {
     return (
         <div>
             <h1>Exchange Rate Data</h1>
-            <ExchangeRateChartWithBrush data={cnyCadRates} title="CNY to CAD Exchange Rates" width={800} />
-            <ExchangeRateChartWithBrush data={cnyUsdRates} title="CNY to USD Exchange Rates" width={800} />
+            <ExchangeRateChart data={cnyCadRates} title="CNY to CAD Exchange Rates" width={800} />
+            <ExchangeRateChart data={cnyUsdRates} title="CNY to USD Exchange Rates" width={800} />
         </div>
     );
 };
