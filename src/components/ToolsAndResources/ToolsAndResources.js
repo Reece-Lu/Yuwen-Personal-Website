@@ -2,11 +2,10 @@ import React from 'react';
 import { createTheme } from '@mui/material/styles';
 import Typography from "@mui/joy/Typography";
 import Box from "@mui/material/Box";
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import CardActionArea from '@mui/material/CardActionArea';
 import CathayPacific from '../../assets/CathayPacific.jpg';
+import ExchangeRate from '../../assets/Currency_Exchange_Rate.png';
+import CustomToolCard from "../CustomToolCard";
+import Grid from "@mui/material/Grid";
 
 const theme = createTheme({
     palette: {
@@ -25,24 +24,24 @@ function ToolsAndResources() {
             <Typography level="h2" sx={{ fontFamily: theme.typography.fontFamily, marginBottom: '1rem' }}>
                 Tools And Resources
             </Typography>
-            <Card sx={{ maxWidth: 345, margin: '20px auto' }}>
-                <CardActionArea href="https://meetyuwen.com/cathaypacific">
-                    <CardMedia
-                        component="img"
-                        height="140"
-                        image= {CathayPacific}
-                        alt="Cathay Pacific Mileage Calculator"
+            <Grid container spacing={2} justifyContent="center">
+                <Grid item xs={12} sm={6} md={4}>
+                    <CustomToolCard
+                        title="Mileage Calculator"
+                        description="Use this tool to easily calculate your Cathay Pacific mileage points."
+                        image={CathayPacific}
+                        link="https://meetyuwen.com/cathaypacific"
                     />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div" sx={{ fontFamily: theme.typography.fontFamily }}>
-                            Cathay Pacific Mileage Calculator
-                        </Typography>
-                        <Typography variant="body2" color="text.secondary" sx={{ fontFamily: theme.typography.fontFamily }}>
-                            Use this tool to easily calculate your Cathay Pacific mileage points.
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                    <CustomToolCard
+                        title="Exchange Rate Tracker"
+                        description="Get real-time exchange rates for CNY, USD, and CAD with easy conversions."
+                        image={ExchangeRate}
+                        link="https://meetyuwen.com/exchangerate"
+                    />
+                </Grid>
+            </Grid>
         </Box>
     );
 }

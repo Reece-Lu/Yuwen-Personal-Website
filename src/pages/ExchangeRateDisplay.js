@@ -63,7 +63,7 @@ const ExchangeRateDisplay = () => {
     return (
         <ThemeProvider theme={theme}>
             <div style={{ width: '80%', margin: '0 auto', textAlign: 'left' }}>
-                <Typography variant="h4" marginTop={6} gutterBottom>
+                <Typography variant="h3" marginTop={6} gutterBottom sx={{ fontWeight: 'bold' }}>
                     Exchange Rate Tracker
                 </Typography>
                 <Typography variant="body1" paragraph>
