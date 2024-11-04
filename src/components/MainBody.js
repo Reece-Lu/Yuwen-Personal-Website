@@ -34,10 +34,6 @@ function MainBody() {
                 <Grid item xs={12}>
                     <ToolsAndResources />
                 </Grid>
-                <Grid item xs={12}>
-                    <SystemArchitecture />
-                </Grid>
-
             </Grid>
         </Container>
     );

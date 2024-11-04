@@ -49,7 +49,7 @@ function NavigationBar() {
                         fontFamily: theme.typography.fontFamily
                     }}
                     component={RouterLink}
-                    to="/projectapis"
+                    to="/websiteinfo"
                 >
                 <motion.div
                     style={{
@@ -66,7 +66,7 @@ function NavigationBar() {
                         duration: 4,
                     }}
                 />
-                    API Doc
+                    Website Info
                 </Button>
             </div>
         </AppBar>
