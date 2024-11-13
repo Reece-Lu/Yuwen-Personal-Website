@@ -1,7 +1,7 @@
 import React from 'react';
 import Box from '@mui/material/Box';
 import ProjectCard from './ProjectCard/ProjectCard';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import projectDataList from '../../data/projectData';
 import Typography from '@mui/joy/Typography';
 

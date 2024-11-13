@@ -6,7 +6,7 @@ import { Box } from '@mui/system';
 import Grid from '@mui/material/Grid';
 import IconBar from '../../IconBar';
 import styles from './ProjectCard.module.css';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import AttachmentsBar from '../../AttachmentsBar';
 
 const theme = createTheme({

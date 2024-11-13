@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import '@xyflow/react/dist/style.css';
 import 'react-flow-renderer/dist/style.css';
 import ResizerNode from './ResizerNode';
@@ -16,7 +16,6 @@ import {
     Background,
     useNodesState,
     useEdgesState,
-    ReactFlowProvider,
 } from '@xyflow/react';
 import './overview.css';
 import { createTheme } from '@mui/material/styles';
@@ -34,10 +33,8 @@ const nodeTypes = {
     group: GroupNode,
 };
 
-const nodeClassName = (node) => node.type;
-
 function SystemArchitecture() {
-    const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+    const [nodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
     const onConnect = useCallback(

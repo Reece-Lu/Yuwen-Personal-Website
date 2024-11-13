@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Typography, Link } from '@mui/material';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Box, Typography } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
     typography: {

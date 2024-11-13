@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography, Chip, Paper, Grid } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import {t} from "i18next";
 
 const FlightResultForm = ({

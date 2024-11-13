@@ -6,7 +6,7 @@ import { useState } from "react";
 import { initialTabs as tabs } from "./ingredients.ts";
 import { motion, AnimatePresence } from "framer-motion";
 import Box from '@mui/material/Box';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import Typography from '@mui/joy/Typography';
 
 

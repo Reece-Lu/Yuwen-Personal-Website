@@ -1,5 +1,4 @@
 import { memo } from 'react';
-import { Handle, Position } from '@xyflow/react';
 
 function GroupNode({ data }) {
     const { label } = data;

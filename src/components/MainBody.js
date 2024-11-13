@@ -6,7 +6,6 @@ import LeftPanel from './mainpage/LeftPanel';
 import Projects from './mainpage/Projects';
 import NoteDisplay from '../components/notedisplay/NoteDisplay';
 import VmUsageChart from '../components/VmUsageChart';
-import SystemArchitecture from '../components/SystemArchitecture/SystemArchitecture';
 import ToolsAndResources from "./ToolsAndResources/ToolsAndResources";
 
 

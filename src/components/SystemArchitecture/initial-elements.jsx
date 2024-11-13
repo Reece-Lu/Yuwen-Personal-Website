@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './SystemArchitecture.module.css';
-import { MarkerType } from "@xyflow/react";
 import dnsIcon from '../../assets/icons/dns.png';
 import reactIcon from '../../assets/icons/react.svg';
 import vueIcon from '../../assets/icons/Vue.png';

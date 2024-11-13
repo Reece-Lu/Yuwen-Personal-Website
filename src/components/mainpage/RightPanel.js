@@ -17,8 +17,10 @@ function RightPanel() {
     const calendarContainerRef = useRef(null);
 
     useEffect(() => {
+        const currentContainer = calendarContainerRef.current;
+
         const scrollToRight = () => {
-            const scrollElement = calendarContainerRef.current.querySelector('.react-activity-calendar__scroll-container');
+            const scrollElement = currentContainer.querySelector('.react-activity-calendar__scroll-container');
             if (scrollElement) {
                 scrollElement.scrollLeft = scrollElement.scrollWidth;
             }
@@ -28,13 +30,13 @@ function RightPanel() {
             scrollToRight();
         });
 
-        if (calendarContainerRef.current) {
-            observer.observe(calendarContainerRef.current, { childList: true, subtree: true });
+        if (currentContainer) {
+            observer.observe(currentContainer, { childList: true, subtree: true });
             scrollToRight();  // Ensure we scroll after initial load
         }
 
         return () => {
-            if (calendarContainerRef.current) {
+            if (currentContainer) {
                 observer.disconnect();
             }
         };

@@ -15,7 +15,7 @@ const FlightSelector = ({ flightsData, onSelectionChange, reset, labels }) => {
     const [selectedDepartureSecondLeg, setSelectedDepartureSecondLeg] = useState(null);
     const [selectedArrivalSecondLeg, setSelectedArrivalSecondLeg] = useState(null);
     const [selectedCabinSecondLeg, setSelectedCabinSecondLeg] = useState(null);
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
 
     const cabinOptions = [
         { label: t('first_class'), value: '头等' },

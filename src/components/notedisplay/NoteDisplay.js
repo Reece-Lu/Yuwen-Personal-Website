@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { scroll } from 'framer-motion/dom';
 import { fetchAllNotes, getNoteImage } from '../../api/NoteDisplayApi';
 import config from '../../config/config.json';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import Typography from '@mui/joy/Typography';
 
 const theme = createTheme({

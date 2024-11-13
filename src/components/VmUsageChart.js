@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Chart } from 'react-charts';
 import { fetchLast3DaysVmStatus } from '../api/VmStatusApi';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme } from '@mui/material/styles';
 import Typography from '@mui/joy/Typography';
 
 const theme = createTheme({

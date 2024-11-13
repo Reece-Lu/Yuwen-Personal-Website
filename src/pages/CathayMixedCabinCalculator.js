@@ -25,7 +25,7 @@ const CathayMixedCabinCalculator = () => {
     const [flightList2, setFlightList2] = useState([]);
     const [error, setError] = useState(false);
     const [totalPoints, setTotalPoints] = useState(null);
-    const [ratios, setRatios] = useState({});
+    const [ setRatios] = useState({});
     const [reset, setReset] = useState(false);
     const [showResultForm, setShowResultForm] = useState(false);
     const { t } = useTranslation();
