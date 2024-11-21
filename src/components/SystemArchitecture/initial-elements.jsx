@@ -7,6 +7,7 @@ import fastapiIcon from '../../assets/icons/FastAPI.png';
 import mysqlIcon from '../../assets/icons/MySQL.png';
 import springIcon from '../../assets/Spring.svg';
 import githubIcon from '../../assets/github.png';
+import { MarkerType } from "@xyflow/react";
 
 export const initialNodes = [
     {
