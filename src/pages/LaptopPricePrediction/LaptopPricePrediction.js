@@ -1,14 +1,15 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Box, Typography, Grid } from '@mui/material';
-import CodeEditor from "../components/CodeEditor";
+import CodeEditor from "../../components/CodeEditor";
 import Container from "@mui/material/Container";
-import CsvTable from "../components/CsvTable";
+import CsvTable from "../../components/CsvTable";
+import ProjectFlowChart from "./ProjectFlowChart";
 
 
 const theme = createTheme({
     typography: {
-        fontFamily: 'Nunito, Arial, sans-serif',
+        fontFamily: 'Avenir, Nunito, Arial, sans-serif',
     },
 });
 
@@ -54,11 +55,12 @@ const LaptopPricePrediction = () => {
                         <Typography variant="body1" paragraph>
                             This section covers the process of data crawling and cleaning using Scrapy, as well as the implementation of prediction models using machine learning algorithms.
                         </Typography>
+                        <ProjectFlowChart />
                     </Grid>
 
                     <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <Typography variant="h5" gutterBottom fontWeight="bold">
-                            Section 1 Objectives
+                        <Typography variant="h5" gutterBottom fontWeight="bold" sx={{ color: '#9D42AD' }}>
+                            Objectives
                         </Typography>
                         <Typography variant="body1" paragraph>
                             This project, developed as part of the <b>CSC503 Data Mining course at the University of Victoria</b>, aims to create an <b>automated, machine learning-based price prediction model</b> tailored for the rapidly expanding <b>second-hand laptop market</b>.
@@ -70,8 +72,8 @@ const LaptopPricePrediction = () => {
                     </Grid>
 
                     <Grid item xs={12} sx={{ display: 'flex', flexDirection: 'column' }}>
-                        <Typography variant="h5" gutterBottom fontWeight="bold">
-                            Section 2 Data Collection
+                        <Typography variant="h5" gutterBottom fontWeight="bold" sx={{ color: '#9D42AD' }}>
+                            Data Collection
                         </Typography>
                         {/* Why Smartprix.com Section */}
                         <Box sx={{ mb: 3 }}>

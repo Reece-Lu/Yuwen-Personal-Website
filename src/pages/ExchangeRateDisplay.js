@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
     typography: {
-        fontFamily: 'Nunito, Arial, sans-serif',
+        fontFamily: 'Avenir, Nunito, Arial, sans-serif',
         fontSize: 14,
     },
 });
@@ -80,7 +80,9 @@ const ExchangeRateDisplay = () => {
                         </div>
                     </Grid>
                     <Typography variant="body1" paragraph style={{ marginBottom: '1rem' }}>
-                        Latest CNY to CAD Exchange Rate: {latestCnyCadRate ? <strong>{latestCnyCadRate.sellRate}</strong> : 'Loading...'} <span>(as of {latestCnyCadRate ? new Date(latestCnyCadRate.timestamp).toLocaleString() : ''})</span>
+                        Latest CNY to CAD Exchange Rate: {latestCnyCadRate ? (
+                        <strong style={{ color: 'red' }}>{latestCnyCadRate.sellRate}</strong>
+                    ) : 'Loading...'} <span>(as of {latestCnyCadRate ? new Date(latestCnyCadRate.timestamp).toLocaleString() : ''})</span>
                     </Typography>
                     <Grid item xs={12} md={8}>
                         <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -88,7 +90,7 @@ const ExchangeRateDisplay = () => {
                         </div>
                     </Grid>
                     <Typography variant="body1" paragraph>
-                        Latest CNY to USD Exchange Rate: {latestCnyUsdRate ? <strong>{latestCnyUsdRate.sellRate}</strong> : 'Loading...'} <span>(as of {latestCnyUsdRate ? new Date(latestCnyUsdRate.timestamp).toLocaleString() : ''})</span>
+                        Latest CNY to USD Exchange Rate: {latestCnyUsdRate ? <strong style={{ color: 'red' }}>{latestCnyUsdRate.sellRate}</strong> : 'Loading...'} <span>(as of {latestCnyUsdRate ? new Date(latestCnyUsdRate.timestamp).toLocaleString() : ''})</span>
                     </Typography>
                 </Grid>
             </div>

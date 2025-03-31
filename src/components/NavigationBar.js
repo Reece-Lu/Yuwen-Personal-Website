@@ -23,8 +23,6 @@ function NavigationBar() {
                 return '#37B7C3'; // 首页
             case '/laptoppriceprediction':
                 return '#9D42AD'; // Laptop Price Prediction 页面
-            case '/websiteinfo':
-                return '#D0C0F7'; // Project APIs 页面
             case '/cathaypacific':
                 return '#005D63'; // Cathay Mixed Cabin Calculator 页面
             case '/exchangerate':

@@ -9,6 +9,14 @@ import FlightResultForm from '../components/FlightResultForm';
 import i18n from '../i18n';
 import Button from "@mui/material/Button";
 import {useTranslation} from "react-i18next";
+import {createTheme} from "@mui/material/styles";
+import {ThemeProvider} from "@emotion/react";
+
+const theme = createTheme({
+    typography: {
+        fontFamily: 'Avenir, Nunito, Arial, sans-serif',
+    },
+});
 
 const CathayMixedCabinCalculator = () => {
     const [flightSelections, setFlightSelections] = useState({
@@ -149,6 +157,7 @@ const CathayMixedCabinCalculator = () => {
     };
 
     return (
+        <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
             <Box sx={{ p: 3 }}>
                 <Typography variant="h4" gutterBottom>{t('title')}</Typography>
@@ -232,6 +241,7 @@ const CathayMixedCabinCalculator = () => {
             </Typography>
 
         </Container>
+        </ThemeProvider>
     );
 };
 
