@@ -1,12 +1,13 @@
-/* General Reset */
-* {
+/* Scope all MovieDux styles to prevent global style leakage */
+.moviedux-page,
+.moviedux-page * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* Typography */
-body {
+.moviedux-page {
   font-family: 'Roboto', sans-serif;
   color: #fff;
   background-color: #121212;
@@ -166,23 +167,23 @@ body {
   font-weight: 300;
 }
 
-nav {
+.moviedux-page nav {
   margin-top: 50px;
   margin-bottom: 25px;
 }
 
-ul {
+.moviedux-page ul {
   list-style-type: none;
   margin: 0;  
   display: flex;
   justify-content: center;
 }
 
-ul li {
+.moviedux-page ul li {
   padding: 10px;
 }
 
-nav a {
+.moviedux-page nav a {
   color:black;
   text-decoration: none;
   padding: 10px 20px;
@@ -191,7 +192,7 @@ nav a {
   box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .5);
 }
 
-nav a:hover {
+.moviedux-page nav a:hover {
   background-color: #E7F2F1;
   color: black;
 }
