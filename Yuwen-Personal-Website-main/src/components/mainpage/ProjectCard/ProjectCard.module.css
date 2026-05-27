@@ -1,0 +1,19 @@
+.card {
+    width: 90%;
+    margin: 15px auto;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+}
+
+
+.card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.cardContentBox {
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

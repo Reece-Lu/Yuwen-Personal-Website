@@ -1,0 +1,42 @@
+[
+  {
+    "category": "超短途",
+    "range": 750,
+    "economy": 7500,
+    "premium_economy": 11000,
+    "business": 16000,
+    "first_class": null
+  },
+  {
+    "category": "短途",
+    "range": 2750,
+    "economy": 10000,
+    "premium_economy": 20000,
+    "business": 28000,
+    "first_class": 43000
+  },
+  {
+    "category": "中途",
+    "range": 5000,
+    "economy": 20000,
+    "premium_economy": 38000,
+    "business": 58000,
+    "first_class": 90000
+  },
+  {
+    "category": "長途",
+    "range": 7500,
+    "economy": 27000,
+    "premium_economy": 50000,
+    "business": 84000,
+    "first_class": 125000
+  },
+  {
+    "category": "超長途",
+    "range": 20000,
+    "economy": 38000,
+    "premium_economy": 75000,
+    "business": 110000,
+    "first_class": 160000
+  }
+]

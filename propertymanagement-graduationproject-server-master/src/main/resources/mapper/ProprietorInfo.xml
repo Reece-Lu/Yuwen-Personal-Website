@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.reecelu.pmsserver.dao.ProprietorInfoDao">
+    <resultMap id="SearchProprietorInfoList" type="com.reecelu.pmsserver.entity.Proprietor">
+        <result property="userName" column="username"/>
+        <result property="weChat" column="wechat"/>
+        <result property="weChat" column="wechat"/>
+        <result property="roleInFamily" column="role_in_family"/>
+    </resultMap>
+    <select id="SearchProprietorInfo" resultMap="SearchProprietorInfoList">
+        select * from proprietor where id = #{id};
+    </select>
+
+    <update id="updateName">
+        update proprietor  set name = #{value} where id=#{id};
+    </update>
+
+    <update id="updateTitle">
+        update proprietor  set title = #{value} where id=#{id};
+    </update>
+
+    <update id="updatePhone">
+        update proprietor  set phone = #{value} where id=#{id};
+    </update>
+
+    <update id="updateEmail">
+        update proprietor  set email = #{value} where id=#{id};
+    </update>
+
+    <update id="updateWeChat">
+        update proprietor  set wechat = #{value} where id=#{id};
+    </update>
+
+    <update id="updateBuilding">
+        update proprietor  set building = #{value} where id=#{id};
+    </update>
+
+    <update id="updateDoor">
+        update proprietor  set door = #{value} where id=#{id};
+    </update>
+
+    <update id="updateEoleInFamily">
+        update proprietor  set role_in_family = #{value} where id=#{id};
+    </update>
+
+    <select id="PropertySearchAll" resultMap="SearchProprietorInfoList">
+        select * from proprietor where name like concat('%',#{name},'%') limit #{pageNum},#{pageSize};
+    </select>
+
+    <select id="countAllProperty" resultType="java.lang.Integer">
+        select count(*) from proprietor where name like concat('%',#{name},'%');
+    </select>
+
+</mapper>

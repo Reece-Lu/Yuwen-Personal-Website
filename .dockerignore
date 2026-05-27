@@ -1,0 +1,13 @@
+.DS_Store
+.git
+.idea
+node_modules
+**/node_modules
+**/build
+**/dist
+**/target
+**/.vscode
+**/.gradle
+*.log
+data/
+.env

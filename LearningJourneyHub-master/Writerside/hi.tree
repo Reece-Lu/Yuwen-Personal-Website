@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="hi"
+                 name="Yuwen Learning Journey Hub"
+                 start-page="Default-topic.md">
+
+    <toc-element topic="Deployment-Guide.md"/>
+    <toc-element topic="Lambda-With-Python.md"/>
+    <toc-element topic="React-Learning.md"/>
+    <toc-element topic="Issues-in-React-Development.md"/>
+    <toc-element topic="How-to-deploy-meetyuwen-com.md"/>
+    <toc-element topic="Markdown.md"/>
+    <toc-element topic="Default-topic.md"/>
+    <toc-element topic="The-Linux-Commands-Yuwen-Always-Looks-Up.md"/>
+</instance-profile>

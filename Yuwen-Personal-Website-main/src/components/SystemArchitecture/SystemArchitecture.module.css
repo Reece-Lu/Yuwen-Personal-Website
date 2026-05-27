@@ -1,0 +1,25 @@
+.architectureRoot {
+    width: 100%;
+}
+
+.architectureFlow {
+    width: 100%;
+    max-width: 1680px;
+    aspect-ratio: 2.85 / 1;
+    min-height: 380px;
+    max-height: 640px;
+    margin: 0 auto 10px;
+    overflow: hidden;
+}
+
+.node-label {
+    font-size: 20px;
+    font-family: 'Nunito', Arial, sans-serif;
+    text-align: left;
+    font-weight: bold;
+    color: black;
+}
+
+.port-label {
+    color: black;
+}

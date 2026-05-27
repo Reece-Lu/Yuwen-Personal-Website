@@ -1,0 +1,8 @@
+__pycache__
+**/__pycache__
+*.pyc
+.git
+.idea
+.DS_Store
+*.log
+**/.data/
