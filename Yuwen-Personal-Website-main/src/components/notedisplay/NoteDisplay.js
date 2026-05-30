@@ -11,6 +11,18 @@ const theme = createTheme({
     },
 });
 
+const getNoteLink = (noteUrl) => {
+    if (!noteUrl) {
+        return '#';
+    }
+
+    if (/^https?:\/\//i.test(noteUrl)) {
+        return noteUrl;
+    }
+
+    return `${config.learningJourneyHubRoot}${noteUrl}`;
+};
+
 function NoteDisplay() {
     const [notes, setNotes] = useState([]);
 
@@ -22,7 +34,7 @@ function NoteDisplay() {
                     id: note.noteid,
                     name: note.notename,
                     imageUrl: getNoteImage(note.notecovername),
-                    link: `${config.learningJourneyHubRoot}${note.noteurl}`
+                    link: getNoteLink(note.noteurl)
                 }));
                 setNotes(formattedNotes);
             } catch (error) {
