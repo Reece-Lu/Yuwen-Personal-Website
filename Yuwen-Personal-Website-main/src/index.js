@@ -2,6 +2,7 @@ import * as ReactDOMClient from 'react-dom/client';
 import React from 'react';
 import App from './App';
 import './assets/fonts/Nunito/fonts.css';
+import './global.css';
 
 const root = ReactDOMClient.createRoot(document.getElementById("root"));
 

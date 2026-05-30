@@ -1,4 +1,27 @@
 const projectDataList = [{
+    "title": "RunInsight",
+    "project": "RunInsight",
+    "category": "iOS App · SwiftUI · HealthKit · AI Coach",
+    "summary": "A privacy-first iOS running journal that turns HealthKit workouts into routes, performance charts, shoe mileage, and AI coaching notes.",
+    descriptionList: [
+        "1. **Built** a SwiftUI running companion that imports workouts from **HealthKit** into a local **SwiftData** journal.",
+        "2. **Designed** the core experience: route history, pace and heart-rate breakdowns, **7+ performance metrics**, and automatic per-shoe mileage tracking.",
+        "3. **Integrated** **OpenAI Responses API** and **Alibaba DashScope** so users can analyze a selected run and ask follow-up questions.",
+        "4. **Protected privacy by design**: the AI coach receives only summary stats, while GPS samples stay on-device and API keys live in **iOS Keychain**.",
+        "5. **Localized** the product in **Simplified Chinese and English**."
+    ],
+    "downloadFiles": [],
+    "GitHubLink": "https://github.com/Reece-Lu/RunInsight",
+    "pageLink": "/runinsight",
+    "icons": ["SwiftUI", "SwiftData", "HealthKit", "MapKit", "OpenAI"],
+    "partners": ["Yuwen Lu"],
+    "time": "Apr 2026 - May 2026",
+    "exploreButton": {
+        "label": "Open RunInsight",
+        "link": "/runinsight"
+    }
+},
+    {
     "title": "Laptop Price Prediction",
     "project": "Laptop Price Prediction",
     "category": "Course Project for CSC503",

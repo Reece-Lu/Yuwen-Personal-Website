@@ -27,6 +27,8 @@ function NavigationBar() {
                 return '#005D63'; // Cathay Mixed Cabin Calculator 页面
             case '/exchangerate':
                 return '#375763'; // Exchange Rate Display 页面
+            case '/runinsight':
+                return '#0066D6'; // RunInsight 页面
             default:
                 return '#3F51B5'; // 默认颜色
         }
