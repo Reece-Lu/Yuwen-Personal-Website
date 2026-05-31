@@ -11,3 +11,8 @@ qiskit-algorithms==0.3.0
 qiskit-machine-learning==0.7.2
 faker==28.4.1
 pypinyin==0.53.0
+duckdb==1.1.3
+yfinance==0.2.65
+curl_cffi==0.7.4
+pandas==2.2.3
+apscheduler==3.10.4

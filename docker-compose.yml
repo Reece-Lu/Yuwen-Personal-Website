@@ -18,6 +18,7 @@ services:
       - personal-data-service
       - pms-server
       - fastapi-service
+      - streamlit-service
     networks:
       - meetyuwen
     restart: unless-stopped
@@ -86,6 +87,25 @@ services:
       - "8000"
     environment:
       ROOT_PATH: /api
+      QUANT_DUCKDB_PATH: /data/quant/quant_pilot.duckdb
+    volumes:
+      - ${QUANT_DATA_HOST_DIR:-./data/quant}:/data/quant
+    networks:
+      - meetyuwen
+    restart: unless-stopped
+
+  streamlit-service:
+    build:
+      context: ./streamlit-service
+    container_name: meetyuwen-streamlit
+    expose:
+      - "8501"
+    environment:
+      QUANT_DUCKDB_PATH: /data/quant/quant_pilot.duckdb
+    volumes:
+      - ${QUANT_DATA_HOST_DIR:-./data/quant}:/data/quant:ro
+    depends_on:
+      - fastapi-service
     networks:
       - meetyuwen
     restart: unless-stopped

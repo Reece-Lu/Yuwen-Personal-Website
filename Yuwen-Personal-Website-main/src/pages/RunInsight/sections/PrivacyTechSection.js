@@ -122,7 +122,7 @@ export default function PrivacyTechSection() {
                         <motion.a
                             whileHover={{ scale: 1.04, y: -2 }}
                             whileTap={{ scale: 0.97 }}
-                            href="https://github.com/Reece-Lu"
+                            href="https://github.com/Reece-Lu/RunInsight"
                             target="_blank"
                             rel="noreferrer"
                             style={{

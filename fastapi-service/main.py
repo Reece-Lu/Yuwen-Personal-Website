@@ -6,10 +6,13 @@ appending it to ``MODULE_ROUTERS`` below.
 """
 
 import os
+from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.modules.quant.router import router as quant_router
+from app.modules.quant.scheduler import start_scheduler, stop_scheduler
 from app.modules.quantum.router import router as quantum_router
 from app.modules.users.router import router as users_router
 
@@ -17,7 +20,17 @@ from app.modules.users.router import router as users_router
 MODULE_ROUTERS = [
     quantum_router,
     users_router,
+    quant_router,
 ]
+
+
+@asynccontextmanager
+async def lifespan(_: FastAPI):
+    start_scheduler()
+    try:
+        yield
+    finally:
+        stop_scheduler()
 
 # OpenAPI tag descriptions — shown as group headers in Swagger UI.
 TAGS_METADATA = [
@@ -31,6 +44,13 @@ TAGS_METADATA = [
     {
         "name": "Users",
         "description": "Fake user data generators (Chinese-style names + pinyin).",
+    },
+    {
+        "name": "Quant",
+        "description": (
+            "Nasdaq-100 ETF (QQQ) daily K-line and SMA 50/100/200 monitor. "
+            "Prices are refreshed daily from yfinance via APScheduler and stored in DuckDB."
+        ),
     },
     {
         "name": "Meta",
@@ -49,8 +69,9 @@ app = FastAPI(
         "Current modules:\n"
         "* **Quantum ML** — Classic CNN vs hybrid Quantum NN image classification.\n"
         "* **Users** — Random Chinese-style user data generator.\n"
+        "* **Quant** — Nasdaq-100 (QQQ) K-line + SMA 50/100/200 with daily yfinance refresh.\n"
     ),
-    version="0.2.0",
+    version="0.3.0",
     contact={"name": "Yuwen Lu", "url": "https://www.meetyuwen.com"},
     license_info={"name": "MIT"},
     openapi_tags=TAGS_METADATA,
@@ -59,6 +80,7 @@ app = FastAPI(
     # at http://localhost/api/docs and at https://www.meetyuwen.com/api/docs
     # without any hardcoded hostnames.
     root_path=ROOT_PATH,
+    lifespan=lifespan,
 )
 
 app.add_middleware(

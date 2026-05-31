@@ -29,6 +29,8 @@ function NavigationBar() {
                 return '#375763'; // Exchange Rate Display 页面
             case '/runinsight':
                 return '#0066D6'; // RunInsight 页面
+            case '/quantmonitor':
+                return '#1f9d72'; // Nasdaq-100 SMA Monitor 页面
             default:
                 return '#3F51B5'; // 默认颜色
         }

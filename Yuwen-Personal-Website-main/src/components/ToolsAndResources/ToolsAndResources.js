@@ -4,6 +4,7 @@ import Typography from "@mui/joy/Typography";
 import Box from "@mui/material/Box";
 import CathayPacific from '../../assets/CathayPacific.jpg';
 import ExchangeRate from '../../assets/Currency_Exchange_Rate.png';
+import QQQSmaMonitor from '../../assets/QQQSmaMonitor.svg';
 import CustomToolCard from "../CustomToolCard";
 import Grid from "@mui/material/Grid";
 
@@ -39,6 +40,14 @@ function ToolsAndResources() {
                         description="Get real-time exchange rates for CNY, USD, and CAD with easy conversions."
                         image={ExchangeRate}
                         link="/exchangerate"
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6} md={4}>
+                    <CustomToolCard
+                        title="Nasdaq-100 SMA Monitor"
+                        description="Track QQQ daily candles against the 50, 100, and 200-day moving averages."
+                        image={QQQSmaMonitor}
+                        link="/quantmonitor"
                     />
                 </Grid>
             </Grid>

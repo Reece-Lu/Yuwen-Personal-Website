@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">QQQ ETF retro mountain chart card artwork</title>
+  <desc id="desc">A retro outdoor-inspired QQQ ETF card image with layered sunset bands, a price-line mountain ridge, and centered QQQ ETF text.</desc>
+  <defs>
+    <clipPath id="cardClip">
+      <rect x="0" y="0" width="1200" height="500" rx="18" ry="18"/>
+    </clipPath>
+    <filter id="softGrain" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="3" seed="41"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.055"/>
+      </feComponentTransfer>
+      <feBlend mode="soft-light" in2="SourceGraphic"/>
+    </filter>
+    <linearGradient id="blackField" x1="0" y1="170" x2="0" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#171312"/>
+      <stop offset="1" stop-color="#070606"/>
+    </linearGradient>
+  </defs>
+  <g clip-path="url(#cardClip)">
+    <rect width="1200" height="500" fill="#09090c"/>
+    <path d="M0 0H1200V86
+      C1085 78 1004 89 900 80
+      C786 70 680 87 574 77
+      C468 67 370 85 266 76
+      C158 67 74 82 0 72Z" fill="#51106b"/>
+    <path d="M0 78
+      C112 86 190 70 304 83
+      C422 96 506 71 622 86
+      C746 102 836 75 954 88
+      C1054 99 1128 82 1200 90V155
+      C1098 148 1016 161 916 151
+      C782 137 684 164 552 149
+      C424 135 326 159 206 145
+      C126 136 56 150 0 141Z" fill="#0860bd"/>
+    <path d="M0 134
+      C100 146 182 119 304 139
+      C420 158 512 122 632 142
+      C748 161 842 127 956 145
+      C1058 161 1126 143 1200 151V242
+      C1082 232 1010 244 894 229
+      C774 212 686 245 558 226
+      C420 205 324 239 200 220
+      C118 208 54 226 0 218Z" fill="#092866"/>
+    <path d="M0 206
+      C104 190 196 216 302 199
+      C420 180 510 213 628 193
+      C744 173 832 204 942 186
+      C1042 170 1124 194 1200 181V232
+      C1090 248 1004 225 894 242
+      C776 260 686 227 558 248
+      C430 269 338 233 214 253
+      C118 268 54 246 0 259Z" fill="#f05a29"/>
+    <path d="M0 243
+      C110 256 190 230 304 250
+      C424 270 514 234 638 254
+      C760 274 856 238 970 258
+      C1062 274 1134 256 1200 266V337
+      C1092 333 1012 344 900 328
+      C790 312 686 342 566 322
+      C444 302 342 333 218 312
+      C126 296 58 310 0 300Z" fill="#07459a"/>
+    <path d="M0 292
+      L42 313 L74 290 L112 338 L158 365 L206 331 L244 290 L286 318
+      L326 272 L374 291 L420 246 L462 274 L506 231 L552 260 L594 208
+      L642 237 L684 182 L734 207 L778 146 L830 176 L870 105 L912 151
+      L948 71 L982 154 L1016 136 L1056 205 L1094 183 L1134 210 L1200 188
+      L1200 500 L0 500Z" fill="url(#blackField)"/>
+    <path d="M0 292
+      L42 313 L74 290 L112 338 L158 365 L206 331 L244 290 L286 318
+      L326 272 L374 291 L420 246 L462 274 L506 231 L552 260 L594 208
+      L642 237 L684 182 L734 207 L778 146 L830 176 L870 105 L912 151
+      L948 71 L982 154 L1016 136 L1056 205 L1094 183 L1134 210 L1200 188"
+          fill="none" stroke="#f8f1e6" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
+    <path d="M0 292
+      L42 313 L74 290 L112 338 L158 365 L206 331 L244 290 L286 318
+      L326 272 L374 291 L420 246 L462 274 L506 231 L552 260 L594 208
+      L642 237 L684 182 L734 207 L778 146 L830 176 L870 105 L912 151
+      L948 71 L982 154 L1016 136 L1056 205 L1094 183 L1134 210 L1200 188"
+          fill="none" stroke="#2b2521" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity="0.35"/>
+    <text x="600" y="407" text-anchor="middle"
+          font-family="Georgia, 'Times New Roman', serif"
+          font-size="88" font-weight="900" letter-spacing="3"
+          fill="#fbf7ef">QQQ ETF</text>
+    <text x="600" y="446" text-anchor="middle"
+          font-family="Avenir Next, Inter, Helvetica, Arial, sans-serif"
+          font-size="24" font-weight="700" letter-spacing="8"
+          fill="#c9d3dc" opacity="0.82">NASDAQ-100</text>
+    <rect width="1200" height="500" fill="transparent" filter="url(#softGrain)"/>
+  </g>
+</svg>

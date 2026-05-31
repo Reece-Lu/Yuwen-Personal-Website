@@ -10,6 +10,7 @@ import ExchangeRateDisplay from "./pages/ExchangeRateDisplay";
 import WebsiteInfo from "./pages/WebsiteInfo";
 import MovieDux from "./pages/MovieDux/MovieDux";
 import RunInsight from "./pages/RunInsight/RunInsight";
+import QuantMonitor from "./pages/QuantMonitor/QuantMonitor";
 
 function App() {
     return (
@@ -24,6 +25,7 @@ function App() {
                 <Route path='/laptoppriceprediction' element={<LaptopPricePrediction />} />
                 <Route path='/moviedux' element={<MovieDux />} />
                 <Route path='/runinsight' element={<RunInsight />} />
+                <Route path='/quantmonitor' element={<QuantMonitor />} />
             </Routes>
             <Footer />
         </BrowserRouter>

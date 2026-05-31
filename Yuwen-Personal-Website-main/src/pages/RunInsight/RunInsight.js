@@ -56,7 +56,7 @@ function RunInsightContent() {
                         <Box className={styles.ctas}>
                             <motion.a
                                 whileTap={{ scale: 0.97 }}
-                                href="https://github.com/Reece-Lu"
+                                href="https://github.com/Reece-Lu/RunInsight"
                                 target="_blank" rel="noreferrer"
                                 className={styles.btnPrimary}
                             >
