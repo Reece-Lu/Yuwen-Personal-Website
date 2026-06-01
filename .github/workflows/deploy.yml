@@ -1,0 +1,46 @@
+name: Deploy to server
+
+on:
+  push:
+    branches:
+      - master
+
+concurrency:
+  group: meetyuwen-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy over SSH
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          SERVER_PORT: ${{ secrets.SERVER_PORT }}
+          SERVER_SSH_KEY: ${{ secrets.SERVER_SSH_KEY }}
+        run: |
+          set -euo pipefail
+
+          mkdir -p ~/.ssh
+          chmod 700 ~/.ssh
+          printf '%s\n' "$SERVER_SSH_KEY" > ~/.ssh/meetyuwen_actions
+          chmod 600 ~/.ssh/meetyuwen_actions
+
+          ssh-keyscan -p "$SERVER_PORT" "$SERVER_HOST" >> ~/.ssh/known_hosts
+
+          ssh -i ~/.ssh/meetyuwen_actions -p "$SERVER_PORT" "$SERVER_USER@$SERVER_HOST" <<'EOF'
+            set -euo pipefail
+
+            cd /opt/meetyuwen
+
+            git fetch origin master
+            git reset --hard origin/master
+
+            docker compose up -d --build
+            docker compose ps
+
+            nginx -t
+            systemctl reload nginx
+          EOF

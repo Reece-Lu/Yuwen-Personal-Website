@@ -1,5 +1,7 @@
 package com.yuwenl.personalwebsite.service;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.FileStore;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
@@ -21,6 +23,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class VmStatusService {
+    private static final Path LINUX_MEMINFO_PATH = Path.of("/proc/meminfo");
+    private static final long KIBIBYTE = 1024L;
 
     @Autowired
     private VmStatusRepository vmStatusRepository;
@@ -37,7 +41,7 @@ public class VmStatusService {
     }
 
     public void recordVmStatus() {
-        long memoryUsed = osBean.getTotalMemorySize() - osBean.getFreeMemorySize();
+        long memoryUsed = getUsedMemory();
         double cpuUsage = osBean.getCpuLoad() * 100;
         double diskUsed = getDiskUsed();
 
@@ -103,7 +107,58 @@ public class VmStatusService {
     }
 
     private long getTotalMemory() {
+        MemorySnapshot memorySnapshot = getLinuxMemorySnapshot();
+        if (memorySnapshot != null) {
+            return memorySnapshot.totalMemory();
+        }
+
         return osBean.getTotalMemorySize();
+    }
+
+    private long getUsedMemory() {
+        MemorySnapshot memorySnapshot = getLinuxMemorySnapshot();
+        if (memorySnapshot != null) {
+            return memorySnapshot.usedMemory();
+        }
+
+        return osBean.getTotalMemorySize() - osBean.getFreeMemorySize();
+    }
+
+    private MemorySnapshot getLinuxMemorySnapshot() {
+        try {
+            if (!Files.isReadable(LINUX_MEMINFO_PATH)) {
+                return null;
+            }
+
+            long totalMemory = -1;
+            long availableMemory = -1;
+
+            for (String line : Files.readAllLines(LINUX_MEMINFO_PATH, StandardCharsets.UTF_8)) {
+                if (line.startsWith("MemTotal:")) {
+                    totalMemory = parseMeminfoBytes(line);
+                } else if (line.startsWith("MemAvailable:")) {
+                    availableMemory = parseMeminfoBytes(line);
+                }
+
+                if (totalMemory > 0 && availableMemory >= 0) {
+                    long usedMemory = Math.max(0, totalMemory - availableMemory);
+                    return new MemorySnapshot(totalMemory, usedMemory);
+                }
+            }
+        } catch (IOException | NumberFormatException e) {
+            return null;
+        }
+
+        return null;
+    }
+
+    private long parseMeminfoBytes(String line) {
+        String[] parts = line.trim().split("\\s+");
+        if (parts.length < 2) {
+            throw new NumberFormatException("Unable to parse memory value from: " + line);
+        }
+
+        return Long.parseLong(parts[1]) * KIBIBYTE;
     }
 
     public List<DailyPerformance> getLast60DaysPerformanceScores() {
@@ -123,5 +178,8 @@ public class VmStatusService {
             status.setMemoryUsagePercentage(memoryUsagePercentage);
             return status;
         }).collect(Collectors.toList());
+    }
+
+    private record MemorySnapshot(long totalMemory, long usedMemory) {
     }
 }
