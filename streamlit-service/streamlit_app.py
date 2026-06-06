@@ -28,6 +28,14 @@ SMA_COLORS = {
     200: "#2368b8",
 }
 
+# SMA used for the forward projection. This window IS one of SMA_WINDOWS
+# (already drawn as a solid line from DuckDB), so the projection just extends
+# that existing line into the future with a dashed segment.
+PROJECTION_WINDOW = 50
+PROJECTION_COLOR = "#8849c4"  # purple — distinct from the solid SMA50 green
+PROJECTION_MAX_HORIZON = 15
+PROJECTION_DEFAULT_HORIZON = 5
+
 
 def _query_lang() -> str:
     """Read `?lang=` from Streamlit's query params with version compatibility."""
@@ -116,7 +124,53 @@ def cached_chart_data(start: date, end: date) -> pd.DataFrame:
     )
 
 
-def build_figure(data: pd.DataFrame) -> go.Figure:
+def compute_projection(series: list[float], horizon: int) -> list[float]:
+    """Approximate SMA(PROJECTION_WINDOW) for the next `horizon` days
+    WITHOUT using any future data.
+
+    Heuristic: tomorrow's SMA ≈ today's SMA(W-1) (drop the oldest value
+    instead of inventing a fictitious tomorrow value). Day +H ≈ SMA(W-H)
+    on the current tail. Requires at least PROJECTION_WINDOW values;
+    entries that would shrink the window below 2 values are dropped.
+
+    `series` should be the same price series the stored SMA uses
+    (adj_close) so the projection lines up with the solid SMA line.
+    """
+
+    if len(series) < PROJECTION_WINDOW:
+        return []
+    tail = list(series[-PROJECTION_WINDOW:])
+    values: list[float] = []
+    for h in range(1, horizon + 1):
+        window_size = PROJECTION_WINDOW - h
+        if window_size < 2:
+            break
+        # Last `window_size` values from today (i.e. drop the oldest h).
+        slice_ = tail[h:]
+        values.append(sum(slice_) / len(slice_))
+    return values
+
+
+def projection_dates(last_date: pd.Timestamp, count: int) -> list[pd.Timestamp]:
+    """Next `count` business days strictly after `last_date`."""
+
+    if count <= 0:
+        return []
+    # +1 because date_range is inclusive of `start` if it's a business day.
+    return list(
+        pd.bdate_range(
+            start=last_date + pd.Timedelta(days=1),
+            periods=count,
+        )
+    )
+
+
+def build_figure(
+    data: pd.DataFrame,
+    projection_xs: list[pd.Timestamp],
+    projection_ys: list[float],
+    t: dict,
+) -> go.Figure:
     chart = data.copy()
     chart["date"] = pd.to_datetime(chart["date"])
 
@@ -135,6 +189,9 @@ def build_figure(data: pd.DataFrame) -> go.Figure:
             decreasing_fillcolor="#cf3d3d",
         )
     )
+
+    # SMA 50 / 100 / 200 — solid lines straight from DuckDB. SMA50 is also
+    # the line the forward projection extends below.
     for window in SMA_WINDOWS:
         column = f"sma{window}"
         if column not in chart.columns:
@@ -147,6 +204,32 @@ def build_figure(data: pd.DataFrame) -> go.Figure:
                 name=f"SMA{window}",
                 line={"color": SMA_COLORS[window], "width": 2},
                 hovertemplate=f"SMA{window}: $%{{y:,.2f}}<extra></extra>",
+            )
+        )
+
+    # Forward projection — anchor with today's actual SMA50 so the dashed
+    # line visually continues the solid SMA50 line.
+    projection_column = f"sma{PROJECTION_WINDOW}"
+    if projection_xs and projection_ys and projection_column in chart.columns:
+        last_actual_idx = chart[projection_column].last_valid_index()
+        if last_actual_idx is not None:
+            anchor_x = [chart["date"].iloc[last_actual_idx]]
+            anchor_y = [float(chart[projection_column].iloc[last_actual_idx])]
+        else:
+            anchor_x, anchor_y = [], []
+
+        fig.add_trace(
+            go.Scatter(
+                x=anchor_x + list(projection_xs),
+                y=anchor_y + list(projection_ys),
+                mode="lines+markers",
+                name=t["projection_legend"].format(window=PROJECTION_WINDOW),
+                line={"color": PROJECTION_COLOR, "width": 2, "dash": "dot"},
+                marker={"color": PROJECTION_COLOR, "size": 6, "symbol": "circle-open"},
+                hovertemplate=(
+                    t["projection_legend"].format(window=PROJECTION_WINDOW)
+                    + ": $%{y:,.2f}<extra></extra>"
+                ),
             )
         )
 
@@ -200,6 +283,48 @@ def render_metrics(data: pd.DataFrame, t: dict) -> None:
         )
 
 
+def render_projection_section(
+    data: pd.DataFrame,
+    projection_xs: list[pd.Timestamp],
+    projection_ys: list[float],
+    t: dict,
+) -> None:
+    st.markdown(f"##### {t['projection_header'].format(window=PROJECTION_WINDOW)}")
+    st.caption(
+        t["projection_caption"].format(
+            window=PROJECTION_WINDOW,
+            window_minus_one=PROJECTION_WINDOW - 1,
+        )
+    )
+
+    if not projection_ys:
+        st.info(t["projection_not_enough_data"].format(window=PROJECTION_WINDOW))
+        return
+
+    # Today's actual SMA50 (from DuckDB) as the baseline for deltas.
+    today_sma = None
+    sma_column = f"sma{PROJECTION_WINDOW}"
+    if sma_column in data.columns:
+        valid = data[sma_column].dropna()
+        if not valid.empty:
+            today_sma = float(valid.iloc[-1])
+
+    cols = st.columns(min(5, len(projection_ys)), gap="small")
+    for i, (when, value) in enumerate(zip(projection_xs, projection_ys)):
+        col = cols[i % len(cols)]
+        label = t["projection_metric_label"].format(days=i + 1, date=when.date().isoformat())
+        if today_sma is None:
+            col.metric(label, format_price(value))
+        else:
+            delta = value - today_sma
+            pct = delta / today_sma * 100
+            col.metric(
+                label,
+                format_price(value),
+                delta=f"{format_percent(pct)} ({format_price_delta(delta)})",
+            )
+
+
 def render_chart_section(t: dict) -> None:
     min_date, max_date = cached_bounds()
     if min_date is None or max_date is None:
@@ -236,8 +361,27 @@ def render_chart_section(t: dict) -> None:
         return
 
     render_metrics(data, t)
-    fig = build_figure(data)
+
+    horizon = st.slider(
+        t["projection_horizon_label"].format(window=PROJECTION_WINDOW),
+        min_value=1,
+        max_value=PROJECTION_MAX_HORIZON,
+        value=PROJECTION_DEFAULT_HORIZON,
+        step=1,
+        help=t["projection_horizon_help"].format(window=PROJECTION_WINDOW),
+    )
+
+    # Project on adj_close so the dashed line lines up with the stored
+    # SMA50 (which is computed from adj_close in the FastAPI module).
+    series_for_projection = data["adj_close"].tolist()
+    projection_ys = compute_projection(series_for_projection, horizon)
+    last_date = pd.to_datetime(data["date"].iloc[-1])
+    projection_xs = projection_dates(last_date, len(projection_ys))
+
+    fig = build_figure(data, projection_xs, projection_ys, t)
     st.plotly_chart(fig, use_container_width=True)
+
+    render_projection_section(data, projection_xs, projection_ys, t)
 
     st.caption(t["caption"])
 

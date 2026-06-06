@@ -23,6 +23,21 @@ STRINGS = {
         "latest_header": "Latest metrics",
         "close_label": "Close",
         "sma_label": "SMA{window}",
+        "projection_header": "SMA{window} forecast (no future data)",
+        "projection_caption": (
+            "Tomorrow's SMA{window} is approximated by today's SMA{window_minus_one} "
+            "(drop the oldest close instead of inventing a future one). Day +H uses "
+            "SMA({window}-H) on the current tail."
+        ),
+        "projection_horizon_label": "Forecast horizon (business days)",
+        "projection_horizon_help": (
+            "How many trading days into the future to extend the SMA{window} projection."
+        ),
+        "projection_legend": "SMA{window} forecast",
+        "projection_metric_label": "+{days} day(s) · {date}",
+        "projection_not_enough_data": (
+            "Need at least {window} closes in the visible window to build a projection."
+        ),
         "caption": (
             "Data is fetched daily from yfinance by the FastAPI service "
             "after the U.S. market close and persisted to DuckDB. "
@@ -44,6 +59,21 @@ STRINGS = {
         "latest_header": "最新指标",
         "close_label": "收盘价",
         "sma_label": "SMA{window}",
+        "projection_header": "SMA{window} 推测（不使用未来数据）",
+        "projection_caption": (
+            "用今天的 SMA{window_minus_one} 近似明天的 SMA{window}："
+            "去掉最早一天的收盘价，而不是凭空虚构未来一天。"
+            "未来第 H 天用今天的 SMA({window}-H)。"
+        ),
+        "projection_horizon_label": "推测天数（交易日）",
+        "projection_horizon_help": (
+            "把 SMA{window} 的推测线向未来延伸多少个交易日。"
+        ),
+        "projection_legend": "SMA{window} 推测",
+        "projection_metric_label": "+{days} 天 · {date}",
+        "projection_not_enough_data": (
+            "需要可见区间内至少 {window} 个收盘价才能生成推测。"
+        ),
         "caption": (
             "数据每日由 FastAPI 服务在美东收盘后从 yfinance 抓取并写入 DuckDB。"
             "仅供研究使用，不构成投资建议。"
