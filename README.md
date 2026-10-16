@@ -96,6 +96,22 @@ docker compose --profile docs up -d learning-journey-hub
 | `/complex/` | Property management backend API |
 | `/notes/` | Writerside notes site, optional profile |
 
+## Running Services Panel
+
+The Website Info page lists the site containers and key host services. Containers cannot
+see the host, so `server-status/collect_services.py` runs on the host every
+minute and writes `data/server-status/services.json`, which the personal data
+service serves at `/springapp/serverstatus/services`. Only services listed in
+the script are published.
+
+Install the timer once on the server:
+
+```bash
+cp server-status/meetyuwen-services.{service,timer} /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable --now meetyuwen-services.timer
+```
+
 ## Useful Commands
 
 ```bash
