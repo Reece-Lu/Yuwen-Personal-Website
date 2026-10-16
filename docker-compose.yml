@@ -57,6 +57,7 @@ services:
     volumes:
       - ${NOTESCOVER_HOST_DIR:-./data/notescover}:/data/notescover
       - ${DOCUMENTS_HOST_DIR:-./data/documents}:/root/documents
+      - ${SERVER_STATUS_HOST_DIR:-./data/server-status}:/data/server-status:ro
     extra_hosts:
       - "host.docker.internal:host-gateway"
     networks:

@@ -2,6 +2,7 @@ import React from "react";
 import Container from '@mui/material/Container';
 import Grid from "@mui/material/Grid";
 import SystemArchitecture from "../components/SystemArchitecture/SystemArchitecture";
+import RunningServices from "../components/RunningServices/RunningServices";
 import ProjectAPIs from "./ProjectAPIsPage/ProjectAPIs";
 
 function WebsiteInfo() {
@@ -10,6 +11,9 @@ function WebsiteInfo() {
           <Grid container spacing={4} alignItems="stretch">
               <Grid item xs={12}>
                   <SystemArchitecture />
+              </Grid>
+              <Grid item xs={12}>
+                  <RunningServices />
               </Grid>
               <Grid item xs={12}>
                   <ProjectAPIs />

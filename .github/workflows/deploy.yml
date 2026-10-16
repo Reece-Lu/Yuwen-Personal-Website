@@ -1,9 +1,9 @@
 name: Deploy to server
 
+# Manual only: run it from the Actions tab ("Run workflow"). Pushes to master
+# no longer deploy automatically.
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
 
 concurrency:
   group: meetyuwen-production

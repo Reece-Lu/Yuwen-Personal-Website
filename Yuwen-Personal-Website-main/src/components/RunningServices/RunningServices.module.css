@@ -1,0 +1,117 @@
+/* Same left inset and top spacing as the other Website Info section titles. */
+.root {
+    margin: 1rem 2rem 0;
+}
+
+.summary {
+    margin: 0 0 1rem;
+    color: #475467;
+    font-size: 0.95rem;
+}
+
+.stale {
+    margin: -0.5rem 0 1rem;
+    color: #b54708;
+    font-size: 0.85rem;
+}
+
+.group + .group {
+    margin-top: 1.25rem;
+}
+
+.groupLabel {
+    margin: 0 0 0.6rem;
+    color: #667085;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+@media (max-width: 600px) {
+    .root {
+        margin: 1rem 0 0;
+    }
+
+    .grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.tile {
+    min-width: 0;
+    padding: 0.85rem 1rem;
+    border: 1px solid #eaecf0;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.tileHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    flex: none;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.running {
+    background: #12b76a;
+    box-shadow: 0 0 0 3px rgba(18, 183, 106, 0.18);
+}
+
+.starting,
+.restarting,
+.stopping,
+.paused {
+    background: #f79009;
+}
+
+.stopped {
+    background: #98a2b3;
+}
+
+.failed {
+    background: #f04438;
+}
+
+.name {
+    min-width: 0;
+    overflow: hidden;
+    color: #101828;
+    font-weight: 800;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.state {
+    margin-left: auto;
+    color: #667085;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.description {
+    margin: 0.35rem 0 0;
+    color: #475467;
+    font-size: 0.85rem;
+    line-height: 1.35;
+}
+
+.details {
+    margin: 0.5rem 0 0;
+    color: #344054;
+    font-size: 0.8rem;
+    font-variant-numeric: tabular-nums;
+}

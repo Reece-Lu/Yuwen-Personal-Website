@@ -35,3 +35,6 @@ app:
   file:
 #    storage-location: /Users/yuwen/Downloads/notescover
     storage-location: /root/notescover
+  server-status:
+    # Written on the host by server-status/collect_services.py, mounted read-only.
+    services-file: /data/server-status/services.json

@@ -1,0 +1,7 @@
+[Unit]
+Description=Snapshot running services for the meetyuwen.com Running Services panel
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 -I /opt/meetyuwen/server-status/collect_services.py
