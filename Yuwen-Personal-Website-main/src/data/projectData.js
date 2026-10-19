@@ -1,6 +1,7 @@
 const projectDataList = [{
     "title": "RunInsight",
     "project": "RunInsight",
+    "hidden": true, // 暂时隐藏，改为 false 即可重新显示
     "category": "iOS App · SwiftUI · HealthKit · AI Coach",
     "summary": "A privacy-first iOS running journal that turns HealthKit workouts into routes, performance charts, shoe mileage, and AI coaching notes.",
     descriptionList: [

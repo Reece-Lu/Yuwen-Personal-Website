@@ -15,7 +15,7 @@ function Projects() {
     return (
         <Box>
             <Typography level="h2" sx={{ marginBottom: '1rem', fontFamily: theme.typography.fontFamily }}>Project Gallery</Typography>
-            {projectDataList.map((data, index) => (
+            {projectDataList.filter((data) => !data.hidden).map((data, index) => (
                 <ProjectCard key={index} projectData={data}/>
             ))}
         </Box>
