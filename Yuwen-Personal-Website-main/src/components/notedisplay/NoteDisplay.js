@@ -90,6 +90,7 @@ function NoteDisplay() {
                     listStyle: 'none',
                     height: '150px',
                     overflowX: 'scroll',
+                    margin: 0,
                     padding: '10px 0',
                     flex: '0 0 90%',
                     // // Hide scrollbar for Chrome, Safari and Opera

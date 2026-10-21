@@ -41,6 +41,11 @@ const FONT = 'Nunito, Arial, sans-serif';
 const PAGE_SIZES = [25, 50, 100];
 const MAX_CHIPS = 4;
 
+// Dropdown lists render in a portal and this page has no MUI theme, so give
+// their options the page font explicitly.
+const LIST_SX = { '& li': { fontFamily: FONT, fontSize: '0.92rem' } };
+const MENU_PROPS = { MenuListProps: { sx: LIST_SX }, PaperProps: { sx: { maxHeight: 360 } } };
+
 const STRINGS = {
     en: {
         locale: 'en-US',
@@ -486,6 +491,7 @@ function NewsMonitor() {
                     value={symbolValue}
                     onChange={(e, option) => updateFilters({ symbol: option ? option.symbol : '' })}
                     isOptionEqualToValue={(a, b) => a.symbol === b.symbol}
+                    ListboxProps={{ sx: { ...LIST_SX, maxHeight: 360 } }}
                     getOptionLabel={(o) => (o.name ? `${ticker(o.symbol)} · ${o.name}` : o.symbol)}
                     renderOption={(props, o) => (
                         <li {...props} key={o.symbol}>
@@ -523,13 +529,14 @@ function NewsMonitor() {
                     label={t.source}
                     value={filters.provider}
                     onChange={(e) => updateFilters({ provider: e.target.value })}
+                    SelectProps={{ MenuProps: MENU_PROPS, renderValue: (value) => value }}
                     sx={{ width: { xs: '100%', sm: 200 } }}
                 >
                     <MenuItem value="">{t.allSources}</MenuItem>
                     {(overview ? overview.providers : []).map((p) => (
                         <MenuItem key={p.name} value={p.name}>
                             {p.name}
-                            <Box component="span" sx={{ color: '#8a96a1', ml: 1, fontSize: '0.8rem' }}>
+                            <Box component="span" sx={{ color: '#8a96a1', ml: 'auto', pl: 2, fontSize: '0.8rem' }}>
                                 {p.count.toLocaleString(locale)}
                             </Box>
                         </MenuItem>
@@ -715,6 +722,7 @@ function NewsMonitor() {
                     onRowsPerPageChange={(e) => updateFilters({ size: Number(e.target.value) })}
                     labelRowsPerPage={t.rowsPerPage}
                     labelDisplayedRows={t.displayedRows}
+                    SelectProps={{ MenuProps: MENU_PROPS }}
                 />
             </Paper>
         </Container>
