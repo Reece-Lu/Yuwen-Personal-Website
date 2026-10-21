@@ -12,6 +12,7 @@ import MovieDux from "./pages/MovieDux/MovieDux";
 // RunInsight 页面暂时隐藏，恢复时取消下面两处注释
 // import RunInsight from "./pages/RunInsight/RunInsight";
 import QuantMonitor from "./pages/QuantMonitor/QuantMonitor";
+import NewsMonitor from "./pages/NewsMonitor/NewsMonitor";
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path='/moviedux' element={<MovieDux />} />
                 {/* <Route path='/runinsight' element={<RunInsight />} /> */}
                 <Route path='/quantmonitor' element={<QuantMonitor />} />
+                <Route path='/newsmonitor' element={<NewsMonitor />} />
             </Routes>
             <Footer />
         </BrowserRouter>

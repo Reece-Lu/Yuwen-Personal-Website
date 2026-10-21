@@ -9,6 +9,11 @@ RUN apt-get update \
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Lightweight extras get their own layer, so adding one doesn't re-download
+# the packages above (torch alone is several GB).
+COPY requirements-extra.txt ./
+RUN pip install --no-cache-dir -r requirements-extra.txt
+
 COPY . .
 
 # Behind the nginx gateway the service is mounted at /api/*, so tell FastAPI

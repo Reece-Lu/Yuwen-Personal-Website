@@ -31,6 +31,8 @@ function NavigationBar() {
                 return '#0066D6'; // RunInsight 页面
             case '/quantmonitor':
                 return '#1f9d72'; // Nasdaq-100 SMA Monitor 页面
+            case '/newsmonitor':
+                return '#1f6f9d'; // Nasdaq-100 新闻页面
             default:
                 return '#3F51B5'; // 默认颜色
         }

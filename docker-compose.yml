@@ -89,8 +89,16 @@ services:
     environment:
       ROOT_PATH: /api
       QUANT_DUCKDB_PATH: /data/quant/quant_pilot.duckdb
+      # News archive written by /opt/tv-news-collector (read-only account).
+      NEWS_MYSQL_HOST: ${NEWS_MYSQL_HOST:-host.docker.internal}
+      NEWS_MYSQL_PORT: ${NEWS_MYSQL_PORT:-3306}
+      NEWS_MYSQL_USER: ${NEWS_MYSQL_USER:-news_reader}
+      NEWS_MYSQL_PASSWORD: ${NEWS_MYSQL_PASSWORD:-}
+      NEWS_MYSQL_DATABASE: ${NEWS_MYSQL_DATABASE:-market_news}
     volumes:
       - ${QUANT_DATA_HOST_DIR:-./data/quant}:/data/quant
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - meetyuwen
     restart: unless-stopped

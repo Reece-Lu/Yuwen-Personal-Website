@@ -11,6 +11,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from app.modules.news.router import router as news_router
 from app.modules.quant.router import router as quant_router
 from app.modules.quant.scheduler import start_scheduler, stop_scheduler
 from app.modules.quantum.router import router as quantum_router
@@ -21,6 +22,7 @@ MODULE_ROUTERS = [
     quantum_router,
     users_router,
     quant_router,
+    news_router,
 ]
 
 
@@ -53,6 +55,13 @@ TAGS_METADATA = [
         ),
     },
     {
+        "name": "News",
+        "description": (
+            "Read-only archive of TradingView news for the Nasdaq-100 members, "
+            "collected twice a day into MySQL. All times are UTC."
+        ),
+    },
+    {
         "name": "Meta",
         "description": "Service metadata and health checks.",
     },
@@ -70,8 +79,9 @@ app = FastAPI(
         "* **Quantum ML** — Classic CNN vs hybrid Quantum NN image classification.\n"
         "* **Users** — Random Chinese-style user data generator.\n"
         "* **Quant** — Nasdaq-100 (QQQ) K-line + SMA 50/100/200 with daily yfinance refresh.\n"
+        "* **News** — TradingView headlines and full text for the Nasdaq-100 members.\n"
     ),
-    version="0.3.0",
+    version="0.4.0",
     contact={"name": "Yuwen Lu", "url": "https://www.meetyuwen.com"},
     license_info={"name": "MIT"},
     openapi_tags=TAGS_METADATA,
