@@ -71,8 +71,32 @@ const projectDataList = [{
     }
 },
     {
+        "title": "TradingView News Collector",
+        "project": "TradingView News Collector",
+        "category": "Personal Project · Market News Data Pipeline",
+        "summary": "Collects and archives Nasdaq-100 news from TradingView under a strict daily API quota, and serves it as a searchable news feed.",
+        descriptionList: [
+            "1. **Built** a Python collector that pulls **headlines and full text** for the **Nasdaq-100 members and QQQ** from TradingView's **MCP service** twice a day, archiving **18,000+ stories** in **MySQL**.",
+            "2. **Designed** around a strict **daily API quota**: each round spends an **even share of the remaining budget**, polls the stalest symbols first and fetches **full text for the newest stories first**.",
+            "3. **Served** the archive through a read-only **FastAPI** endpoint and a **React** news table with symbol, keyword, source and date filters, deployed with **Docker** behind **Nginx** with per-visitor **rate limiting**."
+        ],
+        "downloadFiles": [],
+        "GitHubLink": "",
+        "pageLink": "/newsmonitor",
+        "icons": ["Python", "FastAPI", "MySQL", "Docker", "Ubuntu"],
+        "partners": [
+            "Yuwen Lu"
+        ],
+        "time": "Oct 2026 - Present",
+        "exploreButton": {
+            "label": "Open News Feed",
+            "link": "/newsmonitor"
+        }
+    },
+    {
         "title": "Quantum Machine Learning",
         "project": "Quantum Machine Learning",
+        "hidden": true, // 已被 TradingView News Collector 替换，改为 false 即可重新显示
         "category": "Course Project for CSC586A",
         "summary": "Exploring quantum machine learning techniques with a focus on quantum convolutional neural networks.",
         descriptionList: [

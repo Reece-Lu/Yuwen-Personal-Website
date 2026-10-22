@@ -10,12 +10,14 @@ const AttachmentsBar = ({ downloadFiles, gitHubLink, pageLink }) => {
     return (
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: { xs: 'flex-start', md: 'center' }, justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: 'center', gap: '0.75rem', fontSize: '1rem', flexWrap: 'wrap' }}>
-                <Tooltip title="GitHub Repository">
-                    <Link href={gitHubLink} target="_blank" sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', color: 'black', '&:hover': { color: 'blue' } }}>
-                        <img src={getIconByName('github')} alt="GitHub" style={{ height: '1.5rem', marginRight: '0.25rem' }} />
-                        <span style={{ color: 'inherit', fontSize: '0.75rem' }}>Repository</span>
-                    </Link>
-                </Tooltip>
+                {gitHubLink && (
+                    <Tooltip title="GitHub Repository">
+                        <Link href={gitHubLink} target="_blank" sx={{ textDecoration: 'none', display: 'flex', alignItems: 'center', color: 'black', '&:hover': { color: 'blue' } }}>
+                            <img src={getIconByName('github')} alt="GitHub" style={{ height: '1.5rem', marginRight: '0.25rem' }} />
+                            <span style={{ color: 'inherit', fontSize: '0.75rem' }}>Repository</span>
+                        </Link>
+                    </Tooltip>
+                )}
                 {downloadFiles.map((file, index) => {
                     const iconSrc = getIconByName(file.iconName);
                     const downloadLink = `/springapp/download/${file.filenameOnServer}`;

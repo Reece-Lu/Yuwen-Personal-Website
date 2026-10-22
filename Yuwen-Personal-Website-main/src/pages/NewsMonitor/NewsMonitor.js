@@ -90,6 +90,7 @@ const STRINGS = {
         relatedSymbols: 'Related symbols',
         noStory: 'The full text has not been collected yet.',
         storyError: 'Could not load the full text.',
+        rateLimited: 'Too many requests in a short time. Please wait a minute and try again.',
         empty: 'No news matches these filters.',
         error: 'Could not load news. Please try again later.',
         rowsPerPage: 'Rows per page',
@@ -138,6 +139,7 @@ const STRINGS = {
         relatedSymbols: '相关股票',
         noStory: '正文还没有抓取。',
         storyError: '正文加载失败。',
+        rateLimited: '请求太频繁了，请稍等一分钟再试。',
         empty: '没有符合条件的新闻。',
         error: '新闻加载失败，请稍后再试。',
         rowsPerPage: '每页行数',
@@ -156,6 +158,8 @@ const RUN_STATUS_COLOR = {
 };
 
 const ticker = (symbol) => (symbol.includes(':') ? symbol.split(':')[1] : symbol);
+// The gateway answers 429 when a visitor goes over the news API rate limit.
+const errorKind = (err) => (err && err.response && err.response.status === 429 ? 'rateLimited' : 'error');
 const safeLink = (url) => (url && url.startsWith('https://') ? url : null);
 
 // Filters live in the URL so a filtered view can be bookmarked or linked to.
@@ -222,7 +226,11 @@ function StoryPanel({ item, detail, t, onPickSymbol }) {
     if (!detail || detail.loading) {
         body = <LinearProgress sx={{ my: 2 }} />;
     } else if (detail.error) {
-        body = <Alert severity="error">{t.storyError}</Alert>;
+        body = (
+            <Alert severity={detail.error === 'rateLimited' ? 'warning' : 'error'}>
+                {detail.error === 'rateLimited' ? t.rateLimited : t.storyError}
+            </Alert>
+        );
     } else if (detail.data.body_text) {
         body = (
             <Box sx={{ maxHeight: 420, overflowY: 'auto', pr: 1 }}>
@@ -296,7 +304,7 @@ function NewsMonitor() {
     const [symbols, setSymbols] = useState([]);
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(false);
+    const [error, setError] = useState(null);
     const [expanded, setExpanded] = useState({});
     const [details, setDetails] = useState({});
     const [qInput, setQInput] = useState(filters.q);
@@ -359,10 +367,10 @@ function NewsMonitor() {
             .then((data) => {
                 if (id !== requestId.current) return;
                 setResult(data);
-                setError(false);
+                setError(null);
             })
-            .catch(() => {
-                if (id === requestId.current) setError(true);
+            .catch((err) => {
+                if (id === requestId.current) setError(errorKind(err));
             })
             .finally(() => {
                 if (id === requestId.current) setLoading(false);
@@ -372,7 +380,7 @@ function NewsMonitor() {
     const toggleRow = (item) => {
         const open = !expanded[item.id];
         setExpanded((prev) => ({ ...prev, [item.id]: open }));
-        if (!open || details[item.id]) return;
+        if (!open || (details[item.id] && !details[item.id].error)) return;
         if (item.story_status !== 'fetched') {
             setDetails((prev) => ({ ...prev, [item.id]: { data: {} } }));
             return;
@@ -380,7 +388,7 @@ function NewsMonitor() {
         setDetails((prev) => ({ ...prev, [item.id]: { loading: true } }));
         get(`/news/items/${item.id}`, {}, 'fastAPI')
             .then((data) => setDetails((prev) => ({ ...prev, [item.id]: { data } })))
-            .catch(() => setDetails((prev) => ({ ...prev, [item.id]: { error: true } })));
+            .catch((err) => setDetails((prev) => ({ ...prev, [item.id]: { error: errorKind(err) } })));
     };
 
     const pickSymbol = (symbol) => updateFilters({ symbol });
@@ -616,8 +624,8 @@ function NewsMonitor() {
             <Paper variant="outlined" sx={{ overflow: 'hidden' }}>
                 <Box sx={{ height: 4 }}>{loading && <LinearProgress sx={{ height: 4 }} />}</Box>
                 {error && (
-                    <Alert severity="error" sx={{ m: 2 }}>
-                        {t.error}
+                    <Alert severity={error === 'rateLimited' ? 'warning' : 'error'} sx={{ m: 2 }}>
+                        {t[error]}
                     </Alert>
                 )}
                 <TableContainer>

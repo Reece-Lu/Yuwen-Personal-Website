@@ -1,0 +1,3 @@
+# Pages are open to crawlers; the data APIs behind them are not.
+User-agent: *
+Disallow: /api/
