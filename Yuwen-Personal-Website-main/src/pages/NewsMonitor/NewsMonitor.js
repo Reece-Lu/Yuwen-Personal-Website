@@ -12,7 +12,6 @@ import {
     FormControlLabel,
     IconButton,
     LinearProgress,
-    Link,
     MenuItem,
     Paper,
     Switch,
@@ -32,14 +31,12 @@ import {
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { get } from '../../utils/api-utils';
 import { TIME_ZONES, formatDate, formatDateTime, zoneLabel, zonedMidnightIso } from './time';
+import { ACCENT, FONT, MAX_CHIPS, StoryPanel, SymbolChips, errorKind, ticker, useStoryDetails } from './shared';
+import PriceNewsChart from './PriceNewsChart';
 
-const ACCENT = '#1f6f9d';
-const FONT = 'Nunito, Arial, sans-serif';
 const PAGE_SIZES = [25, 50, 100];
-const MAX_CHIPS = 4;
 
 // Dropdown lists render in a portal and this page has no MUI theme, so give
 // their options the page font explicitly.
@@ -95,6 +92,34 @@ const STRINGS = {
         error: 'Could not load news. Please try again later.',
         rowsPerPage: 'Rows per page',
         displayedRows: ({ from, to, count }) => `${from}–${to} of ${count.toLocaleString('en-US')}`,
+        chart: {
+            title: 'Price & News',
+            subtitle:
+                'Daily candles with a dot above every trading day that has news. ' +
+                'Hover for a summary, click a dot to read that day\'s news.',
+            ranges: { '1M': '1M', '3M': '3M', '6M': '6M', '1Y': '1Y' },
+            open: 'Open',
+            high: 'High',
+            low: 'Low',
+            close: 'Close',
+            volume: 'Volume',
+            change: 'Change',
+            newsCount: (n) => `${n} ${n === 1 ? 'story' : 'stories'}`,
+            clickToRead: 'Click to read them',
+            closeList: 'Close',
+            loadMore: (n) => `Show more (${n} left)`,
+            asOf: (day) => `close of ${day}`,
+            priceError: 'Price data is unavailable right now. Please try again later.',
+            legendDot: 'Stories that trading day',
+            dayRule: 'Trading days follow New York time',
+            dayRuleLong:
+                'A dot counts the stories published from that day\'s midnight in New York up to the next trading day, ' +
+                'so weekend and holiday news shows on the previous trading day.',
+            newsSince: (day) => `News for this symbol is archived from ${day}`,
+            source: 'Prices: Yahoo Finance, daily',
+            hint: 'Click a dot above the candles to read that day\'s news.',
+            timesIn: (zone) => `times in ${zone}`,
+        },
     },
     zh: {
         locale: 'zh-CN',
@@ -144,6 +169,30 @@ const STRINGS = {
         error: '新闻加载失败，请稍后再试。',
         rowsPerPage: '每页行数',
         displayedRows: ({ from, to, count }) => `第 ${from}–${to} 条，共 ${count.toLocaleString('zh-CN')} 条`,
+        chart: {
+            title: '价格与新闻',
+            subtitle: '日 K 线上，有新闻的交易日上方会有一个圆点。鼠标悬停查看概要，点击圆点查看当天的新闻。',
+            ranges: { '1M': '1个月', '3M': '3个月', '6M': '6个月', '1Y': '1年' },
+            open: '开盘',
+            high: '最高',
+            low: '最低',
+            close: '收盘',
+            volume: '成交量',
+            change: '涨跌',
+            newsCount: (n) => `${n} 条新闻`,
+            clickToRead: '点击圆点查看',
+            closeList: '关闭',
+            loadMore: (n) => `加载更多（还有 ${n} 条）`,
+            asOf: (day) => `${day} 收盘`,
+            priceError: '暂时拿不到价格数据，请稍后再试。',
+            legendDot: '当天的新闻条数',
+            dayRule: '交易日按纽约时间划分',
+            dayRuleLong: '圆点统计的是从这个交易日纽约时间零点到下一个交易日之间发布的新闻，所以周末和节假日的新闻会显示在前一个交易日上。',
+            newsSince: (day) => `这只股票的新闻从 ${day} 开始收录`,
+            source: '价格来源：Yahoo Finance（日线）',
+            hint: '点击 K 线上方的圆点，查看当天的新闻。',
+            timesIn: (zone) => `时间为 ${zone}`,
+        },
     },
 };
 
@@ -156,11 +205,6 @@ const RUN_STATUS_COLOR = {
     quota_exhausted: 'warning',
     running: 'info',
 };
-
-const ticker = (symbol) => (symbol.includes(':') ? symbol.split(':')[1] : symbol);
-// The gateway answers 429 when a visitor goes over the news API rate limit.
-const errorKind = (err) => (err && err.response && err.response.status === 429 ? 'rateLimited' : 'error');
-const safeLink = (url) => (url && url.startsWith('https://') ? url : null);
 
 // Filters live in the URL so a filtered view can be bookmarked or linked to.
 function readFilters(params) {
@@ -192,105 +236,6 @@ function StatTile({ label, children }) {
     );
 }
 
-function SymbolChips({ symbols, max, onPick, t }) {
-    const shown = max ? symbols.slice(0, max) : symbols;
-    const rest = symbols.length - shown.length;
-    return (
-        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 0.5 }}>
-            {shown.map((symbol) => (
-                <Tooltip key={symbol} title={`${symbol} · ${t.filterBySymbol}`}>
-                    <Chip
-                        label={ticker(symbol)}
-                        size="small"
-                        variant="outlined"
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            onPick(symbol);
-                        }}
-                        sx={{ fontFamily: FONT, fontWeight: 600, height: 22 }}
-                    />
-                </Tooltip>
-            ))}
-            {rest > 0 && (
-                <Tooltip title={symbols.slice(max).map(ticker).join(', ')}>
-                    <Chip label={`+${rest}`} size="small" sx={{ fontFamily: FONT, height: 22 }} />
-                </Tooltip>
-            )}
-        </Box>
-    );
-}
-
-function StoryPanel({ item, detail, t, onPickSymbol }) {
-    const link = safeLink(item.link);
-    let body;
-    if (!detail || detail.loading) {
-        body = <LinearProgress sx={{ my: 2 }} />;
-    } else if (detail.error) {
-        body = (
-            <Alert severity={detail.error === 'rateLimited' ? 'warning' : 'error'}>
-                {detail.error === 'rateLimited' ? t.rateLimited : t.storyError}
-            </Alert>
-        );
-    } else if (detail.data.body_text) {
-        body = (
-            <Box sx={{ maxHeight: 420, overflowY: 'auto', pr: 1 }}>
-                {detail.data.body_text.split(/\n\s*\n/).map((para, i) => (
-                    <Typography
-                        key={i}
-                        sx={{ fontFamily: FONT, color: '#2b3540', lineHeight: 1.65, mb: 1.25, whiteSpace: 'pre-line' }}
-                    >
-                        {para}
-                    </Typography>
-                ))}
-            </Box>
-        );
-    } else {
-        body = <Typography sx={{ color: '#66737f', fontFamily: FONT, my: 1 }}>{t.noStory}</Typography>;
-    }
-
-    return (
-        <Box sx={{ px: { xs: 1, sm: 3 }, py: 2, background: '#f7f8fa', borderTop: '1px solid #e6eaee' }}>
-            {body}
-            <Box
-                sx={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    alignItems: 'center',
-                    gap: 2,
-                    mt: 1.5,
-                    pt: 1.5,
-                    borderTop: '1px dashed #dde3e8',
-                }}
-            >
-                {item.symbols.length > MAX_CHIPS && (
-                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, flexWrap: 'wrap' }}>
-                        <Typography sx={{ color: '#66737f', fontSize: '0.8rem', fontFamily: FONT }}>
-                            {t.relatedSymbols}
-                        </Typography>
-                        <SymbolChips symbols={item.symbols} onPick={onPickSymbol} t={t} />
-                    </Box>
-                )}
-                {detail && detail.data && detail.data.copyright && (
-                    <Typography sx={{ color: '#8a96a1', fontSize: '0.78rem', fontFamily: FONT }}>
-                        © {detail.data.copyright}
-                    </Typography>
-                )}
-                {link && (
-                    <Link
-                        href={link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        sx={{ fontFamily: FONT, fontSize: '0.85rem', display: 'inline-flex', alignItems: 'center', gap: 0.5 }}
-                    >
-                        {t.openOriginal}
-                        <OpenInNewIcon sx={{ fontSize: '0.95rem' }} />
-                    </Link>
-                )}
-            </Box>
-        </Box>
-    );
-}
-
 function NewsMonitor() {
     const [lang, setLang] = useState(() =>
         typeof navigator !== 'undefined' && (navigator.language || '').toLowerCase().startsWith('zh') ? 'zh' : 'en',
@@ -305,8 +250,7 @@ function NewsMonitor() {
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const [expanded, setExpanded] = useState({});
-    const [details, setDetails] = useState({});
+    const { expanded, details, toggle: toggleRow } = useStoryDetails();
     const [qInput, setQInput] = useState(filters.q);
     const requestId = useRef(0);
 
@@ -385,20 +329,6 @@ function NewsMonitor() {
                 if (id === requestId.current) setLoading(false);
             });
     }, [filters.symbol, filters.q, filters.provider, startIso, endIso, filters.full, filters.page, filters.size]);
-
-    const toggleRow = (item) => {
-        const open = !expanded[item.id];
-        setExpanded((prev) => ({ ...prev, [item.id]: open }));
-        if (!open || (details[item.id] && !details[item.id].error)) return;
-        if (item.story_status !== 'fetched') {
-            setDetails((prev) => ({ ...prev, [item.id]: { data: {} } }));
-            return;
-        }
-        setDetails((prev) => ({ ...prev, [item.id]: { loading: true } }));
-        get(`/news/items/${item.id}`, {}, 'fastAPI')
-            .then((data) => setDetails((prev) => ({ ...prev, [item.id]: { data } })))
-            .catch((err) => setDetails((prev) => ({ ...prev, [item.id]: { error: errorKind(err) } })));
-    };
 
     const pickSymbol = (symbol) => updateFilters({ symbol });
 
@@ -742,6 +672,8 @@ function NewsMonitor() {
                     SelectProps={{ MenuProps: MENU_PROPS }}
                 />
             </Paper>
+
+            <PriceNewsChart symbols={symbols} t={t} locale={locale} timeZone={timeZone} />
         </Container>
     );
 }

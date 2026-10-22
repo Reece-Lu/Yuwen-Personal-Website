@@ -62,3 +62,29 @@ class NewsOverview(BaseModel):
     tracked_symbols: int
     providers: List[ProviderCount]
     last_run: Optional[CollectRun] = None
+
+
+class PriceCandle(BaseModel):
+    date: str  # trading day, YYYY-MM-DD (New York)
+    open: float
+    high: float
+    low: float
+    close: float
+    volume: int
+
+
+class NewsMarker(BaseModel):
+    date: str  # the candle the news belongs to
+    count: int
+    start: datetime  # news window [start, end): from this trading day to the next one, New York midnight
+    end: Optional[datetime] = None  # open-ended for the latest candle
+    titles: List[str]  # up to three latest headlines, for the hover card
+
+
+class ChartResponse(BaseModel):
+    symbol: str
+    name: Optional[str] = None
+    range: str
+    candles: List[PriceCandle]
+    markers: List[NewsMarker]
+    news_since: Optional[datetime] = None  # earliest archived news for the symbol

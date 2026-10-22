@@ -8,7 +8,8 @@ from typing import Iterator, List, Literal, Optional
 from fastapi import APIRouter, Depends, HTTPException, Path, Query
 
 from app.modules.news import database, service
-from app.modules.news.schemas import NewsDetail, NewsListResponse, NewsOverview, TrackedSymbol
+from app.modules.news.prices import PriceUnavailable
+from app.modules.news.schemas import ChartResponse, NewsDetail, NewsListResponse, NewsOverview, TrackedSymbol
 
 
 router = APIRouter(prefix="/news", tags=["News"])
@@ -89,3 +90,29 @@ def item(news_id: int = Path(..., ge=1), conn=Depends(get_connection)) -> NewsDe
     if row is None:
         raise HTTPException(status_code=404, detail="News item not found.")
     return NewsDetail(**row)
+
+
+@router.get(
+    "/chart",
+    response_model=ChartResponse,
+    summary="Daily candles with a news count per trading day",
+    description=(
+        "Daily OHLCV from yfinance (cached for 30 minutes) for a tracked symbol, plus how many "
+        "archived stories fall on each candle. Days follow New York time; weekend and holiday "
+        "news counts toward the previous trading day. `start`/`end` on each marker can be passed "
+        "to `/news/items` to list that day's stories."
+    ),
+)
+def chart(
+    symbol: str = Query("NASDAQ:NVDA", max_length=64, description="Tracked symbol, e.g. NASDAQ:NVDA."),
+    range: Literal["1M", "3M", "6M", "1Y"] = Query("3M", description="How much history to show."),
+    conn=Depends(get_connection),
+) -> ChartResponse:
+    row = service.tracked_symbol(conn, symbol.strip().upper())
+    if row is None:
+        raise HTTPException(status_code=404, detail="Symbol is not tracked.")
+    try:
+        payload = service.chart(conn, symbol=row["symbol"], name=row["name"], range_key=range)
+    except PriceUnavailable as exc:
+        raise HTTPException(status_code=503, detail="Price data is unavailable right now.") from exc
+    return ChartResponse(**payload)

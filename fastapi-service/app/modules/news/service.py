@@ -2,10 +2,17 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from bisect import bisect_right
+from collections import deque
+from datetime import date, datetime, timedelta, timezone
 from typing import Any, Dict, List, Optional
+from zoneinfo import ZoneInfo
 
 from app.modules.news.database import as_utc, to_naive_utc
+from app.modules.news.prices import daily_candles, yahoo_ticker
+
+NEW_YORK = ZoneInfo("America/New_York")
+CHART_RANGES = {"1M": 31, "3M": 92, "6M": 183, "1Y": 366}
 
 
 def _escape_like(text: str) -> str:
@@ -206,4 +213,68 @@ def overview(conn) -> Dict[str, Any]:
         "tracked_symbols": tracked,
         "providers": providers,
         "last_run": run,
+    }
+
+
+def tracked_symbol(conn, symbol: str) -> Optional[Dict[str, Any]]:
+    with conn.cursor() as cur:
+        cur.execute("SELECT symbol, name FROM tracked_symbol WHERE symbol = %s AND active = 1", [symbol])
+        return cur.fetchone()
+
+
+def _new_york_midnight_utc(day: date) -> datetime:
+    """00:00 New York time on ``day``, as the naive UTC value MySQL stores."""
+    local = datetime(day.year, day.month, day.day, tzinfo=NEW_YORK)
+    return local.astimezone(timezone.utc).replace(tzinfo=None)
+
+
+def chart(conn, *, symbol: str, name: Optional[str], range_key: str) -> Dict[str, Any]:
+    """Daily candles for ``range_key`` plus, per candle, the symbol's news count.
+
+    A candle owns the news published from its trading day's New York midnight up to
+    the next candle's, so weekend and holiday news lands on the previous trading day
+    and the latest candle collects everything since.
+    """
+    since = date.today() - timedelta(days=CHART_RANGES[range_key])
+    candles = [c for c in daily_candles(yahoo_ticker(symbol)) if c["date"] >= since]
+    markers: List[Dict[str, Any]] = []
+    news_since = None
+    if candles:
+        bounds = [_new_york_midnight_utc(c["date"]) for c in candles]
+        counts = [0] * len(candles)
+        latest_titles = [deque(maxlen=3) for _ in candles]
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT s.published_at, n.title
+                FROM news_symbol s JOIN news_item n ON n.id = s.news_id
+                WHERE s.symbol = %s AND s.published_at >= %s
+                ORDER BY s.published_at
+                """,
+                [symbol, bounds[0]],
+            )
+            for row in cur.fetchall():
+                i = bisect_right(bounds, row["published_at"]) - 1
+                counts[i] += 1
+                latest_titles[i].append(row["title"])
+            cur.execute("SELECT MIN(published_at) AS first FROM news_symbol WHERE symbol = %s", [symbol])
+            news_since = as_utc(cur.fetchone()["first"])
+        for i, candle in enumerate(candles):
+            if counts[i]:
+                markers.append(
+                    {
+                        "date": candle["date"].isoformat(),
+                        "count": counts[i],
+                        "start": as_utc(bounds[i]),
+                        "end": as_utc(bounds[i + 1]) if i + 1 < len(bounds) else None,
+                        "titles": list(reversed(latest_titles[i])),
+                    }
+                )
+    return {
+        "symbol": symbol,
+        "name": name,
+        "range": range_key,
+        "candles": [{**c, "date": c["date"].isoformat()} for c in candles],
+        "markers": markers,
+        "news_since": news_since,
     }
