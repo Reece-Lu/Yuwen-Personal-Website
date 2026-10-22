@@ -160,6 +160,7 @@ export default function ProjectCard({ projectData }) {
                                 downloadFiles={projectData.downloadFiles}
                                 gitHubLink={projectData.GitHubLink}
                                 pageLink={projectData.pageLink}
+                                pageInNewTab={projectData.pageInNewTab !== false}
                             />
                         </Grid>
                     </Grid>

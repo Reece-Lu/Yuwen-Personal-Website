@@ -50,7 +50,7 @@ const STRINGS = {
     en: {
         locale: 'en-US',
         kicker: 'NASDAQ-100 NEWS ARCHIVE',
-        title: 'Market News Feed',
+        title: 'TradingView News Collector',
         subtitle:
             'Headlines and full text for the Nasdaq-100 members and QQQ, collected from ' +
             'TradingView twice a day (00:10 and 12:10 UTC). Times follow the time zone you pick.',
@@ -99,7 +99,7 @@ const STRINGS = {
     zh: {
         locale: 'zh-CN',
         kicker: '纳斯达克 100 新闻库',
-        title: '市场新闻',
+        title: 'TradingView 新闻收集',
         subtitle:
             '纳斯达克 100 成分股和 QQQ 的新闻标题与正文，每天两次（UTC 00:10 和 12:10，' +
             '即北京时间 08:10 和 20:10）从 TradingView 抓取。时间按你选择的时区显示。',
@@ -309,6 +309,15 @@ function NewsMonitor() {
     const [details, setDetails] = useState({});
     const [qInput, setQInput] = useState(filters.q);
     const requestId = useRef(0);
+
+    // Browser tab title follows the page heading; restore the site title on leave.
+    useEffect(() => {
+        const previous = document.title;
+        document.title = `${t.title} | Yuwen`;
+        return () => {
+            document.title = previous;
+        };
+    }, [t.title]);
 
     const updateFilters = useCallback(
         (patch, { keepPage = false } = {}) => {

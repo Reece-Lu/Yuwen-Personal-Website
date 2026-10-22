@@ -6,7 +6,9 @@ import Link from '@mui/joy/Link';
 import { getIconByName } from '../utils/iconHelpers';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 
-const AttachmentsBar = ({ downloadFiles, gitHubLink, pageLink }) => {
+// pageInNewTab: false for pages of this site (they open in the same tab);
+// separate apps such as /residentialcomplex/ keep opening a new tab.
+const AttachmentsBar = ({ downloadFiles, gitHubLink, pageLink, pageInNewTab = true }) => {
     return (
         <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: { xs: 'flex-start', md: 'center' }, justifyContent: 'space-between' }}>
             <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, alignItems: 'center', gap: '0.75rem', fontSize: '1rem', flexWrap: 'wrap' }}>
@@ -38,8 +40,7 @@ const AttachmentsBar = ({ downloadFiles, gitHubLink, pageLink }) => {
                     <Button
                         variant="contained"
                         href={pageLink}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        {...(pageInNewTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                         size="sm"
                         sx={{
                             fontSize: '0.75rem',

@@ -83,6 +83,7 @@ const projectDataList = [{
         "downloadFiles": [],
         "GitHubLink": "",
         "pageLink": "/newsmonitor",
+        "pageInNewTab": false, // a page of this site: open in the same tab
         "icons": ["Python", "FastAPI", "MySQL", "Docker", "Ubuntu"],
         "partners": [
             "Yuwen Lu"
